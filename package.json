@@ -1,9 +1,6 @@
 {
   "name": "@kking5464/simple-react-components",
   "version": "0.1.0",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/simple-react-components"
-  },
   "description": "A simple template for a custom React component library",
   "scripts": {
     "rollup": "rollup -c",
