@@ -19,10 +19,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '16.x'
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@kking5464'
+          registry-url: 'https://registry.npmjs.org/simple-react-components'
       - run: npm ci
       - run: npm run rollup
       - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
