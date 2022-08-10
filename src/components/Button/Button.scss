@@ -1,3 +1,19 @@
 button {
-  font-size: 60px;
+  background-color: #dd0031;
+  border-radius: 24px;
+  border-width: 0;
+  color: #FFFFFF;
+  font-family: 'Apercu Pro', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 24px;
+  padding: 12px 24px;
+  transition: 0.3s;
+
+  &:hover {
+    background: #B00027;
+    cursor: pointer;
+  }
 }
