@@ -14,6 +14,13 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const ButtonStory = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
+ButtonStory.argTypes = {
+  label: {
+    name: 'Label',
+    control: { type: 'text' },
+    description: 'Button text',
+  },
+}
 ButtonStory.args = {
   label: 'Button Text',
 };
