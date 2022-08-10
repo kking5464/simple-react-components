@@ -1,5 +1,5 @@
 {
-  "name": "@kking5464/simple-react-components",
+  "name": "@hannah.walsh/simple-react-components",
   "version": "0.1.0",
   "description": "A simple template for a custom React component library",
   "scripts": {
@@ -8,7 +8,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "author": "Kevin King",
+  "author": "Hannah Walsh",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.16.0",

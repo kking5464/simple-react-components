@@ -20,9 +20,17 @@ ButtonStory.argTypes = {
     control: { type: 'text' },
     description: 'Button text',
   },
+  type: {
+    name: 'Type',
+    control: { type: 'select' },
+    options: ['primary', 'secondary'],
+    description:
+      'Button type/whether the button is used to communicate the primary or secondary action',
+  },
 }
 ButtonStory.args = {
   label: 'Button Text',
+  type: 'primary',
 };
 
 ButtonStory.storyName = "Button";
