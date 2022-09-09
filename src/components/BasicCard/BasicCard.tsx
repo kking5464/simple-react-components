@@ -8,12 +8,13 @@ export interface BasicCardProps {
   copy: string;
   buttonLabel: string;
   buttonType: string;
+  imageURL: string;
 }
 
 const BasicCard = (props: BasicCardProps) => {
   return (
     <div className="basic-card">
-      <img src="https://d1fd34dzzl09j.cloudfront.net/2022/07/Chicken%20Biscuit%20story/chicken%20biscuit%20image.png?h=973&w=1462&la=en" />
+      <img src={props.imageURL} />
       <div className="basic-card__content">
         <h1>{props.title}</h1>
         <h2>{props.subtitle}</h2>
