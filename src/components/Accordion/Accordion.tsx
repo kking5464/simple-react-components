@@ -7,7 +7,7 @@ export interface AccordionProps {
 }
 
 const Accordion = (props: AccordionProps) => {
-  const [isActive, setIsActive] = React.useState(false);
+  const [isActive, setIsActive] = React.useState<boolean | null>(false);
 
   return (
     <div className="accordion">
