@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import "./Accordion.scss";
 
 export interface AccordionProps {
@@ -7,7 +7,7 @@ export interface AccordionProps {
 }
 
 const Accordion = (props: AccordionProps) => {
-  const [isActive, setIsActive] = React?.useState<boolean | null>(false);
+  const [isActive, setIsActive] = useState<boolean | null>(false);
 
   return (
     <div className="accordion">
