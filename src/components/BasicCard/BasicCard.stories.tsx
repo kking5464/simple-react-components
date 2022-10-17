@@ -56,7 +56,7 @@ BasicCardStory.args = {
   copy: 'Detailed text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
   buttonLabel: 'Button Text',
   buttonType: 'secondary',
-  imageURL: 'https://d1fd34dzzl09j.cloudfront.net/2022/07/Chicken%20Biscuit%20story/chicken%20biscuit%20image.png?h=973&w=1462&la=en',
+  imageURL: 'https://images.unsplash.com/photo-1508184585643-6001cf47a1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
 };
 
 BasicCardStory.storyName = "Basic Card";

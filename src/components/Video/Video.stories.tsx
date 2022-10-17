@@ -27,7 +27,7 @@ VideoStory.argTypes = {
   },
 }
 VideoStory.args = {
-  embedId: '3YrPEOu8iBU',
+  embedId: 'qsMpKU5Ld94',
   videoTitle: 'Test video',
 };
 
