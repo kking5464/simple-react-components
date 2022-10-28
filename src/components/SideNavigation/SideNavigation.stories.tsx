@@ -21,10 +21,22 @@ SideNavigationStory.argTypes = {
     name: 'Is Open',
     control: { type: 'boolean'},
     description: 'Is side navigation open or closed',
-  }
+  },
+  linkTitle: {
+    name: 'Link Title',
+    control: { type: 'text'},
+    description: 'Title for Link',
+  },
+  linkUrl: {
+    name: "Link Url",
+    control: { type: "text"},
+    description: "Url for Link"
+  },
 }
 SideNavigationStory.args = {
   isOpen: true,
+  linkTitle: 'Home',
+  linkUrl: "",
 };
 
 SideNavigationStory.storyName = "Side Navigation";

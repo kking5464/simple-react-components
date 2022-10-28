@@ -1,19 +1,17 @@
 import React from 'react';
 import "./SideNavigation.scss";
+import SideNavigationLink from '../SideNavigationLink';
 
 export interface SideNavigationProps {
   isOpen: boolean | null;
+  linkTitle: string;
+  linkUrl: string;
 }
 
 const SideNavigation = (props: SideNavigationProps) => {
   return (
       <div className={`side-navigation ${props.isOpen && 'side-navigation--open'}`}>
-        <a className="active" href="#">Home</a>
-        <a href="#">Schedule</a>
-        <a href="#">My Restaurant</a>
-        <a href="#">Pay</a>
-        <a href="#">Performance</a>
-        <a href="#">Team Member Resources</a>
+        <SideNavigationLink isActive linkTitle={props.linkTitle} linkUrl={props.linkUrl}/>
       </div>
   );
 };
