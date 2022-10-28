@@ -1,0 +1,50 @@
+.side-navigation {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 72px;
+    right: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    transition: 0.5s;
+    padding: 28px 0;
+
+    &--open {
+        width: calc(100% - 56px);
+        padding: 28px;
+        border-top: 1px solid rgb(91 103 112 / 0.3);
+
+        @media screen and (min-width: 400px) {
+            width: 300px;
+        }
+    }
+
+    a {
+        padding: 20px;
+        text-decoration: none;
+        font-family: "Apercu Pro", sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        line-height: 24px;
+        color: #5b6770;
+        display: block;
+        transition: 0.3s;
+        border-bottom: 1px solid #5b6770;
+        white-space: nowrap;
+
+        &:hover {
+            border-color: #B00027;
+            color: #B00027;
+        }
+
+        &.active {
+            color: #dd0031;
+            border-color: #dd0031;
+            border-width: 4px;
+        }
+    }
+}
