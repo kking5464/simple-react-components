@@ -20,7 +20,7 @@ const Navigation = (props: NavigationProps) => {
     <>
       <div className="navigation">
         <div className="navigation__logo">
-          <a className="navigation__logo-link" href="">
+          <a className="navigation__logo-link" href={props.logoLink}>
             <img className="navigation__logo-image" src={props.logoImage} alt="" />
           </a>
         </div>
