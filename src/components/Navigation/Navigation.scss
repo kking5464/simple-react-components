@@ -1,0 +1,75 @@
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 0 5px 32px 6px lightgrey;
+    padding: 16px 20px;
+
+    &__logo {
+        &-link {
+            height: 40px;
+            display: flex;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+
+        &-profile {
+            &-link {
+                height: 40px;
+                display: flex;
+                margin-right: 20px;
+            }
+
+            &-image {
+                border-radius: 50%;
+                width: 40px;
+                object-fit: cover;
+            }
+        }
+
+        &-toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 28px;
+            width: 32px;
+            margin: auto;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &--open {
+                .navigation__buttons-toggle-bar {    
+                    &:nth-of-type(1) {
+                        transform: rotate(45deg);
+                        transform-origin: top left;
+                        width: 36px;
+                    }
+    
+                    &:nth-of-type(2) {
+                        transform-origin: center;
+                        width: 0;
+                    }
+    
+                    &:nth-of-type(3) {
+                        transform: rotate(-45deg);
+                        transform-origin: bottom left;
+                        width: 36px;
+                    }
+                }
+            }
+
+            &-bar {
+                height: 3px;
+                width: 100%;
+                background-color: #5b6770;
+                transition: all 100ms ease-in-out;
+                border-radius: 3px;
+            }
+        }
+    }
+}
