@@ -10,6 +10,15 @@ export interface NavigationProps {
 
   // Profile
   profileImage: string;
+  profileHome: string;
+  profileHomeLink: string;
+  profileStore: string;
+  profileStoreLinkTitle: string;
+  profileStoreLink: string;
+  profileSettings: string;
+  profileSettingsLink: string;
+  profileLogout: string;
+  profileLogoutLink: string;
 }
 
 const Navigation = (props: NavigationProps) => {
@@ -34,24 +43,24 @@ const Navigation = (props: NavigationProps) => {
               <img className="navigation__buttons-profile-image" src={props.profileImage} alt="" />
             </button>
             <div className={`navigation__buttons-profile-content ${isProfileOpen && 'navigation__buttons-profile-content--open'}`}>
-              <a className="navigation__buttons-profile-content-link" href="#">My Profile</a>
-              <a className="navigation__buttons-profile-content-link" href="#">Settings</a>
+              <a className="navigation__buttons-profile-content-link" href={props.profileHomeLink}>{props.profileHome}</a>
+              <a className="navigation__buttons-profile-content-link" href={props.profileSettingsLink}>{props.profileSettings}</a>
 
               <RuleDivider />
 
               <div className="navigation__buttons-profile-content-location">
                 <h3 className="navigation__buttons-profile-content-location-name">
-                  North Ave FSU - 01885
+                  {props.profileStore}
                 </h3>
-                <a className="navigation__buttons-profile-content-location-link" href="#">
-                  Switch Locations
+                <a className="navigation__buttons-profile-content-location-link" href={props.profileStoreLink}>
+                  {props.profileStoreLinkTitle}
                 </a>
 
               </div>
 
               <RuleDivider />
 
-              <a className="navigation__buttons-profile-content-link" href="#">Log Out</a>
+              <a className="navigation__buttons-profile-content-link" href={props.profileLogoutLink}>{props.profileLogout}</a>
             </div>
           </div>
 
@@ -71,7 +80,7 @@ const Navigation = (props: NavigationProps) => {
         </div>
       </div>
 
-      <SideNavigation isOpen={isOpen} />
+      <SideNavigation isOpen={isOpen} linkTitle="Hello" linkUrl="#" />
     </>
 
   );
