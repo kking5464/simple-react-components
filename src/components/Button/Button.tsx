@@ -7,7 +7,17 @@ export interface ButtonProps {
 }
 
 const Button = (props: ButtonProps) => {
-  return <button className={`button ${props.type}`}>{props.label}</button>;
+  return (
+    <button
+      className={`button ${props.type}`}
+      onClick={(e) => {
+        e.preventDefault();
+        window.location.href = "http://google.com";
+      }}
+    >
+      {props.label}
+    </button>
+  );
 };
 
 export default Button;
