@@ -10,6 +10,14 @@ export interface NavigationProps {
 
   // Profile
   profileImage: string;
+
+  // Side Navigation
+  isOpen: boolean | null;
+  sideNavigationLinks: {
+    linkTitle: string;
+    linkUrl: string;
+    isActive: boolean;
+  }[];
 }
 
 const Navigation = (props: NavigationProps) => {
@@ -71,7 +79,7 @@ const Navigation = (props: NavigationProps) => {
         </div>
       </div>
 
-      <SideNavigation isOpen={isOpen} linkTitle="" linkUrl="" />
+      <SideNavigation isOpen={isOpen} sideNavigationLinks={props.sideNavigationLinks} />
     </>
 
   );

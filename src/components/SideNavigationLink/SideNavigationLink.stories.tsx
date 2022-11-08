@@ -5,7 +5,7 @@ import SideNavigationLink from "./SideNavigationLink";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "React Component Library/Side Navigation",
+  title: "React Component Library/Navigation/Side Navigation Link",
   component: SideNavigationLink,
 } as ComponentMeta<typeof SideNavigationLink>;
 
@@ -30,7 +30,7 @@ SideNavigationLinkStory.argTypes = {
     description: "Url for Link",
   },
   isActive: {
-    name: "Link Active Status",
+    name: "Is Active",
     control: { type: "boolean" },
     description: "Active Status for Link",
   },

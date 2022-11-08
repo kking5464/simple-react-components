@@ -5,7 +5,7 @@ import Navigation from './Navigation';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'React Component Library/Navigation',
+  title: 'React Component Library/Navigation/Navigation',
   component: Navigation,
 } as ComponentMeta<typeof Navigation>;
 
@@ -44,11 +44,64 @@ NavigationStory.argTypes = {
       category: 'Profile',
     },
   },
+
+  // Side Navigation
+  isOpen: { 
+    name: 'Is Open',
+    control: { type: 'boolean'},
+    description: 'Is side navigation open or closed',
+    table: {
+      category: 'Side Navigation',
+    },
+  },
+  sideNavigationLinks: {
+    name: "Side Navigation Links",
+    control: { type: "object"},
+    description: "Side navigation links",
+    table: {
+      category: 'Side Navigation',
+    },
+  },
 }
 NavigationStory.args = {
   logoImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Red_circle_frame_transparent.svg/512px-Red_circle_frame_transparent.svg.png',
   logoLink: '/',
   profileImage: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aGVhZHNob3R8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+  
+  // Side Navigation
+  isOpen: true,
+  sideNavigationLinks: [
+    {
+      linkTitle: "Home",
+      linkUrl: "/",
+      isActive: true,
+    },
+    {
+      linkTitle: "Schedule",
+      linkUrl: "/",
+      isActive: false,
+    },
+    {
+      linkTitle: "My Restaurant",
+      linkUrl: "/",
+      isActive: false,
+    },
+    {
+      linkTitle: "Pay",
+      linkUrl: "/",
+      isActive: false,
+    },
+    {
+      linkTitle: "Performace",
+      linkUrl: "/",
+      isActive: false,
+    },
+    {
+      linkTitle: "Team Member Resources",
+      linkUrl: "/",
+      isActive: false,
+    }
+  ]
 };
 
 NavigationStory.storyName = "Navigation";

@@ -10,7 +10,7 @@ export interface SideNavigationLinkProps {
 
 const SideNavigationLink = (props: SideNavigationLinkProps) => {
   return (
-        <a className={`side-navigation__link ${props.isActive && 'side-navigation__link--active'}`} href={props.linkUrl}>{props.linkTitle}</a>
+    <a className={`side-navigation__link ${props.isActive && 'side-navigation__link--active'}`} href={props.linkUrl}>{props.linkTitle}</a>
   );
 };
 

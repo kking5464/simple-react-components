@@ -6,9 +6,13 @@ import SideNavigation from "./SideNavigation";
 describe("SideNavigation", () => {
   test("renders the Navigation component", () => {
     render(<SideNavigation
-        isOpen
-        linkTitle=""
-        linkUrl=""
-      />);
+      isOpen
+      sideNavigationLinks={[
+        {
+          linkTitle: "Home",
+          linkUrl: "/",
+          isActive: true,
+        }]}
+    />);
   });
 });
