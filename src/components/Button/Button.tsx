@@ -7,7 +7,7 @@ export interface ButtonProps {
 }
 
 const Button = (props: ButtonProps) => {
-  return <button className={`button ${props.type}`}>{props.label}</button>;
+  return <button data-epi-edit="ButtonBlock" className={`button ${props.type}`}>{props.label}</button>;
 };
 
 export default Button;
