@@ -3,10 +3,11 @@ import "./Button.scss";
 
 export interface ButtonProps {
   label: string;
+  type: string;
 }
 
 const Button = (props: ButtonProps) => {
-  return <button>{props.label}</button>;
+  return <button className={`button ${props.type}`}>{props.label}</button>;
 };
 
 export default Button;
