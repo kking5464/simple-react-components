@@ -71,7 +71,7 @@ const Navigation = (props: NavigationProps) => {
         </div>
       </div>
 
-      <SideNavigation isOpen={isOpen} />
+      <SideNavigation isOpen={isOpen} linkTitle="" linkUrl="" />
     </>
 
   );

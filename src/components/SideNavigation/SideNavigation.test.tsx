@@ -7,6 +7,8 @@ describe("SideNavigation", () => {
   test("renders the Navigation component", () => {
     render(<SideNavigation
         isOpen
+        linkTitle=""
+        linkUrl=""
       />);
   });
 });
