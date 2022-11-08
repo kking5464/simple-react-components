@@ -46,14 +46,6 @@ NavigationStory.argTypes = {
   },
 
   // Side Navigation
-  isOpen: { 
-    name: 'Is Open',
-    control: { type: 'boolean'},
-    description: 'Is side navigation open or closed',
-    table: {
-      category: 'Side Navigation',
-    },
-  },
   sideNavigationLinks: {
     name: "Side Navigation Links",
     control: { type: "object"},
@@ -69,7 +61,6 @@ NavigationStory.args = {
   profileImage: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aGVhZHNob3R8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
   
   // Side Navigation
-  isOpen: true,
   sideNavigationLinks: [
     {
       linkTitle: "Home",

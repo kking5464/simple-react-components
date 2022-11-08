@@ -5,4 +5,5 @@ export { default as Button } from "./Button";
 export { default as Navigation } from "./Navigation";
 export { default as RuleDivider } from "./RuleDivider";
 export { default as SideNavigation } from "./SideNavigation";
+export { default as SideNavigationLink } from "./SideNavigationLink";
 export { default as Video } from "./Video";

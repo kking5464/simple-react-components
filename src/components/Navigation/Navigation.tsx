@@ -12,7 +12,6 @@ export interface NavigationProps {
   profileImage: string;
 
   // Side Navigation
-  isOpen: boolean | null;
   sideNavigationLinks: {
     linkTitle: string;
     linkUrl: string;
