@@ -16,9 +16,10 @@ const renderLinks = (sideNavigationLinks: {
   linkUrl: string;
   isActive: boolean;
 }[]) => {
-  return sideNavigationLinks?.map(sideNavigationLink => {
+  return sideNavigationLinks?.map((sideNavigationLink, key) => {
     return (
       <SideNavigationLink
+        key={key}
         linkTitle={sideNavigationLink.linkTitle}
         linkUrl={sideNavigationLink.linkUrl}
         isActive={sideNavigationLink.isActive}

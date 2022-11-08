@@ -48,7 +48,7 @@ NavigationStory.argTypes = {
   // Side Navigation
   sideNavigationLinks: {
     name: "Side Navigation Links",
-    control: { type: "object"},
+    control: { type: "object" },
     description: "Side navigation links",
     table: {
       category: 'Side Navigation',
