@@ -4,6 +4,7 @@ import "./Button.scss";
 export interface ButtonProps {
   label: string;
   type: string;
+  url: string;
 }
 
 const Button = (props: ButtonProps) => {
@@ -12,7 +13,7 @@ const Button = (props: ButtonProps) => {
       className={`button ${props.type}`}
       onClick={(e) => {
         e.preventDefault();
-        window.location.href = "http://yahoo.com";
+        window.location.href = "{props.url}";
       }}
     >
       {props.label}
