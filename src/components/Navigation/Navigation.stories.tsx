@@ -44,6 +44,78 @@ NavigationStory.argTypes = {
       category: 'Profile',
     },
   },
+  profileHome: {
+    name: "Profile Home",
+    control: { type: "text" },
+    description: "Profile home",
+    table: {
+      category: "Profile",
+    },
+  },
+  profileHomeLink: {
+    name: "Profile Home Link",
+    control: { type: "text" },
+    description: "Profile home link",
+    table: {
+      category: "Profile Link URL",
+    },
+  },
+  profileSettings: {
+    name: "Profile Settings",
+    control: { type: "text" },
+    description: "Profile settings",
+    table: {
+      category: "Profile",
+    },
+  },
+  profileSettingsLink: {
+    name: "Profile Settings Link",
+    control: { type: "text" },
+    description: "Profile settings link",
+    table: {
+      category: "Profile Link URL",
+    },
+  },
+  profileStore: {
+    name: "Profile Store",
+    control: { type: "text" },
+    description: "Profile store",
+    table: {
+      category: "Profile",
+    },
+  },
+  profileStoreLinkTitle: {
+    name: "Profile Store Link Title",
+    control: { type: "text" },
+    description: "Profile store link title",
+    table: {
+      category: "Profile",
+    },
+  },
+  profileStoreLink: {
+    name: "Profile Store Link",
+    control: { type: "text" },
+    description: "Profile store link",
+    table: {
+      category: "Profile Link URL",
+    },
+  },
+  profileLogout: {
+    name: "Profile Logout",
+    control: { type: "text" },
+    description: "Profile logout",
+    table: {
+      category: "Profile",
+    },
+  },
+  profileLogoutLink: {
+    name: "Profile Logout Link",
+    control: { type: "text" },
+    description: "Profile logout link",
+    table: {
+      category: "Profile Link URL",
+    },
+  },
 
   // Side Navigation
   sideNavigationLinks: {
@@ -59,6 +131,15 @@ NavigationStory.args = {
   logoImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Red_circle_frame_transparent.svg/512px-Red_circle_frame_transparent.svg.png',
   logoLink: '/',
   profileImage: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aGVhZHNob3R8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+  profileHome: "Home",
+  profileHomeLink: "#",
+  profileSettings: "Settings",
+  profileSettingsLink: "#",
+  profileStore: "North Avenue FSU - 01885",
+  profileStoreLink: "#",
+  profileStoreLinkTitle: "Switch Locations",
+  profileLogout: "Logout",
+  profileLogoutLink: "#",
   
   // Side Navigation
   sideNavigationLinks: [
