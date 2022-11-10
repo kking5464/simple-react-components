@@ -4,10 +4,21 @@ import "./Button.scss";
 export interface ButtonProps {
   label: string;
   type: string;
+  url: string;
 }
 
 const Button = (props: ButtonProps) => {
-  return <button data-epi-edit="Label" className={`button ${props.type}`}>{props.label}</button>;
+  return (
+    <button
+      className={`button ${props.type}`}
+      onClick={(e) => {
+        e.preventDefault();
+        if (props.url) window.location.href = props.url;
+      }}
+    >
+      {props.label}
+    </button>
+  );
 };
 
 export default Button;

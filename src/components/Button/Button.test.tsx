@@ -5,6 +5,8 @@ import Button from "./Button";
 
 describe("Button", () => {
   test("renders the Button component", () => {
-    render(<Button label="Hello world!" type="primary" />);
+    render(
+      <Button label="Hello world!" type="primary" url="https://google.com" />
+    );
   });
 });
