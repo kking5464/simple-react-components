@@ -17,7 +17,7 @@
     cursor: pointer;
   }
 
-  &.secondary {
+  &--secondary {
     background-color: #FFFFFF;
     border: 1.5px solid #dd0031;
     color: #dd0031;
@@ -25,6 +25,14 @@
     &:hover {
       border-color: #B00027;
       color: #B00027;
+    }
+  }
+
+  &--blue {
+    background-color: #004F71;
+
+    &:hover {
+      background: #023951;
     }
   }
 }

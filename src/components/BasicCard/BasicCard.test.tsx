@@ -13,6 +13,8 @@ describe("BasicCard", () => {
       buttonLabel='Button Text'
       buttonType='primary'
       imageURL='https://d1fd34dzzl09j.cloudfront.net/2022/07/Chicken%20Biscuit%20story/chicken%20biscuit%20image.png?h=973&w=1462&la=en'
+      useButton={true}
+      centerText={false}
     />);
   });
 });

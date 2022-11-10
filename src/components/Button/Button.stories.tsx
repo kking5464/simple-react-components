@@ -32,11 +32,24 @@ ButtonStory.argTypes = {
     control: { type: "text" },
     description: "Url that will be routed to when button is clicked",
   },
-};
+  color: {
+    name: 'Color',
+    description: 'Button color',
+    options: ['red', 'blue'],
+    control: {
+      type: 'select',
+      labels: {
+        'red': 'Red',
+        'blue': 'Blue'
+      },
+    },
+  }
+}
 ButtonStory.args = {
-  label: "Button Text",
-  type: "primary",
-  url: "text",
+  label: 'Button Text',
+  type: 'primary',
+  url: 'https://www.google.com',
+  color: 'red',
 };
 
 ButtonStory.storyName = "Button";
