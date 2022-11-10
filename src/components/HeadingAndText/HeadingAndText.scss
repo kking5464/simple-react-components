@@ -1,7 +1,10 @@
 .heading-and-text {
   margin: auto;
-  max-width: 800px;
   padding: 30px 16px;
+
+  @media screen and (min-width: 550px) {
+    max-width: 832px;
+  }
 
   &--tan {
     background-color: rgba(245, 227, 204, 0.4);

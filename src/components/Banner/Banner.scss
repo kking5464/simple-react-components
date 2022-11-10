@@ -1,4 +1,9 @@
 .banner {
+   @media screen and (min-width: 550px) {
+      max-width: 832px;
+      margin: auto;
+   }
+
    &__label {
     font-family: "Lato", sans-serif;    
     font-style: normal;
@@ -11,6 +16,7 @@
     /* Secondary/Blue */
     color: #004F71;
    }
+
    &__description {
     font-family: "Lato", sans-serif;
     font-style: normal;
