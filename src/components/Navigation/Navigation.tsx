@@ -10,6 +10,13 @@ export interface NavigationProps {
 
   // Profile
   profileImage: string;
+
+  // Side Navigation
+  sideNavigationLinks?: {
+    linkTitle: string;
+    linkUrl: string;
+    isActive: boolean;
+  }[];
 }
 
 const Navigation = (props: NavigationProps) => {
@@ -56,11 +63,10 @@ const Navigation = (props: NavigationProps) => {
           </div>
 
           <a
-            className={`navigation__buttons-toggle ${isOpen && 'navigation__buttons-toggle--open'}`}
+            className={`navigation__buttons-toggle ${isOpen ? 'navigation__buttons-toggle--open' : ''}`}
             onClick={() => {
               setIsOpen(!isOpen);
               setIsProfileOpen(false);
-              !isOpen ? document.body.style.backgroundColor = "#5b6770" : document.body.style.backgroundColor = "transparent";
             }
             }
           >
@@ -71,7 +77,11 @@ const Navigation = (props: NavigationProps) => {
         </div>
       </div>
 
-      <SideNavigation isOpen={isOpen} />
+      {props.sideNavigationLinks &&
+        <SideNavigation isOpen={isOpen} sideNavigationLinks={props.sideNavigationLinks} />
+      }
+
+      <div className={`navigation__screen ${isOpen ? 'navigation__screen--open' : ''}`}></div>
     </>
 
   );

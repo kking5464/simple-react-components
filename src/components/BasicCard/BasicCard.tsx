@@ -14,11 +14,11 @@ export interface BasicCardProps {
 const BasicCard = (props: BasicCardProps) => {
   return (
     <div className="basic-card">
-      <img src={props.imageURL} />
+      <img data-epi-edit="Image" src={props.imageURL} />
       <div className="basic-card__content">
-        <h1>{props.title}</h1>
-        <h2>{props.subtitle}</h2>
-        <p>{props.copy}</p>
+        <h1 data-epi-edit="Title">{props.title}</h1>
+        <h2 data-epi-edit="Subtitle">{props.subtitle}</h2>
+        <p data-epi-edit="Copy">{props.copy}</p>
         <Button
           label={props.buttonLabel}
           type={props.buttonType}
