@@ -22,7 +22,13 @@ ButtonStory.argTypes = {
   },
   type: {
     name: "Type",
-    control: { type: "select" },
+    control: {
+      type: 'select',
+      labels: {
+        'primary': 'Primary',
+        'secondary': 'Secondary'
+      },
+    },
     options: ["primary", "secondary"],
     description:
       "Button type/whether the button is used to communicate the primary or secondary action",

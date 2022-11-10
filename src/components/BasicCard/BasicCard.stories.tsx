@@ -70,8 +70,37 @@ BasicCardStory.argTypes = {
   },
   buttonType: {
     name: 'Button Type',
-    control: { type: 'select' },
+    control: {
+      type: 'select',
+      labels: {
+        'primary': 'Primary',
+        'secondary': 'Secondary'
+      },
+    },
     options: ['primary', 'secondary'],
+    table: {
+      category: 'Button',
+    },
+  },
+  buttonUrl: {
+    name: "Button Url",
+    control: { type: "text" },
+    description: "Url that will be routed to when button is clicked",
+    table: {
+      category: 'Button',
+    },
+  },
+  buttonColor: {
+    name: 'Button Color',
+    description: 'Button color',
+    options: ['red', 'blue'],
+    control: {
+      type: 'select',
+      labels: {
+        'red': 'Red',
+        'blue': 'Blue'
+      },
+    },
     table: {
       category: 'Button',
     },
@@ -105,6 +134,8 @@ BasicCardStory.args = {
   copy: 'Detailed text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
   buttonLabel: 'Button Text',
   buttonType: 'secondary',
+  buttonUrl: 'https://www.google.com',
+  buttonColor: 'red',
   useButton: true,
   centerText: false,
   smallTitles: false,

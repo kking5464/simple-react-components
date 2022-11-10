@@ -8,6 +8,8 @@ export interface BasicCardProps {
   copy?: string;
   buttonLabel?: string;
   buttonType?: string;
+  buttonColor?: string;
+  buttonUrl?: string;
   imageURL?: string;
   useButton?: boolean;
   centerText?: boolean;
@@ -27,6 +29,8 @@ const BasicCard = (props: BasicCardProps) => {
           <Button
             label={props.buttonLabel}
             type={props.buttonType}
+            color={props.buttonColor}
+            url={props.buttonUrl}
           />
           : ''}
       </div>
