@@ -1,11 +1,11 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import Button from './Button';
+import Button from "./Button";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'React Component Library/Button',
+  title: "React Component Library/Button",
   component: Button,
 } as ComponentMeta<typeof Button>;
 
@@ -16,21 +16,27 @@ export const ButtonStory = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ButtonStory.argTypes = {
   label: {
-    name: 'Label',
-    control: { type: 'text' },
-    description: 'Button text',
+    name: "Label",
+    control: { type: "text" },
+    description: "Button text",
   },
   type: {
-    name: 'Type',
-    control: { type: 'select' },
-    options: ['primary', 'secondary'],
+    name: "Type",
+    control: { type: "select" },
+    options: ["primary", "secondary"],
     description:
-      'Button type/whether the button is used to communicate the primary or secondary action',
+      "Button type/whether the button is used to communicate the primary or secondary action",
   },
-}
+  url: {
+    name: "Url",
+    control: { type: "text" },
+    description: "Url that will be routed to when button is clicked",
+  },
+};
 ButtonStory.args = {
-  label: 'Button Text',
-  type: 'primary',
+  label: "Button Text",
+  type: "primary",
+  url: "text",
 };
 
 ButtonStory.storyName = "Button";

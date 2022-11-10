@@ -13,7 +13,7 @@ const Button = (props: ButtonProps) => {
       className={`button ${props.type}`}
       onClick={(e) => {
         e.preventDefault();
-        window.location.href = "{props.url}";
+        if (props.url) window.location.href = props.url;
       }}
     >
       {props.label}
