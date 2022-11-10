@@ -1,0 +1,23 @@
+.side-navigation {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 72px;
+    right: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    transition: 0.5s;
+    padding: 28px 0;
+
+    &--open {
+        width: calc(100% - 56px);
+        padding: 28px;
+        border-top: 1px solid rgb(91 103 112 / 0.3);
+
+        @media screen and (min-width: 400px) {
+            width: 300px;
+        }
+    }
+}
