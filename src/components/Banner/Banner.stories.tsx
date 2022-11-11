@@ -45,7 +45,7 @@ BannerStory.argTypes = {
 BannerStory.args = {
   label: "label",
   description: "description",
-  bannerName: "bannerName",
+  bannerName: "BannerTest",
   useApi: false,
 };
 

@@ -10,45 +10,56 @@ export interface BannerProps {
   useApi?: boolean | null;
 }
 
-const Banner = (props: BannerProps) => {
-  let labelText: string = props.label;
-  let descText: string = props.description;
+interface BannerContent {
+  header: string;
+  body: string;
+}
 
-  const [error, setError] = useState(null);
-  const [banners, setBanners] = useState<[]>([]);
+const Banner = (props: BannerProps) => {
+  const [banner, setBanner] = useState<BannerContent>();
 
   useEffect(() => {
-    fetch(
-      "https://epop03mstrt6av4inte.dxcloud.episerver.net/api/Banner?Name=" +
-        props.bannerName
-    )
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setBanners(result);
-        },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        (error) => {
-          setError(error);
-        }
-      );
-  }, []);
-
-  if (error) {
-    labelText = "Error";
-    descText = "Banner could not be found";
-  }
-  if (props.useApi == true) {
-    labelText = banners?.header;
-    descText = banners?.body;
-  }
+    if (props.useApi) {
+      fetch(
+        `https://epop03mstrt6av4inte.dxcloud.episerver.net/api/Banner?Name=${props.bannerName}`
+      )
+        .then((res) => res.json())
+        .then(
+          (result) => {
+            setBanner(result);
+          },
+          // Note: it's important to handle errors here
+          // instead of a catch() block so that we don't swallow
+          // exceptions from actual bugs in components.
+          (error) => {
+            const bannerError: BannerContent = {
+              header: "Error",
+              body: "Banner could not be found",
+            };
+            setBanner(bannerError);
+          }
+        );
+    } else {
+      const bannerTemp: BannerContent = {
+        header: props.label,
+        body: props.description,
+      };
+      setBanner(bannerTemp);
+    }
+  }, [props]);
 
   return (
     <div className="banner">
-      <h1 className="banner__label">{labelText}</h1>
-      <h2 className="banner__description">{descText}</h2>
+      {banner?.header ? (
+        <h1 className="banner__label">{banner?.header}</h1>
+      ) : (
+        ""
+      )}
+      {banner?.body ? (
+        <h2 className="banner__description">{banner?.body}</h2>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
