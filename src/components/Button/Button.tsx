@@ -2,8 +2,8 @@ import React from "react";
 import "./Button.scss";
 
 export interface ButtonProps {
-  label?: string;
-  type?: string;
+  label: string;
+  type: string;
   color?: string;
   url?: string;
 }
