@@ -11,9 +11,7 @@ export interface ButtonProps {
 const Button = (props: ButtonProps) => {
   return (
     <button
-      className={`button ${props.type ? "button--" + props.type : ""} ${
-        props.color ? "button--" + props.color : ""
-      }`}
+      className={`button ${props.type ? 'button--' + props.type : ''} ${props.color ? 'button--' + props.color : ''}`}
       data-epi-edit="Label"
       onClick={(e) => {
         e.preventDefault();
