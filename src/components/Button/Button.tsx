@@ -2,8 +2,8 @@ import React from "react";
 import "./Button.scss";
 
 export interface ButtonProps {
-  label: string;
-  type: string;
+  label?: string;
+  type?: string;
   color?: string;
   url?: string;
 }
@@ -11,7 +11,9 @@ export interface ButtonProps {
 const Button = (props: ButtonProps) => {
   return (
     <button
-      className={`button ${props.type ? 'button--' + props.type : ''} ${props.color ? 'button--' + props.color : ''}`}
+      className={`button ${props.type ? "button--" + props.type : ""} ${
+        props.color ? "button--" + props.color : ""
+      }`}
       data-epi-edit="Label"
       onClick={(e) => {
         e.preventDefault();
