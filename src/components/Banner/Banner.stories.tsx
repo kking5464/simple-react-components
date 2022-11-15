@@ -16,19 +16,37 @@ export const BannerStory = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 BannerStory.argTypes = {
   label: {
-    name: "label",
+    name: "Label",
     control: { type: "text" },
     description: "Banner label",
   },
   description: {
-    name: "description",
+    name: "Description",
     control: { type: "text" },
     description: "Banner description",
+  },
+  bannerName: {
+    name: "Banner Name",
+    control: { type: "text" },
+    description: "Banner trying to hit",
+    table: {
+      category: "API",
+    },
+  },
+  useApi: {
+    name: "Use API?",
+    control: { type: "boolean" },
+    description: "using API or not",
+    table: {
+      category: "API",
+    },
   },
 };
 BannerStory.args = {
   label: "label",
   description: "description",
+  bannerName: "BannerTest",
+  useApi: false,
 };
 
 BannerStory.storyName = "Banner";
