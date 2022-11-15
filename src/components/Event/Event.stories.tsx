@@ -19,46 +19,71 @@ EventStory.argTypes = {
     name: "Event Name",
     control: { type: "text" },
     description: "Event Name",
+    table: {
+      category: "Icon",
+    },
   },
   description: {
     name: "Description",
     control: { type: "text" },
     description: "Event description",
+    table: {
+      category: "Icon",
+    },
   },
-  time: {
-    name: "Event Time",
+  date: {
+    name: "Event date and time",
     control: { type: "text" },
-    description: "Time of Event",
+    description: "Date and time of Event",
+    table: {
+      category: "Card",
+    },
   },
   useApi: {
     name: "Use API?",
     control: { type: "boolean" },
     description: "using API or not",
+    table: {
+      category: "API",
+    },
   },
-  isEventCard: {
-    name: "Is Event Card?",
-    control: { type: "boolean" },
-    description: "Is Event Card or not",
+  icon: {
+    name: "Icon",
+    control: { type: "text" },
+    description: "icon link",
+    table: {
+      category: "Icon",
+    },
   },
-  isEventPreview: {
-    name: "Is Event Preview?",
-    control: { type: "boolean" },
-    description: "Is Event preview or not",
+  image: {
+    name: "Image",
+    control: { type: "text" },
+    description: "image link",
+    table: {
+      category: "Card",
+    },
   },
-  isEventIcon: {
-    name: "Is Event Icon?",
-    control: { type: "boolean" },
-    description: "Is Event Icon or not",
+  eventType: {
+    name: "Event Type?",
+    control: {
+      type: "select",
+      labels: {
+        card: "Card",
+        preview: "Preview",
+        icon: "Icon",
+      },
+    },
+    options: ["card", "preview", "icon"],
+    description: "What type of event block",
   },
 };
 EventStory.args = {
-  eventName: "Event Name",
-  description: "description",
-  time: "time",
+  eventType: "card",
+  date: "Tue, Nov. 15 at 10:00 AM",
+  eventName: "Nicholas' Birthday",
+  description: "Suprise party for Nicholas",
   useApi: false,
-  isEventCard: false,
-  isEventPreview: false,
-  isEventIcon: false,
+  icon: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vecteezy.com%2Ffree-vector%2Fcalendar-icon%2520white&psig=AOvVaw3w0zQ4foYhyeiuiDQkTInh&ust=1668625003361000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCJjUjNjusPsCFQAAAAAdAAAAABAD",
 };
 
 EventStory.storyName = "Event";

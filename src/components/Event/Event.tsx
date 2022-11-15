@@ -3,15 +3,12 @@ import "./Event.scss";
 
 export interface EventProps {
   image?: string;
-  eventName: string;
-  time?: string;
+  eventName?: string;
   date?: string;
   icon?: string;
-  description: string;
+  description?: string;
   useApi?: boolean | null;
-  isEventCard?: boolean | null;
-  isEventPreview?: boolean | null;
-  isEventIcon?: boolean | null;
+  eventType?: string;
 }
 
 interface EventContent {
