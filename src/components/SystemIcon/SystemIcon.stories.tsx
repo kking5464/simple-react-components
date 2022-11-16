@@ -1,38 +1,48 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import Icon from "./Icon";
+import SystemIcon from "./SystemIcon";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "React Component Library/Icon",
-  component: Icon,
-} as ComponentMeta<typeof Icon>;
+  title: "React Component Library/Icon/System Icon",
+  component: SystemIcon,
+} as ComponentMeta<typeof SystemIcon>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} />;
+const Template: ComponentStory<typeof SystemIcon> = (args) => <SystemIcon {...args} />;
 
-export const IconStory = Template.bind({});
+export const SystemIconStory = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-IconStory.argTypes = {
+SystemIconStory.argTypes = {
   name: {
     name: 'Name',
     description: 'Name of icon',
     options: [
+      'actions-horizontal',
       'calendar',
+      'chevron-right',
+      'close',
       'error-filled', 
       'info-filled',
+      'menu',
+      'search',
       'success-filled', 
       'warning-filled',
     ],
     control: {
       type: 'select',
       labels: {
+        'actions-horizontal' : 'Actions - Horizontal',
         'calendar': 'Calendar',
-        'error-filled': 'Error (Filled)',
-        'info-filled': 'Info (Filled)',
-        'success-filled': 'Success (Filled)',
-        'warning-filled': 'Warning (Filled)'
+        'chevron-right': 'Chevron - Right',
+        'close': 'Close',
+        'error-filled': 'Error - Filled',
+        'info-filled': 'Info - Filled',
+        'menu': 'Menu',
+        'search': 'Search',
+        'success-filled': 'Success - Filled',
+        'warning-filled': 'Warning - Filled'
       },
     },
   },
@@ -54,9 +64,9 @@ IconStory.argTypes = {
     },
   }
 };
-IconStory.args = {
+SystemIconStory.args = {
   name: 'error-filled',
   color: 'gray'
 };
 
-IconStory.storyName = "Icon";
+SystemIconStory.storyName = "System Icon";
