@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./Banner.scss";
-import { BannerStory } from "./Banner.stories";
 
 export interface BannerProps {
   label: string;
