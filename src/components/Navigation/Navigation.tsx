@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import RuleDivider from '../RuleDivider';
-import SideNavigation from '../SideNavigation';
+import React, { useState } from "react";
+import RuleDivider from "../RuleDivider";
+import SideNavigation from "../SideNavigation";
 import "./Navigation.scss";
 
 export interface NavigationProps {
@@ -9,7 +9,16 @@ export interface NavigationProps {
   logoLink: string;
 
   // Profile
-  profileImage: string;
+  profileImage?: string;
+  homeLinkText?: string;
+  homeLinkUrl?: string;
+  storeName?: string;
+  changeStoreLinkTitle?: string;
+  changeStoreLinkUrl?: string;
+  settingsLinkText?: string;
+  settingsLinkUrl?: string;
+  logoutLinkText?: string;
+  logoutLinkUrl?: string;
 
   // Side Navigation
   sideNavigationLinks?: {
@@ -28,7 +37,13 @@ const Navigation = (props: NavigationProps) => {
       <div className="navigation">
         <div className="navigation__logo">
           <a className="navigation__logo-link" href={props.logoLink}>
-            <img className="navigation__logo-image" src={props.logoImage} alt="" />
+            {props.logoImage ? 
+              <img
+                className="navigation__logo-image"
+                src={props.logoImage}
+                alt=""
+              /> : ""
+            }
           </a>
         </div>
 
@@ -38,37 +53,69 @@ const Navigation = (props: NavigationProps) => {
               className="navigation__buttons-profile-button"
               onClick={() => setIsProfileOpen(!isProfileOpen)}
             >
-              <img className="navigation__buttons-profile-image" src={props.profileImage} alt="" />
+              {props.profileImage ?
+                <img
+                  className="navigation__buttons-profile-image"
+                  src={props.profileImage}
+                  alt=""
+                /> : ""
+              }
             </button>
-            <div className={`navigation__buttons-profile-content ${isProfileOpen && 'navigation__buttons-profile-content--open'}`}>
-              <a className="navigation__buttons-profile-content-link" href="#">My Profile</a>
-              <a className="navigation__buttons-profile-content-link" href="#">Settings</a>
+            <div
+              className={`navigation__buttons-profile-content ${
+                isProfileOpen && "navigation__buttons-profile-content--open"
+              }`}
+            >
+            {props.homeLinkText ?  
+              <a
+                className="navigation__buttons-profile-content-link"
+                href={props.homeLinkUrl}
+              > 
+                {props.homeLinkText}
+              </a>: ""}
+            {props.settingsLinkText ?
+              <a
+                className="navigation__buttons-profile-content-link"
+                href={props.settingsLinkUrl}
+              >
+                {props.settingsLinkText}
+              </a> : ""}
 
               <RuleDivider />
 
               <div className="navigation__buttons-profile-content-location">
+              {props.storeName ?
                 <h3 className="navigation__buttons-profile-content-location-name">
-                  North Ave FSU - 01885
-                </h3>
-                <a className="navigation__buttons-profile-content-location-link" href="#">
-                  Switch Locations
-                </a>
-
+                  {props.storeName}
+                </h3> : ""}
+              {props.changeStoreLinkTitle ? 
+                <a
+                  className="navigation__buttons-profile-content-location-link"
+                  href={props.changeStoreLinkUrl}
+                >
+                  {props.changeStoreLinkTitle}
+                </a> : ""}
               </div>
 
               <RuleDivider />
-
-              <a className="navigation__buttons-profile-content-link" href="#">Log Out</a>
+            {props.logoutLinkText ?
+              <a
+                className="navigation__buttons-profile-content-link"
+                href={props.logoutLinkUrl}
+              >
+                {props.logoutLinkText}
+              </a> : ""}
             </div>
           </div>
 
           <a
-            className={`navigation__buttons-toggle ${isOpen ? 'navigation__buttons-toggle--open' : ''}`}
+            className={`navigation__buttons-toggle ${
+              isOpen ? "navigation__buttons-toggle--open" : ""
+            }`}
             onClick={() => {
               setIsOpen(!isOpen);
               setIsProfileOpen(false);
-            }
-            }
+            }}
           >
             <span className="navigation__buttons-toggle-bar"></span>
             <span className="navigation__buttons-toggle-bar"></span>
@@ -77,13 +124,19 @@ const Navigation = (props: NavigationProps) => {
         </div>
       </div>
 
-      {props.sideNavigationLinks &&
-        <SideNavigation isOpen={isOpen} sideNavigationLinks={props.sideNavigationLinks} />
-      }
+      {props.sideNavigationLinks && (
+        <SideNavigation
+          isOpen={isOpen}
+          sideNavigationLinks={props.sideNavigationLinks}
+        />
+      )}
 
-      <div className={`navigation__screen ${isOpen ? 'navigation__screen--open' : ''}`}></div>
+      <div
+        className={`navigation__screen ${
+          isOpen ? "navigation__screen--open" : ""
+        }`}
+      ></div>
     </>
-
   );
 };
 
