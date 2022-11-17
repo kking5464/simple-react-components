@@ -9,7 +9,7 @@ export interface NavigationProps {
   logoLink: string;
 
   // Profile
-  profileImage: string;
+  profileImage?: string;
   homeLinkText?: string;
   homeLinkUrl?: string;
   storeName?: string;
@@ -37,11 +37,13 @@ const Navigation = (props: NavigationProps) => {
       <div className="navigation">
         <div className="navigation__logo">
           <a className="navigation__logo-link" href={props.logoLink}>
-            <img
-              className="navigation__logo-image"
-              src={props.logoImage}
-              alt=""
-            />
+            {props.logoImage ? 
+              <img
+                className="navigation__logo-image"
+                src={props.logoImage}
+                alt=""
+              /> : ""
+            }
           </a>
         </div>
 
@@ -51,52 +53,58 @@ const Navigation = (props: NavigationProps) => {
               className="navigation__buttons-profile-button"
               onClick={() => setIsProfileOpen(!isProfileOpen)}
             >
-              <img
-                className="navigation__buttons-profile-image"
-                src={props.profileImage}
-                alt=""
-              />
+              {props.profileImage ?
+                <img
+                  className="navigation__buttons-profile-image"
+                  src={props.profileImage}
+                  alt=""
+                /> : ""
+              }
             </button>
             <div
               className={`navigation__buttons-profile-content ${
                 isProfileOpen && "navigation__buttons-profile-content--open"
               }`}
             >
+            {props.homeLinkText ?  
               <a
                 className="navigation__buttons-profile-content-link"
                 href={props.homeLinkUrl}
-              >
+              > 
                 {props.homeLinkText}
-              </a>
+              </a>: ""}
+            {props.settingsLinkText ?
               <a
                 className="navigation__buttons-profile-content-link"
                 href={props.settingsLinkUrl}
               >
                 {props.settingsLinkText}
-              </a>
+              </a> : ""}
 
               <RuleDivider />
 
               <div className="navigation__buttons-profile-content-location">
+              {props.storeName ?
                 <h3 className="navigation__buttons-profile-content-location-name">
                   {props.storeName}
-                </h3>
+                </h3> : ""}
+              {props.changeStoreLinkTitle ? 
                 <a
                   className="navigation__buttons-profile-content-location-link"
                   href={props.changeStoreLinkUrl}
                 >
                   {props.changeStoreLinkTitle}
-                </a>
+                </a> : ""}
               </div>
 
               <RuleDivider />
-
+            {props.logoutLinkText ?
               <a
                 className="navigation__buttons-profile-content-link"
                 href={props.logoutLinkUrl}
               >
                 {props.logoutLinkText}
-              </a>
+              </a> : ""}
             </div>
           </div>
 
