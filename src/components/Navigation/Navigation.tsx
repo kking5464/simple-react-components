@@ -10,15 +10,15 @@ export interface NavigationProps {
 
   // Profile
   profileImage: string;
-  homeLinkText: string;
-  homeLinkUrl: string;
-  storeName: string;
-  changeStoreLinkTitle: string;
-  changeStoreLinkUrl: string;
-  settingsLinkText: string;
-  settingsLinkUrl: string;
-  logoutLinkText: string;
-  logoutLinkUrl: string;
+  homeLinkText?: string;
+  homeLinkUrl?: string;
+  storeName?: string;
+  changeStoreLinkTitle?: string;
+  changeStoreLinkUrl?: string;
+  settingsLinkText?: string;
+  settingsLinkUrl?: string;
+  logoutLinkText?: string;
+  logoutLinkUrl?: string;
 
   // Side Navigation
   sideNavigationLinks?: {
