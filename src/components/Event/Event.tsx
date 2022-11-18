@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Icon from "../Icon/Icon";
+import SystemIcon from "../SystemIcon/SystemIcon";
 import BasicCard from "../BasicCard/BasicCard";
 import "./Event.scss";
 
@@ -72,7 +72,7 @@ const Event = (props: EventProps) => {
     return (
       <div className="event event--icon">
         <div className="event__icon">
-          <Icon name={props.iconName} color={props.iconColor} />
+          <SystemIcon name={props.iconName} color={props.iconColor} />
         </div>
         <div className="event__body">
           <h1 className="event__name">{event?.header}</h1>
