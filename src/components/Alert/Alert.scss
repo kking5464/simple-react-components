@@ -1,0 +1,10 @@
+.alert {
+    max-width: 100%;
+&-item {
+    width: max-content;
+    background-color: lightblue;
+}
+&-header {
+    display: flex;
+}
+}

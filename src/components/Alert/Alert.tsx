@@ -7,7 +7,13 @@ export interface AlertProps {
 
 const Alert = (props: AlertProps) => {
     return (
-        <div className="alert"></div>
+        <div className="alert">
+            <div className="alert-item">
+                <div className="alert-header">
+                {props.header}
+                </div>
+            </div>
+        </div>
 
     );
 };
