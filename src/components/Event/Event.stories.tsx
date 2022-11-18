@@ -94,7 +94,7 @@ EventStory.argTypes = {
       category: "Icon",
     },
   },
-  bc_titleColor: {
+  basicCardTitleColor: {
     name: "Title Color",
     description: "Title text color",
     options: ["gray", "red", "blue"],
@@ -111,7 +111,7 @@ EventStory.argTypes = {
       subcategory: "Title",
     },
   },
-  bc_subtitle: {
+  basicCardSubtitle: {
     name: "Subtitle",
     control: { type: "text" },
     table: {
@@ -119,7 +119,7 @@ EventStory.argTypes = {
       subcategory: "Text",
     },
   },
-  bc_copy: {
+  basicCardCopy: {
     name: "Copy",
     control: { type: "text" },
     table: {
@@ -127,7 +127,7 @@ EventStory.argTypes = {
       subcategory: "Text",
     },
   },
-  bc_useButton: {
+  basicCardUseButton: {
     name: "Use Button",
     control: { type: "boolean" },
     table: {
@@ -135,7 +135,7 @@ EventStory.argTypes = {
       subcategory: "Button",
     },
   },
-  bc_buttonLabel: {
+  basicCardButtonLabel: {
     name: "Button Label",
     control: { type: "text" },
     table: {
@@ -143,7 +143,7 @@ EventStory.argTypes = {
       subcategory: "Button",
     },
   },
-  bc_buttonType: {
+  basicCardButtonType: {
     name: "Button Type",
     control: {
       type: "select",
@@ -158,7 +158,7 @@ EventStory.argTypes = {
       subcategory: "Button",
     },
   },
-  bc_buttonUrl: {
+  basicCardButtonUrl: {
     name: "Button Url",
     control: { type: "text" },
     description: "Url that will be routed to when button is clicked",
@@ -167,7 +167,7 @@ EventStory.argTypes = {
       subcategory: "Button",
     },
   },
-  bc_buttonColor: {
+  basicCardButtonColor: {
     name: "Button Color",
     description: "Button color",
     options: ["red", "blue"],
@@ -183,7 +183,7 @@ EventStory.argTypes = {
       subcategory: "Button",
     },
   },
-  bc_imageURL: {
+  basicCardImageURL: {
     name: "Image URL",
     control: { type: "text" },
     table: {
@@ -191,7 +191,7 @@ EventStory.argTypes = {
       subcategory: "Image",
     },
   },
-  bc_centerText: {
+  basicCardCenterText: {
     name: "Center Text",
     control: { type: "boolean" },
     table: {
@@ -199,7 +199,7 @@ EventStory.argTypes = {
       subcategory: "Text",
     },
   },
-  bc_smallTitles: {
+  basicCardSmallTitles: {
     name: "Small Title and Subtitle",
     control: { type: "boolean" },
     table: {
@@ -221,17 +221,17 @@ EventStory.args = {
   eventName: "EventTest",
   description: "Default Event Description",
   useApi: false,
-  bc_titleColor: "gray",
-  bc_subtitle: "Tuesday, November the 15th",
-  bc_copy: "In the back office at 10:00 AM",
-  bc_buttonLabel: "Button Text",
-  bc_buttonType: "secondary",
-  bc_buttonUrl: "https://www.google.com",
-  bc_buttonColor: "red",
-  bc_useButton: true,
-  bc_centerText: false,
-  bc_smallTitles: false,
-  bc_imageURL:
+  basicCardTitleColor: "gray",
+  basicCardSubtitle: "Tuesday, November the 15th",
+  basicCardCopy: "In the back office at 10:00 AM",
+  basicCardButtonLabel: "Button Text",
+  basicCardButtonType: "secondary",
+  basicCardButtonUrl: "https://www.google.com",
+  basicCardButtonColor: "red",
+  basicCardUseButton: true,
+  basicCardCenterText: false,
+  basicCardSmallTitles: false,
+  basicCardImageURL:
     "https://images.unsplash.com/photo-1508184585643-6001cf47a1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80",
   previewImage:
     "https://iso.500px.com/wp-content/uploads/2015/03/business_cover.jpeg",

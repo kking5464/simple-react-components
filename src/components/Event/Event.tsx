@@ -18,17 +18,17 @@ export interface EventProps {
   iconColor?: string;
 
   //BasicCard Props
-  bc_subtitle?: string;
-  bc_copy?: string;
-  bc_buttonLabel?: string;
-  bc_buttonType?: string;
-  bc_buttonColor?: string;
-  bc_buttonUrl?: string;
-  bc_imageURL?: string;
-  bc_useButton?: boolean;
-  bc_centerText?: boolean;
-  bc_smallTitles?: boolean;
-  bc_titleColor?: string;
+  basicCardSubtitle?: string;
+  basicCardCopy?: string;
+  basicCardButtonLabel?: string;
+  basicCardButtonType?: string;
+  basicCardButtonColor?: string;
+  basicCardButtonUrl?: string;
+  basicCardImageURL?: string;
+  basicCardUseButton?: boolean;
+  basicCardCenterText?: boolean;
+  basicCardSmallTitles?: boolean;
+  basicCardTitleColor?: string;
 }
 
 interface EventContent {
@@ -96,17 +96,17 @@ const Event = (props: EventProps) => {
     return (
       <BasicCard
         title={props.eventName}
-        subtitle={props.bc_subtitle}
-        copy={props.bc_copy}
-        buttonLabel={props.bc_buttonLabel}
-        buttonType={props.bc_buttonType}
-        buttonColor={props.bc_buttonColor}
-        buttonUrl={props.bc_buttonUrl}
-        imageURL={props.bc_imageURL}
-        useButton={props.bc_useButton}
-        centerText={props.bc_centerText}
-        smallTitles={props.bc_smallTitles}
-        titleColor={props.bc_titleColor}
+        subtitle={props.basicCardSubtitle}
+        copy={props.basicCardCopy}
+        buttonLabel={props.basicCardButtonLabel}
+        buttonType={props.basicCardButtonType}
+        buttonColor={props.basicCardButtonColor}
+        buttonUrl={props.basicCardButtonUrl}
+        imageURL={props.basicCardImageURL}
+        useButton={props.basicCardUseButton}
+        centerText={props.basicCardCenterText}
+        smallTitles={props.basicCardSmallTitles}
+        titleColor={props.basicCardTitleColor}
       />
     );
   }
