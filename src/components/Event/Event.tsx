@@ -70,7 +70,7 @@ const Event = (props: EventProps) => {
   }, [props]);
   if (props.eventType === "icon") {
     return (
-      <div className="event">
+      <div className="event event--icon">
         <div className="event__icon">
           <Icon name={props.iconName} color={props.iconColor} />
         </div>
@@ -82,13 +82,13 @@ const Event = (props: EventProps) => {
     );
   } else if (props.eventType === "preview") {
     return (
-      <div className="preview">
-        <div className="preview__image">
+      <div className="event event--preview">
+        <div className="event__image">
           <img src={props.previewImage} />
         </div>
-        <div className="preview__body">
-          <h1 className="preview__name">{event?.header}</h1>
-          <h2 className="preview__details">{event?.body}</h2>
+        <div className="event__body">
+          <h1 className="event__name">{event?.header}</h1>
+          <h2 className="event__description">{event?.body}</h2>
         </div>
       </div>
     );
