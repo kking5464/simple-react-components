@@ -1,3 +1,51 @@
-button {
-  font-size: 60px;
+.button {
+  background-color: #dd0031;
+  border-radius: 24px;
+  border-width: 0;
+  color: #FFFFFF;
+  font-family: 'Apercu Pro', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 24px;
+  padding: 12px 24px;
+  transition: 0.3s;
+
+  &:hover {
+    background: #B00027;
+    cursor: pointer;
+  }
+
+  &--secondary {
+    background-color: #FFFFFF;
+    border: 1.5px solid #dd0031;
+    color: #dd0031;
+
+    &:hover {
+      background-color: #B00027;
+      border-color: #B00027;
+      color: #FFFFFF;
+    }
+  }
+
+  &--blue {
+    background-color: #004F71;
+
+    &:hover {
+      background: #023951;
+    }
+
+    &.button--secondary {
+      background-color: #FFFFFF;
+      border-color: #004F71;
+      color: #004F71;
+
+      &:hover {
+        background-color: #023951;
+        border-color: #023951;
+        color: #FFFFFF;
+      }
+    }
+  }
 }

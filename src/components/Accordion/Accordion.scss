@@ -1,0 +1,41 @@
+.accordion {
+    max-width: 100%;
+    margin: 17px 16px;
+    border-top: 1px solid #CCCFD0;
+
+    &-item {
+        border-bottom: 1px solid #CCCFD0;
+    }
+
+    &-title {
+        background: rgba(0, 79, 113, 0.05);
+        display: flex;
+        padding: 15px 48px;
+        justify-content: space-between;
+
+        font-family: 'Apercu Pro', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #5b6770;
+        cursor: pointer;
+        transition: opacity 400ms;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &--icon {
+            font-size: 26px;
+            line-height: 16px;
+        }
+    }
+
+    &-content {
+        margin: 6px 40px 24px 48px;
+        color: #5b6770;
+        font-family: "Apercu Pro", sans-serif;
+        font-style: normal;
+    }
+}

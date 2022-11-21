@@ -1,0 +1,34 @@
+.banner {
+   padding: 0 16px;
+
+   @media screen and (min-width: 550px) {
+      max-width: 832px;
+      margin: auto;
+   }
+
+   &__label {
+    font-family: "Lato", sans-serif;    
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    padding: 0px;
+    margin-bottom: 13px;
+    /* or 125% */
+    /* Secondary/Blue */
+    color: #004F71;
+   }
+
+   &__description {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    padding: 0px;
+    margin: 0px;
+    /* or 160% */
+    /* Grayscale/Gray 6 | #5B6770 */
+    color: #5B6770;
+   }
+}
