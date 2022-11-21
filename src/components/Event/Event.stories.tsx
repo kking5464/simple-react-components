@@ -33,10 +33,10 @@ EventStory.argTypes = {
       category: "Preview",
     },
   },
-  previewName: {
-    name: "Preview Name",
+  previewTitle: {
+    name: "Preview Title",
     control: { type: "text" },
-    description: "Event description",
+    description: "Event Title",
     table: {
       category: "Preview",
     },
@@ -49,10 +49,10 @@ EventStory.argTypes = {
       category: "Icon",
     },
   },
-  iconEventName: {
-    name: "Icon Name",
+  iconEventTitle: {
+    name: "Icon Title",
     control: { type: "text" },
-    description: "Event description",
+    description: "Event Title",
     table: {
       category: "Icon",
     },
@@ -244,10 +244,10 @@ EventStory.argTypes = {
 EventStory.args = {
   eventType: "card",
   eventName: "EventTest",
-  previewName: "Default preview Name",
+  previewTitle: "Default preview Title",
   previewDescription: "Default preview Description",
   iconEventDescription: "Default icon Description",
-  iconEventName: "Default icon Name",
+  iconEventTitle: "Default icon Name",
   useApi: false,
   basicCardTitleColor: "gray",
   basicCardTitle: "Basic Card Title",

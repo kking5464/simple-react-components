@@ -10,13 +10,13 @@ export interface EventProps {
 
   //preview prop
   previewImage?: string;
-  previewName?: string;
+  previewTitle?: string;
   previewDescription?: string;
 
   //Icon props
   iconName?: string;
   iconColor?: string;
-  iconEventName?: string;
+  iconEventTitle?: string;
   iconEventDescription?: string;
 
   //BasicCard Props
@@ -34,9 +34,17 @@ export interface EventProps {
   basicCardTitleColor?: string;
 }
 
-interface EventContent {
+interface PreviewContent {
   header?: string;
   body?: string;
+  image?: string;
+}
+
+interface IconContent {
+  header?: string;
+  body?: string;
+  iconName?: string;
+  iconColor?: string;
 }
 interface CardEventContent {
   cardTitle?: string;
@@ -54,7 +62,8 @@ interface CardEventContent {
 }
 
 const Event = (props: EventProps) => {
-  const [event, setEvent] = useState<EventContent>();
+  const [previewEvent, setPreviewEvent] = useState<PreviewContent>();
+  const [iconEvent, setIconEvent] = useState<IconContent>();
   const [cardEvent, setCardEvent] = useState<CardEventContent>();
 
   useEffect(() => {
@@ -65,32 +74,68 @@ const Event = (props: EventProps) => {
         .then((res) => res.json())
         .then(
           (result) => {
-            setEvent(result);
+            if (props.eventType === "icon") {
+              setIconEvent(result);
+            } else if (props.eventType === "preview") {
+              setPreviewEvent(result);
+            } else {
+              setCardEvent(result);
+            }
           },
           // Note: it's important to handle errors here
           // instead of a catch() block so that we don't swallow
           // exceptions from actual bugs in components.
           (error) => {
-            const eventError: EventContent = {
-              header: "Error",
-              body: "Event could not be found",
-            };
-            setEvent(eventError);
+            if (props.eventType === "icon") {
+              const eventError: IconContent = {
+                header: "Error",
+                body: "Event could not be found",
+                iconName: "calendar",
+                iconColor: "red",
+              };
+              setIconEvent(eventError);
+            } else if (props.eventType === "preview") {
+              const eventError: PreviewContent = {
+                header: "Error",
+                body: "Event could not be found",
+                image: "error",
+              };
+              setIconEvent(eventError);
+            } else {
+              const CardEventTemp: CardEventContent = {
+                cardTitle: "Error",
+                cardSubtitle: "Error",
+                cardCopy: "Error",
+                cardButtonLabel: "Error",
+                cardButtonType: "primary",
+                cardButtonColor: "red",
+                cardButtonUrl: "error",
+                cardImageURL: "error",
+                cardUseButton: false,
+                cardCenterText: false,
+                cardSmallTitles: false,
+                cardTitleColor: "red",
+              };
+              setCardEvent(CardEventTemp);
+            }
           }
         );
     } else {
       if (props.eventType === "icon") {
-        const eventTemp: EventContent = {
-          header: props.iconEventName,
+        const eventTemp: IconContent = {
+          header: props.iconEventTitle,
           body: props.iconEventDescription,
+          iconName : props.iconName,
+          iconColor : props.iconColor
         };
-        setEvent(eventTemp);
+        setIconEvent(eventTemp);
       } else if (props.eventType === "preview") {
-        const eventTemp: EventContent = {
-          header: props.previewName,
+        const eventTemp: PreviewContent = {
+          header: props.previewTitle,
           body: props.previewDescription,
+          image: props.previewImage
         };
-        setEvent(eventTemp);
+        setPreviewEvent(eventTemp);
       } else {
         const CardEventTemp: CardEventContent = {
           cardTitle: props.basicCardSubtitle,
@@ -114,11 +159,11 @@ const Event = (props: EventProps) => {
     return (
       <div className="event event--icon">
         <div className="event__icon">
-          <BrandIcon name={props.iconName} color={props.iconColor} />
+          <BrandIcon name={iconEvent?.iconName} color={iconEvent?.iconColor} />
         </div>
         <div className="event__body">
-          <h1 className="event__name">{event?.header}</h1>
-          <h2 className="event__description">{event?.body}</h2>
+          <h1 className="event__name">{iconEvent?.header}</h1>
+          <h2 className="event__description">{iconEvent?.body}</h2>
         </div>
       </div>
     );
@@ -126,11 +171,11 @@ const Event = (props: EventProps) => {
     return (
       <div className="event event--preview">
         <div className="event__image">
-          <img src={props.previewImage} />
+          <img src={previewEvent?.image} />
         </div>
         <div className="event__body">
-          <h1 className="event__name">{event?.header}</h1>
-          <h2 className="event__description">{event?.body}</h2>
+          <h1 className="event__name">{previewEvent?.header}</h1>
+          <h2 className="event__description">{previewEvent?.body}</h2>
         </div>
       </div>
     );
