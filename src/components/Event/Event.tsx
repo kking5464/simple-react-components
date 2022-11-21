@@ -13,16 +13,8 @@ export interface EventProps {
   date?: string;
   title?: string;
 
-  //Icon props
-  iconName?: string;
-  iconColor?: string;
-
   //BasicCard Props
   basicCardDescription?: string;
-  basicCardButtonLabel?: string;
-  basicCardButtonType?: string;
-  basicCardButtonColor?: string;
-  basicCardButtonUrl?: string;
   basicCardUseButton?: boolean;
   basicCardTitleColor?: string;
 }
@@ -33,15 +25,8 @@ interface EventContent {
 
   image?: string;
 
-  iconName?: string;
-  iconColor?: string;
-
   cardSubtitle?: string;
   cardDescription?: string;
-  cardButtonLabel?: string;
-  cardButtonType?: string;
-  cardButtonColor?: string;
-  cardButtonUrl?: string;
   cardUseButton?: boolean;
   cardCenterText?: false;
   cardSmallTitles?: false;
@@ -69,8 +54,6 @@ const Event = (props: EventProps) => {
               const eventError: EventContent = {
                 header: "Error",
                 body: "Event could not be found",
-                iconName: "calendar",
-                iconColor: "red",
               };
               setEvent(eventError);
             } else if (props.eventType === "preview") {
@@ -85,10 +68,6 @@ const Event = (props: EventProps) => {
                 header: "Error",
                 cardSubtitle: "Error",
                 cardDescription: "Error",
-                cardButtonLabel: "Error",
-                cardButtonType: "primary",
-                cardButtonColor: "red",
-                cardButtonUrl: "error",
                 image: "error",
                 cardUseButton: false,
                 cardCenterText: false,
@@ -104,8 +83,6 @@ const Event = (props: EventProps) => {
         const eventTemp: EventContent = {
           header: props.title,
           body: props.date,
-          iconName: props.iconName,
-          iconColor: props.iconColor,
         };
         setEvent(eventTemp);
       } else if (props.eventType === "preview") {
@@ -120,14 +97,8 @@ const Event = (props: EventProps) => {
           header: props.title,
           body: props.date,
           cardDescription: props.basicCardDescription,
-          cardButtonLabel: props.basicCardButtonLabel,
-          cardButtonType: props.basicCardButtonType,
-          cardButtonColor: props.basicCardButtonColor,
-          cardButtonUrl: props.basicCardButtonUrl,
           image: props.image,
           cardUseButton: props.basicCardUseButton,
-          cardCenterText: false,
-          cardSmallTitles: false,
           cardTitleColor: props.basicCardTitleColor,
         };
         setEvent(CardEventTemp);
@@ -138,7 +109,7 @@ const Event = (props: EventProps) => {
     return (
       <div className="event event--icon">
         <div className="event__icon">
-          <BrandIcon name={event?.iconName} color={event?.iconColor} />
+          <BrandIcon name={"occasions_calendar"} color={"gray"} />
         </div>
         <div className="event__body">
           <h1 className="event__name">{event?.header}</h1>
@@ -164,10 +135,10 @@ const Event = (props: EventProps) => {
         title={event?.header}
         subtitle={event?.body}
         copy={event?.cardDescription}
-        buttonLabel={event?.cardButtonLabel}
-        buttonType={event?.cardButtonType}
-        buttonColor={event?.cardButtonColor}
-        buttonUrl={event?.cardButtonUrl}
+        buttonLabel={"More Info"}
+        buttonType={"primary"}
+        buttonColor={"red"}
+        buttonUrl={"test"}
         imageURL={event?.image}
         useButton={event?.cardUseButton}
         centerText={false}
