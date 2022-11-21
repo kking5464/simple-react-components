@@ -34,19 +34,15 @@ export interface EventProps {
   basicCardTitleColor?: string;
 }
 
-interface PreviewContent {
+interface CardEventContent {
   header?: string;
   body?: string;
-  image?: string;
-}
 
-interface IconContent {
-  header?: string;
-  body?: string;
+  image?: string;
+
   iconName?: string;
   iconColor?: string;
-}
-interface CardEventContent {
+
   cardTitle?: string;
   cardSubtitle?: string;
   cardCopy?: string;
@@ -62,9 +58,7 @@ interface CardEventContent {
 }
 
 const Event = (props: EventProps) => {
-  const [previewEvent, setPreviewEvent] = useState<PreviewContent>();
-  const [iconEvent, setIconEvent] = useState<IconContent>();
-  const [cardEvent, setCardEvent] = useState<CardEventContent>();
+  const [event, setEvent] = useState<CardEventContent>();
 
   useEffect(() => {
     if (props.useApi) {
@@ -74,33 +68,27 @@ const Event = (props: EventProps) => {
         .then((res) => res.json())
         .then(
           (result) => {
-            if (props.eventType === "icon") {
-              setIconEvent(result);
-            } else if (props.eventType === "preview") {
-              setPreviewEvent(result);
-            } else {
-              setCardEvent(result);
-            }
+            setEvent(result);
           },
           // Note: it's important to handle errors here
           // instead of a catch() block so that we don't swallow
           // exceptions from actual bugs in components.
           (error) => {
             if (props.eventType === "icon") {
-              const eventError: IconContent = {
+              const eventError: CardEventContent = {
                 header: "Error",
                 body: "Event could not be found",
                 iconName: "calendar",
                 iconColor: "red",
               };
-              setIconEvent(eventError);
+              setEvent(eventError);
             } else if (props.eventType === "preview") {
-              const eventError: PreviewContent = {
+              const eventError: CardEventContent = {
                 header: "Error",
                 body: "Event could not be found",
                 image: "error",
               };
-              setIconEvent(eventError);
+              setEvent(eventError);
             } else {
               const CardEventTemp: CardEventContent = {
                 cardTitle: "Error",
@@ -116,26 +104,26 @@ const Event = (props: EventProps) => {
                 cardSmallTitles: false,
                 cardTitleColor: "red",
               };
-              setCardEvent(CardEventTemp);
+              setEvent(CardEventTemp);
             }
           }
         );
     } else {
       if (props.eventType === "icon") {
-        const eventTemp: IconContent = {
+        const eventTemp: CardEventContent = {
           header: props.iconEventTitle,
           body: props.iconEventDescription,
-          iconName : props.iconName,
-          iconColor : props.iconColor
+          iconName: props.iconName,
+          iconColor: props.iconColor,
         };
-        setIconEvent(eventTemp);
+        setEvent(eventTemp);
       } else if (props.eventType === "preview") {
-        const eventTemp: PreviewContent = {
+        const eventTemp: CardEventContent = {
           header: props.previewTitle,
           body: props.previewDescription,
-          image: props.previewImage
+          image: props.previewImage,
         };
-        setPreviewEvent(eventTemp);
+        setEvent(eventTemp);
       } else {
         const CardEventTemp: CardEventContent = {
           cardTitle: props.basicCardSubtitle,
@@ -151,7 +139,7 @@ const Event = (props: EventProps) => {
           cardSmallTitles: props.basicCardSmallTitles,
           cardTitleColor: props.basicCardTitleColor,
         };
-        setCardEvent(CardEventTemp);
+        setEvent(CardEventTemp);
       }
     }
   }, [props]);
@@ -159,11 +147,11 @@ const Event = (props: EventProps) => {
     return (
       <div className="event event--icon">
         <div className="event__icon">
-          <BrandIcon name={iconEvent?.iconName} color={iconEvent?.iconColor} />
+          <BrandIcon name={event?.iconName} color={event?.iconColor} />
         </div>
         <div className="event__body">
-          <h1 className="event__name">{iconEvent?.header}</h1>
-          <h2 className="event__description">{iconEvent?.body}</h2>
+          <h1 className="event__name">{event?.header}</h1>
+          <h2 className="event__description">{event?.body}</h2>
         </div>
       </div>
     );
@@ -171,29 +159,29 @@ const Event = (props: EventProps) => {
     return (
       <div className="event event--preview">
         <div className="event__image">
-          <img src={previewEvent?.image} />
+          <img src={event?.image} />
         </div>
         <div className="event__body">
-          <h1 className="event__name">{previewEvent?.header}</h1>
-          <h2 className="event__description">{previewEvent?.body}</h2>
+          <h1 className="event__name">{event?.header}</h1>
+          <h2 className="event__description">{event?.body}</h2>
         </div>
       </div>
     );
   } else {
     return (
       <BasicCard
-        title={cardEvent?.cardTitle}
-        subtitle={cardEvent?.cardSubtitle}
-        copy={cardEvent?.cardCopy}
-        buttonLabel={cardEvent?.cardButtonLabel}
-        buttonType={cardEvent?.cardButtonType}
-        buttonColor={cardEvent?.cardButtonColor}
-        buttonUrl={cardEvent?.cardButtonUrl}
-        imageURL={cardEvent?.cardImageURL}
-        useButton={cardEvent?.cardUseButton}
-        centerText={cardEvent?.cardCenterText}
-        smallTitles={cardEvent?.cardSmallTitles}
-        titleColor={cardEvent?.cardTitleColor}
+        title={event?.cardTitle}
+        subtitle={event?.cardSubtitle}
+        copy={event?.cardCopy}
+        buttonLabel={event?.cardButtonLabel}
+        buttonType={event?.cardButtonType}
+        buttonColor={event?.cardButtonColor}
+        buttonUrl={event?.cardButtonUrl}
+        imageURL={event?.cardImageURL}
+        useButton={event?.cardUseButton}
+        centerText={event?.cardCenterText}
+        smallTitles={event?.cardSmallTitles}
+        titleColor={event?.cardTitleColor}
       />
     );
   }
