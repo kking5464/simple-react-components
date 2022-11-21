@@ -3,18 +3,25 @@ import { render } from "@testing-library/react";
 
 import Event from "./Event";
 
-describe("Event Banner", () => {
+describe("Event Icon", () => {
   test("renders the Event component", () => {
-    render(<Event eventName="name" iconEventDescription="Description" />);
+    render(
+      <Event
+        iconEventTitle="name"
+        iconEventDescription="Description"
+        iconName="calendar"
+        iconColor="red"
+      />
+    );
   });
 });
 describe("Event Preview", () => {
   test("renders the Event component", () => {
     render(
       <Event
-        eventType="preview"
-        eventName="name"
+        previewTitle="title"
         previewDescription="Description"
+        previewImage="test"
       />
     );
   });
