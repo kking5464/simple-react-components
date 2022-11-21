@@ -6,24 +6,13 @@ import Event from "./Event";
 describe("Event Icon", () => {
   test("renders the Event component", () => {
     render(
-      <Event
-        title="name"
-        description="Description"
-        iconName="calendar"
-        iconColor="red"
-      />
+      <Event title="name" date="date" iconName="calendar" iconColor="red" />
     );
   });
 });
 describe("Event Preview", () => {
   test("renders the Event component", () => {
-    render(
-      <Event
-        title="title"
-        description="Description"
-        image="test"
-      />
-    );
+    render(<Event title="title" date="date" image="test" />);
   });
 });
 describe("Event Card", () => {
@@ -33,18 +22,15 @@ describe("Event Card", () => {
         eventType="card"
         title="title"
         basicCardTitleColor="gray"
-        basicCardSubtitle="Tuesday, November the 15th"
-        basicCardCopy="In the back office at 10:00 AM"
+        date="Tuesday, November the 15th"
+        basicCardDescription="In the back office at 10:00 AM"
         basicCardButtonLabel="Button Text"
         basicCardButtonType="secondary"
         basicCardButtonUrl="https://www.google.com"
         basicCardButtonColor="red"
         basicCardUseButton={true}
-        basicCardCenterText={false}
-        basicCardSmallTitles={false}
         image="https://images.unsplash.com/photo-1508184585643-6001cf47a1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"
       />
     );
   });
 });
-
