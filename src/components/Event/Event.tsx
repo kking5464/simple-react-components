@@ -126,7 +126,7 @@ const Event = (props: EventProps) => {
         setEvent(eventTemp);
       } else {
         const CardEventTemp: EventContent = {
-          cardTitle: props.basicCardSubtitle,
+          cardTitle: props.basicCardTitle,
           cardSubtitle: props.basicCardSubtitle,
           cardCopy: props.basicCardCopy,
           cardButtonLabel: props.basicCardButtonLabel,
