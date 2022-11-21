@@ -54,48 +54,6 @@ EventStory.argTypes = {
     options: ["card", "preview", "icon"],
     description: "What type of event block",
   },
-  iconName: {
-    name: "Name",
-    description: "Name of icon",
-    options: [
-      "occasions_birthday-cake",
-      "occasions_calendar",
-      "occasions_collaboration",
-      "occasions_disco",
-      "restaurant_team-member",
-      "technology_tablet-and-desktop",
-    ],
-    control: {
-      type: "select",
-      labels: {
-        "occasions_birthday-cake": "Occasions | Birthday Cake",
-        occasions_calendar: "Occasions | Calendar",
-        occasions_collaboration: "Occasions | Collaboration",
-        occasions_disco: "Occasions | Disco",
-        "restaurant_team-member": "Restaurant | Team Member",
-        "technology_tablet-and-desktop": "Technology | Tablet and Desktop",
-      },
-    },
-    table: {
-      category: "Icon",
-    },
-  },
-  iconColor: {
-    name: "Color",
-    description: "Icon color",
-    options: ["gray", "red", "blue"],
-    control: {
-      type: "select",
-      labels: {
-        gray: "Gray",
-        red: "Red",
-        blue: "Blue",
-      },
-    },
-    table: {
-      category: "Icon",
-    },
-  },
   basicCardTitleColor: {
     name: "Title Color",
     description: "Title text color",
@@ -126,55 +84,6 @@ EventStory.argTypes = {
     control: { type: "boolean" },
     table: {
       category: "Card",
-      subcategory: "Button",
-    },
-  },
-  basicCardButtonLabel: {
-    name: "Button Label",
-    control: { type: "text" },
-    table: {
-      category: "Card",
-      subcategory: "Button",
-    },
-  },
-  basicCardButtonType: {
-    name: "Button Type",
-    control: {
-      type: "select",
-      labels: {
-        primary: "Primary",
-        secondary: "Secondary",
-      },
-    },
-    options: ["primary", "secondary"],
-    table: {
-      category: "Card",
-      subcategory: "Button",
-    },
-  },
-  basicCardButtonUrl: {
-    name: "Button Url",
-    control: { type: "text" },
-    description: "Url that will be routed to when button is clicked",
-    table: {
-      category: "Card",
-      subcategory: "Button",
-    },
-  },
-  basicCardButtonColor: {
-    name: "Button Color",
-    description: "Button color",
-    options: ["red", "blue"],
-    control: {
-      type: "select",
-      labels: {
-        red: "Red",
-        blue: "Blue",
-      },
-    },
-    table: {
-      category: "Card",
-      subcategory: "Button",
     },
   },
   image: {
@@ -193,10 +102,6 @@ EventStory.args = {
   useApi: false,
   basicCardTitleColor: "gray",
   basicCardDescription: "In the back office at 10:00 AM",
-  basicCardButtonLabel: "Button Text",
-  basicCardButtonType: "secondary",
-  basicCardButtonUrl: "https://www.google.com",
-  basicCardButtonColor: "red",
   basicCardUseButton: true,
   image:
     "https://images.unsplash.com/photo-1508184585643-6001cf47a1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80",
