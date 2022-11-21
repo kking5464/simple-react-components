@@ -10,7 +10,7 @@ export interface EventProps {
 
   //shared props
   image?: string;
-  description?: string;
+  date?: string;
   title?: string;
 
   //Icon props
@@ -18,15 +18,12 @@ export interface EventProps {
   iconColor?: string;
 
   //BasicCard Props
-  basicCardSubtitle?: string;
-  basicCardCopy?: string;
+  basicCardDescription?: string;
   basicCardButtonLabel?: string;
   basicCardButtonType?: string;
   basicCardButtonColor?: string;
   basicCardButtonUrl?: string;
   basicCardUseButton?: boolean;
-  basicCardCenterText?: boolean;
-  basicCardSmallTitles?: boolean;
   basicCardTitleColor?: string;
 }
 
@@ -40,14 +37,14 @@ interface EventContent {
   iconColor?: string;
 
   cardSubtitle?: string;
-  cardCopy?: string;
+  cardDescription?: string;
   cardButtonLabel?: string;
   cardButtonType?: string;
   cardButtonColor?: string;
   cardButtonUrl?: string;
   cardUseButton?: boolean;
-  cardCenterText?: boolean;
-  cardSmallTitles?: boolean;
+  cardCenterText?: false;
+  cardSmallTitles?: false;
   cardTitleColor?: string;
 }
 
@@ -87,7 +84,7 @@ const Event = (props: EventProps) => {
               const CardEventTemp: EventContent = {
                 header: "Error",
                 cardSubtitle: "Error",
-                cardCopy: "Error",
+                cardDescription: "Error",
                 cardButtonLabel: "Error",
                 cardButtonType: "primary",
                 cardButtonColor: "red",
@@ -106,7 +103,7 @@ const Event = (props: EventProps) => {
       if (props.eventType === "icon") {
         const eventTemp: EventContent = {
           header: props.title,
-          body: props.description,
+          body: props.date,
           iconName: props.iconName,
           iconColor: props.iconColor,
         };
@@ -114,23 +111,23 @@ const Event = (props: EventProps) => {
       } else if (props.eventType === "preview") {
         const eventTemp: EventContent = {
           header: props.title,
-          body: props.description,
+          body: props.date,
           image: props.image,
         };
         setEvent(eventTemp);
       } else {
         const CardEventTemp: EventContent = {
           header: props.title,
-          cardSubtitle: props.basicCardSubtitle,
-          cardCopy: props.basicCardCopy,
+          body: props.date,
+          cardDescription: props.basicCardDescription,
           cardButtonLabel: props.basicCardButtonLabel,
           cardButtonType: props.basicCardButtonType,
           cardButtonColor: props.basicCardButtonColor,
           cardButtonUrl: props.basicCardButtonUrl,
           image: props.image,
           cardUseButton: props.basicCardUseButton,
-          cardCenterText: props.basicCardCenterText,
-          cardSmallTitles: props.basicCardSmallTitles,
+          cardCenterText: false,
+          cardSmallTitles: false,
           cardTitleColor: props.basicCardTitleColor,
         };
         setEvent(CardEventTemp);
@@ -165,16 +162,16 @@ const Event = (props: EventProps) => {
     return (
       <BasicCard
         title={event?.header}
-        subtitle={event?.cardSubtitle}
-        copy={event?.cardCopy}
+        subtitle={event?.body}
+        copy={event?.cardDescription}
         buttonLabel={event?.cardButtonLabel}
         buttonType={event?.cardButtonType}
         buttonColor={event?.cardButtonColor}
         buttonUrl={event?.cardButtonUrl}
         imageURL={event?.image}
         useButton={event?.cardUseButton}
-        centerText={event?.cardCenterText}
-        smallTitles={event?.cardSmallTitles}
+        centerText={false}
+        smallTitles={false}
         titleColor={event?.cardTitleColor}
       />
     );
