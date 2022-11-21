@@ -1,38 +1,40 @@
-// position: absolute;
-// width: 164px;
-// height: 51px;
-// left: 136px;
-// top: 1232px;
-
-/* Body Copy / Body 2 / Bold */
 .event {
-    &__icon{
-        display:inline-block;
+    &__icon {
+        display: inline-block;
         padding-right: 10px;
     }
-    &__body{
-        display:inline-block;
+
+    &__body {
+        display: inline-block;
     }
-    &__name{
-        font-family: "Lato", sans-serif;    
+
+    &__name {
+        font-family: 'Apercu Pro', 'Lato', sans-serif;
         font-style: normal;
         font-weight: 700;
         font-size: 14px;
         line-height: 24px;
-        /* or 171% */
-        /* Grayscale/Gray 7 | #37424A */
-        color: #37424A;
-    }    
+        color: #37424a;
+    }
 
     &__description {
-        font-family: "Lato", sans-serif;
+        font-family: 'Apercu Pro', 'Lato', sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 12px;
         line-height: 16px;
-        /* or 133% */
-        /* Secondary/Blue */
-        color: #004F71;
+        color: #004f71;
+    }
+
+    &--preview {
+        .event__image {
+            display: inline;
+
+            img {
+                height: 80px;
+                width: 80px;
+                padding-right: 10px;
+            }
+        }
     }
 }
-
