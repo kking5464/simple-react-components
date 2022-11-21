@@ -25,37 +25,15 @@ EventStory.argTypes = {
     control: { type: "text" },
     description: "Event Name",
   },
-  previewDescription: {
+  description: {
     name: "Description",
     control: { type: "text" },
     description: "Event description",
-    table: {
-      category: "Preview",
-    },
   },
-  previewTitle: {
-    name: "Preview Title",
+  title: {
+    name: "Title",
     control: { type: "text" },
     description: "Event Title",
-    table: {
-      category: "Preview",
-    },
-  },
-  iconEventDescription: {
-    name: "Description",
-    control: { type: "text" },
-    description: "Event description",
-    table: {
-      category: "Icon",
-    },
-  },
-  iconEventTitle: {
-    name: "Icon Title",
-    control: { type: "text" },
-    description: "Event Title",
-    table: {
-      category: "Icon",
-    },
   },
   eventType: {
     name: "Event Type",
@@ -137,14 +115,6 @@ EventStory.argTypes = {
       subcategory: "Text",
     },
   },
-  basicCardTitle: {
-    name: "Text",
-    control: { type: "text" },
-    table: {
-      category: "Card",
-      subcategory: "Title",
-    },
-  },
   basicCardCopy: {
     name: "Copy",
     control: { type: "text" },
@@ -209,14 +179,6 @@ EventStory.argTypes = {
       subcategory: "Button",
     },
   },
-  basicCardImageURL: {
-    name: "Image URL",
-    control: { type: "text" },
-    table: {
-      category: "Card",
-      subcategory: "Image",
-    },
-  },
   basicCardCenterText: {
     name: "Center Text",
     control: { type: "boolean" },
@@ -233,24 +195,18 @@ EventStory.argTypes = {
       subcategory: "Text",
     },
   },
-  previewImage: {
-    name: "Preview card image",
+  image: {
+    name: "Image",
     control: { type: "text" },
-    table: {
-      category: "Preview",
-    },
   },
 };
 EventStory.args = {
   eventType: "card",
   eventName: "EventTest",
-  previewTitle: "Default preview Title",
-  previewDescription: "Default preview Description",
-  iconEventDescription: "Default icon Description",
-  iconEventTitle: "Default icon Name",
+  title: "Default Title",
+  description: "Default Description",
   useApi: false,
   basicCardTitleColor: "gray",
-  basicCardTitle: "Basic Card Title",
   basicCardSubtitle: "Tuesday, November the 15th",
   basicCardCopy: "In the back office at 10:00 AM",
   basicCardButtonLabel: "Button Text",
@@ -260,10 +216,8 @@ EventStory.args = {
   basicCardUseButton: true,
   basicCardCenterText: false,
   basicCardSmallTitles: false,
-  basicCardImageURL:
+  image:
     "https://images.unsplash.com/photo-1508184585643-6001cf47a1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80",
-  previewImage:
-    "https://iso.500px.com/wp-content/uploads/2015/03/business_cover.jpeg",
 };
 
 EventStory.storyName = "Event";
