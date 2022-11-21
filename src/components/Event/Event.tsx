@@ -39,9 +39,18 @@ interface EventContent {
   body?: string;
 }
 interface CardEventContent {
-  header?: string;
-  subtitle?: string;
-  body?: string;
+  cardTitle?: string;
+  cardSubtitle?: string;
+  cardCopy?: string;
+  cardButtonLabel?: string;
+  cardButtonType?: string;
+  cardButtonColor?: string;
+  cardButtonUrl?: string;
+  cardImageURL?: string;
+  cardUseButton?: boolean;
+  cardCenterText?: boolean;
+  cardSmallTitles?: boolean;
+  cardTitleColor?: string;
 }
 
 const Event = (props: EventProps) => {
@@ -84,9 +93,18 @@ const Event = (props: EventProps) => {
         setEvent(eventTemp);
       } else {
         const CardEventTemp: CardEventContent = {
-          header: props.basicCardTitle,
-          subtitle: props.basicCardSubtitle,
-          body: props.basicCardCopy,
+          cardTitle: props.basicCardSubtitle,
+          cardSubtitle: props.basicCardSubtitle,
+          cardCopy: props.basicCardCopy,
+          cardButtonLabel: props.basicCardButtonLabel,
+          cardButtonType: props.basicCardButtonType,
+          cardButtonColor: props.basicCardButtonColor,
+          cardButtonUrl: props.basicCardButtonUrl,
+          cardImageURL: props.basicCardImageURL,
+          cardUseButton: props.basicCardUseButton,
+          cardCenterText: props.basicCardCenterText,
+          cardSmallTitles: props.basicCardSmallTitles,
+          cardTitleColor: props.basicCardTitleColor,
         };
         setCardEvent(CardEventTemp);
       }
@@ -119,18 +137,18 @@ const Event = (props: EventProps) => {
   } else {
     return (
       <BasicCard
-        title={props.basicCardTitle}
-        subtitle={props.basicCardSubtitle}
-        copy={props.basicCardCopy}
-        buttonLabel={props.basicCardButtonLabel}
-        buttonType={props.basicCardButtonType}
-        buttonColor={props.basicCardButtonColor}
-        buttonUrl={props.basicCardButtonUrl}
-        imageURL={props.basicCardImageURL}
-        useButton={props.basicCardUseButton}
-        centerText={props.basicCardCenterText}
-        smallTitles={props.basicCardSmallTitles}
-        titleColor={props.basicCardTitleColor}
+        title={cardEvent?.cardTitle}
+        subtitle={cardEvent?.cardSubtitle}
+        copy={cardEvent?.cardCopy}
+        buttonLabel={cardEvent?.cardButtonLabel}
+        buttonType={cardEvent?.cardButtonType}
+        buttonColor={cardEvent?.cardButtonColor}
+        buttonUrl={cardEvent?.cardButtonUrl}
+        imageURL={cardEvent?.cardImageURL}
+        useButton={cardEvent?.cardUseButton}
+        centerText={cardEvent?.cardCenterText}
+        smallTitles={cardEvent?.cardSmallTitles}
+        titleColor={cardEvent?.cardTitleColor}
       />
     );
   }
