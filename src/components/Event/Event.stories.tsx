@@ -25,15 +25,21 @@ EventStory.argTypes = {
     control: { type: "text" },
     description: "Event Name",
   },
-  description: {
-    name: "Description",
+  date: {
+    name: "Event Date",
     control: { type: "text" },
-    description: "Event description",
+    description: "Event date",
+    table: {
+      category: "Event Info",
+    },
   },
   title: {
     name: "Title",
     control: { type: "text" },
     description: "Event Title",
+    table: {
+      category: "Event Info",
+    },
   },
   eventType: {
     name: "Event Type",
@@ -107,16 +113,8 @@ EventStory.argTypes = {
       subcategory: "Title",
     },
   },
-  basicCardSubtitle: {
-    name: "Subtitle",
-    control: { type: "text" },
-    table: {
-      category: "Card",
-      subcategory: "Text",
-    },
-  },
-  basicCardCopy: {
-    name: "Copy",
+  basicCardDescription: {
+    name: "Description",
     control: { type: "text" },
     table: {
       category: "Card",
@@ -179,43 +177,27 @@ EventStory.argTypes = {
       subcategory: "Button",
     },
   },
-  basicCardCenterText: {
-    name: "Center Text",
-    control: { type: "boolean" },
-    table: {
-      category: "Card",
-      subcategory: "Text",
-    },
-  },
-  basicCardSmallTitles: {
-    name: "Small Title and Subtitle",
-    control: { type: "boolean" },
-    table: {
-      category: "Card",
-      subcategory: "Text",
-    },
-  },
   image: {
     name: "Image",
     control: { type: "text" },
+    table: {
+      category: "Event Info",
+    },
   },
 };
 EventStory.args = {
   eventType: "card",
   eventName: "EventTest",
   title: "Default Title",
-  description: "Default Description",
+  date: "Tuesday, November the 15th",
   useApi: false,
   basicCardTitleColor: "gray",
-  basicCardSubtitle: "Tuesday, November the 15th",
-  basicCardCopy: "In the back office at 10:00 AM",
+  basicCardDescription: "In the back office at 10:00 AM",
   basicCardButtonLabel: "Button Text",
   basicCardButtonType: "secondary",
   basicCardButtonUrl: "https://www.google.com",
   basicCardButtonColor: "red",
   basicCardUseButton: true,
-  basicCardCenterText: false,
-  basicCardSmallTitles: false,
   image:
     "https://images.unsplash.com/photo-1508184585643-6001cf47a1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80",
 };
