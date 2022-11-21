@@ -5,13 +5,17 @@ import Event from "./Event";
 
 describe("Event Banner", () => {
   test("renders the Event component", () => {
-    render(<Event eventName="name" description="Description" />);
+    render(<Event eventName="name" iconEventDescription="Description" />);
   });
 });
 describe("Event Preview", () => {
   test("renders the Event component", () => {
     render(
-      <Event eventType="preview" eventName="name" description="Description" />
+      <Event
+        eventType="preview"
+        eventName="name"
+        previewDescription="Description"
+      />
     );
   });
 });
@@ -20,6 +24,7 @@ describe("Event Card", () => {
     render(
       <Event
         eventType="card"
+        basicCardTitle="title"
         basicCardTitleColor="gray"
         basicCardSubtitle="Tuesday, November the 15th"
         basicCardCopy="In the back office at 10:00 AM"

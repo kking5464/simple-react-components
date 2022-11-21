@@ -1,23 +1,26 @@
 import React, { useEffect, useState } from "react";
-import Icon from "../Icon/Icon";
+import BrandIcon from "../BrandIcon/BrandIcon";
 import BasicCard from "../BasicCard/BasicCard";
 import "./Event.scss";
 
 export interface EventProps {
   eventName?: string;
-  date?: string;
-  description?: string;
   useApi?: boolean | null;
   eventType?: string;
 
   //preview prop
   previewImage?: string;
+  previewName?: string;
+  previewDescription?: string;
 
   //Icon props
   iconName?: string;
   iconColor?: string;
+  iconEventName?: string;
+  iconEventDescription?: string;
 
   //BasicCard Props
+  basicCardTitle?: string;
   basicCardSubtitle?: string;
   basicCardCopy?: string;
   basicCardButtonLabel?: string;
@@ -35,9 +38,15 @@ interface EventContent {
   header?: string;
   body?: string;
 }
+interface CardEventContent {
+  header?: string;
+  subtitle?: string;
+  body?: string;
+}
 
 const Event = (props: EventProps) => {
   const [event, setEvent] = useState<EventContent>();
+  const [cardEvent, setCardEvent] = useState<CardEventContent>();
 
   useEffect(() => {
     if (props.useApi) {
@@ -61,18 +70,33 @@ const Event = (props: EventProps) => {
           }
         );
     } else {
-      const eventTemp: EventContent = {
-        header: props.eventName,
-        body: props.description,
-      };
-      setEvent(eventTemp);
+      if (props.eventType === "icon") {
+        const eventTemp: EventContent = {
+          header: props.iconEventName,
+          body: props.iconEventDescription,
+        };
+        setEvent(eventTemp);
+      } else if (props.eventType === "preview") {
+        const eventTemp: EventContent = {
+          header: props.previewName,
+          body: props.previewDescription,
+        };
+        setEvent(eventTemp);
+      } else {
+        const CardEventTemp: CardEventContent = {
+          header: props.basicCardTitle,
+          subtitle: props.basicCardSubtitle,
+          body: props.basicCardCopy,
+        };
+        setCardEvent(CardEventTemp);
+      }
     }
   }, [props]);
   if (props.eventType === "icon") {
     return (
       <div className="event event--icon">
         <div className="event__icon">
-          <Icon name={props.iconName} color={props.iconColor} />
+          <BrandIcon name={props.iconName} color={props.iconColor} />
         </div>
         <div className="event__body">
           <h1 className="event__name">{event?.header}</h1>
@@ -95,7 +119,7 @@ const Event = (props: EventProps) => {
   } else {
     return (
       <BasicCard
-        title={props.eventName}
+        title={props.basicCardTitle}
         subtitle={props.basicCardSubtitle}
         copy={props.basicCardCopy}
         buttonLabel={props.basicCardButtonLabel}

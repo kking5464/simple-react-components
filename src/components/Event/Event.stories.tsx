@@ -25,7 +25,23 @@ EventStory.argTypes = {
     control: { type: "text" },
     description: "Event Name",
   },
-  description: {
+  previewDescription: {
+    name: "Description",
+    control: { type: "text" },
+    description: "Event description",
+    table: {
+      category: "Preview",
+    },
+  },
+  previewName: {
+    name: "Preview Name",
+    control: { type: "text" },
+    description: "Event description",
+    table: {
+      category: "Preview",
+    },
+  },
+  iconEventDescription: {
     name: "Description",
     control: { type: "text" },
     description: "Event description",
@@ -33,12 +49,12 @@ EventStory.argTypes = {
       category: "Icon",
     },
   },
-  date: {
-    name: "Event date and time",
+  iconEventName: {
+    name: "Icon Name",
     control: { type: "text" },
-    description: "Date and time of Event",
+    description: "Event description",
     table: {
-      category: "Card",
+      category: "Icon",
     },
   },
   eventType: {
@@ -58,20 +74,22 @@ EventStory.argTypes = {
     name: "Name",
     description: "Name of icon",
     options: [
-      "calendar",
-      "error-filled",
-      "info-filled",
-      "success-filled",
-      "warning-filled",
+      "occasions_birthday-cake",
+      "occasions_calendar",
+      "occasions_collaboration",
+      "occasions_disco",
+      "restaurant_team-member",
+      "technology_tablet-and-desktop",
     ],
     control: {
       type: "select",
       labels: {
-        calendar: "Calendar",
-        "error-filled": "Error (Filled)",
-        "info-filled": "Info (Filled)",
-        "success-filled": "Success (Filled)",
-        "warning-filled": "Warning (Filled)",
+        "occasions_birthday-cake": "Occasions | Birthday Cake",
+        occasions_calendar: "Occasions | Calendar",
+        occasions_collaboration: "Occasions | Collaboration",
+        occasions_disco: "Occasions | Disco",
+        "restaurant_team-member": "Restaurant | Team Member",
+        "technology_tablet-and-desktop": "Technology | Tablet and Desktop",
       },
     },
     table: {
@@ -117,6 +135,14 @@ EventStory.argTypes = {
     table: {
       category: "Card",
       subcategory: "Text",
+    },
+  },
+  basicCardTitle: {
+    name: "Text",
+    control: { type: "text" },
+    table: {
+      category: "Card",
+      subcategory: "Title",
     },
   },
   basicCardCopy: {
@@ -217,11 +243,14 @@ EventStory.argTypes = {
 };
 EventStory.args = {
   eventType: "card",
-  date: "Tue, Nov. 15 at 10:00 AM",
   eventName: "EventTest",
-  description: "Default Event Description",
+  previewName: "Default preview Name",
+  previewDescription: "Default preview Description",
+  iconEventDescription: "Default icon Description",
+  iconEventName: "Default icon Name",
   useApi: false,
   basicCardTitleColor: "gray",
+  basicCardTitle: "Basic Card Title",
   basicCardSubtitle: "Tuesday, November the 15th",
   basicCardCopy: "In the back office at 10:00 AM",
   basicCardButtonLabel: "Button Text",
