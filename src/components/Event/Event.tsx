@@ -1,39 +1,36 @@
 import React, { useEffect, useState } from "react";
-import SystemIcon from "../SystemIcon/SystemIcon";
+import BrandIcon from "../BrandIcon/BrandIcon";
 import BasicCard from "../BasicCard/BasicCard";
 import "./Event.scss";
 
 export interface EventProps {
   eventName?: string;
-  date?: string;
-  description?: string;
   useApi?: boolean | null;
   eventType?: string;
 
-  //preview prop
-  previewImage?: string;
-
-  //Icon props
-  iconName?: string;
-  iconColor?: string;
+  //shared props
+  image?: string;
+  date?: string;
+  title?: string;
 
   //BasicCard Props
-  basicCardSubtitle?: string;
-  basicCardCopy?: string;
-  basicCardButtonLabel?: string;
-  basicCardButtonType?: string;
-  basicCardButtonColor?: string;
-  basicCardButtonUrl?: string;
-  basicCardImageURL?: string;
+  basicCardDescription?: string;
   basicCardUseButton?: boolean;
-  basicCardCenterText?: boolean;
-  basicCardSmallTitles?: boolean;
   basicCardTitleColor?: string;
 }
 
 interface EventContent {
   header?: string;
   body?: string;
+
+  image?: string;
+
+  cardSubtitle?: string;
+  cardDescription?: string;
+  cardUseButton?: boolean;
+  cardCenterText?: false;
+  cardSmallTitles?: false;
+  cardTitleColor?: string;
 }
 
 const Event = (props: EventProps) => {
@@ -53,26 +50,66 @@ const Event = (props: EventProps) => {
           // instead of a catch() block so that we don't swallow
           // exceptions from actual bugs in components.
           (error) => {
-            const eventError: EventContent = {
-              header: "Error",
-              body: "Event could not be found",
-            };
-            setEvent(eventError);
+            if (props.eventType === "icon") {
+              const eventError: EventContent = {
+                header: "Error",
+                body: "Event could not be found",
+              };
+              setEvent(eventError);
+            } else if (props.eventType === "preview") {
+              const eventError: EventContent = {
+                header: "Error",
+                body: "Event could not be found",
+                image: "error",
+              };
+              setEvent(eventError);
+            } else {
+              const CardEventTemp: EventContent = {
+                header: "Error",
+                cardSubtitle: "Error",
+                cardDescription: "Error",
+                image: "error",
+                cardUseButton: false,
+                cardCenterText: false,
+                cardSmallTitles: false,
+                cardTitleColor: "red",
+              };
+              setEvent(CardEventTemp);
+            }
           }
         );
     } else {
-      const eventTemp: EventContent = {
-        header: props.eventName,
-        body: props.description,
-      };
-      setEvent(eventTemp);
+      if (props.eventType === "icon") {
+        const eventTemp: EventContent = {
+          header: props.title,
+          body: props.date,
+        };
+        setEvent(eventTemp);
+      } else if (props.eventType === "preview") {
+        const eventTemp: EventContent = {
+          header: props.title,
+          body: props.date,
+          image: props.image,
+        };
+        setEvent(eventTemp);
+      } else {
+        const CardEventTemp: EventContent = {
+          header: props.title,
+          body: props.date,
+          cardDescription: props.basicCardDescription,
+          image: props.image,
+          cardUseButton: props.basicCardUseButton,
+          cardTitleColor: props.basicCardTitleColor,
+        };
+        setEvent(CardEventTemp);
+      }
     }
   }, [props]);
   if (props.eventType === "icon") {
     return (
       <div className="event event--icon">
         <div className="event__icon">
-          <SystemIcon name={props.iconName} color={props.iconColor} />
+          <BrandIcon name={"occasions_calendar"} color={"gray"} />
         </div>
         <div className="event__body">
           <h1 className="event__name">{event?.header}</h1>
@@ -84,7 +121,7 @@ const Event = (props: EventProps) => {
     return (
       <div className="event event--preview">
         <div className="event__image">
-          <img src={props.previewImage} />
+          <img src={event?.image} />
         </div>
         <div className="event__body">
           <h1 className="event__name">{event?.header}</h1>
@@ -95,18 +132,18 @@ const Event = (props: EventProps) => {
   } else {
     return (
       <BasicCard
-        title={props.eventName}
-        subtitle={props.basicCardSubtitle}
-        copy={props.basicCardCopy}
-        buttonLabel={props.basicCardButtonLabel}
-        buttonType={props.basicCardButtonType}
-        buttonColor={props.basicCardButtonColor}
-        buttonUrl={props.basicCardButtonUrl}
-        imageURL={props.basicCardImageURL}
-        useButton={props.basicCardUseButton}
-        centerText={props.basicCardCenterText}
-        smallTitles={props.basicCardSmallTitles}
-        titleColor={props.basicCardTitleColor}
+        title={event?.header}
+        subtitle={event?.body}
+        copy={event?.cardDescription}
+        buttonLabel={"More Info"}
+        buttonType={"primary"}
+        buttonColor={"red"}
+        buttonUrl={"test"}
+        imageURL={event?.image}
+        useButton={event?.cardUseButton}
+        centerText={false}
+        smallTitles={false}
+        titleColor={event?.cardTitleColor}
       />
     );
   }
