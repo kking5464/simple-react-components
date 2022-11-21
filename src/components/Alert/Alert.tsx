@@ -1,18 +1,27 @@
 import "./Alert.scss";
 import React from "react";
+import SystemIcon from "../SystemIcon";
 
 export interface AlertProps {
     header: string;
+    iconName: string;
+    iconColor: string;
 }
 
 const Alert = (props: AlertProps) => {
     return (
         <div className="alert">
-            <div className="alert-item">
-                <div className="alert-header">
-                {props.header}
+                <div className="alert-icon">
+                    <SystemIcon
+                    name={props.iconName}
+                    color={props.iconColor}/>
                 </div>
-            </div>
+                <p className="alert-header">
+                    {props.header}
+                </p>
+                <div className="alert-close">
+
+                </div>
         </div>
 
     );
