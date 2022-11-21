@@ -34,7 +34,7 @@ export interface EventProps {
   basicCardTitleColor?: string;
 }
 
-interface CardEventContent {
+interface EventContent {
   header?: string;
   body?: string;
 
@@ -58,7 +58,7 @@ interface CardEventContent {
 }
 
 const Event = (props: EventProps) => {
-  const [event, setEvent] = useState<CardEventContent>();
+  const [event, setEvent] = useState<EventContent>();
 
   useEffect(() => {
     if (props.useApi) {
@@ -75,7 +75,7 @@ const Event = (props: EventProps) => {
           // exceptions from actual bugs in components.
           (error) => {
             if (props.eventType === "icon") {
-              const eventError: CardEventContent = {
+              const eventError: EventContent = {
                 header: "Error",
                 body: "Event could not be found",
                 iconName: "calendar",
@@ -83,14 +83,14 @@ const Event = (props: EventProps) => {
               };
               setEvent(eventError);
             } else if (props.eventType === "preview") {
-              const eventError: CardEventContent = {
+              const eventError: EventContent = {
                 header: "Error",
                 body: "Event could not be found",
                 image: "error",
               };
               setEvent(eventError);
             } else {
-              const CardEventTemp: CardEventContent = {
+              const CardEventTemp: EventContent = {
                 cardTitle: "Error",
                 cardSubtitle: "Error",
                 cardCopy: "Error",
@@ -110,7 +110,7 @@ const Event = (props: EventProps) => {
         );
     } else {
       if (props.eventType === "icon") {
-        const eventTemp: CardEventContent = {
+        const eventTemp: EventContent = {
           header: props.iconEventTitle,
           body: props.iconEventDescription,
           iconName: props.iconName,
@@ -118,14 +118,14 @@ const Event = (props: EventProps) => {
         };
         setEvent(eventTemp);
       } else if (props.eventType === "preview") {
-        const eventTemp: CardEventContent = {
+        const eventTemp: EventContent = {
           header: props.previewTitle,
           body: props.previewDescription,
           image: props.previewImage,
         };
         setEvent(eventTemp);
       } else {
-        const CardEventTemp: CardEventContent = {
+        const CardEventTemp: EventContent = {
           cardTitle: props.basicCardSubtitle,
           cardSubtitle: props.basicCardSubtitle,
           cardCopy: props.basicCardCopy,
