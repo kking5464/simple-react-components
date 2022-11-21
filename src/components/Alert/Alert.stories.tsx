@@ -18,9 +18,9 @@ AlertStory.argTypes = {
     control: { type: "text" },
     description: "Alert header",
   },
-  iconName: {
-    name: "Icon Name",
-    description: "Name of Icon",
+  alertIconName: {
+    name: "Alert Icon Name",
+    description: "Name of icon for alert",
     options: [
       "actions-horizontal",
       "calendar",
@@ -49,10 +49,10 @@ AlertStory.argTypes = {
       },
     },
   },
-  iconColor: {
-    name: "Icon Color",
-    description: "Color of Icon",
-    options: ["gray", "red", "blue","white"],
+  alertIconColor: {
+    name: "Alert Icon Color",
+    description: "Color of icon for alert",
+    options: ["gray", "red", "blue", "white"],
     control: {
       type: "select",
       labels: {
@@ -63,11 +63,58 @@ AlertStory.argTypes = {
       },
     },
   },
+  closeIconName: {
+    name: "Close Icon Name",
+    description: "Name of icon for closing alert",
+    options: [
+      "actions-horizontal",
+      "calendar",
+      "chevron-right",
+      "close",
+      "error-filled",
+      "info-filled",
+      "menu",
+      "search",
+      "success-filled",
+      "warning-filled",
+    ],
+    control: {
+      type: "select",
+      labels: {
+        "actions-horizontal": "Actions - Horizontal",
+        calendar: "Calendar",
+        "chevron-right": "Chevron - Right",
+        close: "Close",
+        "error-filled": "Error - Filled",
+        "info-filled": "Info - Filled",
+        menu: "Menu",
+        search: "Search",
+        "success-filled": "Success - Filled",
+        "warning-filled": "Warning - Filled",
+      },
+    },
+  },
+  closeIconColor: {
+    name: "Close Icon Color",
+    description: "Color of icon for closing alert",
+    options: ["gray", "red", "blue", "white"],
+    control: {
+      type: "select",
+      labels: {
+        gray: "Gray",
+        red: "Red",
+        blue: "Blue",
+        white: "White",
+      },
+    },
+  }
 };
 AlertStory.args = {
   header: "Describe your alert",
-  iconName: "info-filled",
-  iconColor: "blue",
+  alertIconName: "info-filled",
+  alertIconColor: "white",
+  closeIconName: "close",
+  closeIconColor: "white",
 };
 
 AlertStory.storyName = "Alert";
