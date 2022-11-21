@@ -8,26 +8,22 @@ export interface EventProps {
   useApi?: boolean | null;
   eventType?: string;
 
-  //preview prop
-  previewImage?: string;
-  previewTitle?: string;
-  previewDescription?: string;
+  //shared props
+  image?: string;
+  description?: string;
+  title?: string;
 
   //Icon props
   iconName?: string;
   iconColor?: string;
-  iconEventTitle?: string;
-  iconEventDescription?: string;
 
   //BasicCard Props
-  basicCardTitle?: string;
   basicCardSubtitle?: string;
   basicCardCopy?: string;
   basicCardButtonLabel?: string;
   basicCardButtonType?: string;
   basicCardButtonColor?: string;
   basicCardButtonUrl?: string;
-  basicCardImageURL?: string;
   basicCardUseButton?: boolean;
   basicCardCenterText?: boolean;
   basicCardSmallTitles?: boolean;
@@ -43,14 +39,12 @@ interface EventContent {
   iconName?: string;
   iconColor?: string;
 
-  cardTitle?: string;
   cardSubtitle?: string;
   cardCopy?: string;
   cardButtonLabel?: string;
   cardButtonType?: string;
   cardButtonColor?: string;
   cardButtonUrl?: string;
-  cardImageURL?: string;
   cardUseButton?: boolean;
   cardCenterText?: boolean;
   cardSmallTitles?: boolean;
@@ -91,14 +85,14 @@ const Event = (props: EventProps) => {
               setEvent(eventError);
             } else {
               const CardEventTemp: EventContent = {
-                cardTitle: "Error",
+                header: "Error",
                 cardSubtitle: "Error",
                 cardCopy: "Error",
                 cardButtonLabel: "Error",
                 cardButtonType: "primary",
                 cardButtonColor: "red",
                 cardButtonUrl: "error",
-                cardImageURL: "error",
+                image: "error",
                 cardUseButton: false,
                 cardCenterText: false,
                 cardSmallTitles: false,
@@ -111,29 +105,29 @@ const Event = (props: EventProps) => {
     } else {
       if (props.eventType === "icon") {
         const eventTemp: EventContent = {
-          header: props.iconEventTitle,
-          body: props.iconEventDescription,
+          header: props.title,
+          body: props.description,
           iconName: props.iconName,
           iconColor: props.iconColor,
         };
         setEvent(eventTemp);
       } else if (props.eventType === "preview") {
         const eventTemp: EventContent = {
-          header: props.previewTitle,
-          body: props.previewDescription,
-          image: props.previewImage,
+          header: props.title,
+          body: props.description,
+          image: props.image,
         };
         setEvent(eventTemp);
       } else {
         const CardEventTemp: EventContent = {
-          cardTitle: props.basicCardTitle,
+          header: props.title,
           cardSubtitle: props.basicCardSubtitle,
           cardCopy: props.basicCardCopy,
           cardButtonLabel: props.basicCardButtonLabel,
           cardButtonType: props.basicCardButtonType,
           cardButtonColor: props.basicCardButtonColor,
           cardButtonUrl: props.basicCardButtonUrl,
-          cardImageURL: props.basicCardImageURL,
+          image: props.image,
           cardUseButton: props.basicCardUseButton,
           cardCenterText: props.basicCardCenterText,
           cardSmallTitles: props.basicCardSmallTitles,
@@ -170,14 +164,14 @@ const Event = (props: EventProps) => {
   } else {
     return (
       <BasicCard
-        title={event?.cardTitle}
+        title={event?.header}
         subtitle={event?.cardSubtitle}
         copy={event?.cardCopy}
         buttonLabel={event?.cardButtonLabel}
         buttonType={event?.cardButtonType}
         buttonColor={event?.cardButtonColor}
         buttonUrl={event?.cardButtonUrl}
-        imageURL={event?.cardImageURL}
+        imageURL={event?.image}
         useButton={event?.cardUseButton}
         centerText={event?.cardCenterText}
         smallTitles={event?.cardSmallTitles}
