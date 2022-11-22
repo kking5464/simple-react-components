@@ -59,7 +59,6 @@ EventStory.argTypes = {
     control: { type: "text" },
     table: {
       category: "Card",
-      subcategory: "Text",
     },
   },
   image: {
@@ -69,12 +68,20 @@ EventStory.argTypes = {
       category: "Event Info",
     },
   },
+  buttonUrl: {
+    name: "Button Url",
+    control: { type: "text" },
+    table: {
+      category: "Card",
+    },
+  },
 };
 EventStory.args = {
   eventType: "card",
   eventName: "EventTest",
   title: "Default Title",
   date: "Tuesday, November the 15th",
+  buttonUrl: "google.com",
   useApi: false,
   basicCardDescription: "In the back office at 10:00 AM",
   image:
