@@ -15,8 +15,7 @@ export interface EventProps {
 
   //BasicCard Props
   basicCardDescription?: string;
-  basicCardUseButton?: boolean;
-  basicCardTitleColor?: string;
+  
 }
 
 interface EventContent {
@@ -25,12 +24,8 @@ interface EventContent {
 
   image?: string;
 
-  cardSubtitle?: string;
   cardDescription?: string;
-  cardUseButton?: boolean;
-  cardCenterText?: false;
-  cardSmallTitles?: false;
-  cardTitleColor?: string;
+  
 }
 
 const Event = (props: EventProps) => {
@@ -66,13 +61,8 @@ const Event = (props: EventProps) => {
             } else {
               const CardEventTemp: EventContent = {
                 header: "Error",
-                cardSubtitle: "Error",
                 cardDescription: "Error",
                 image: "error",
-                cardUseButton: false,
-                cardCenterText: false,
-                cardSmallTitles: false,
-                cardTitleColor: "red",
               };
               setEvent(CardEventTemp);
             }
@@ -98,8 +88,6 @@ const Event = (props: EventProps) => {
           body: props.date,
           cardDescription: props.basicCardDescription,
           image: props.image,
-          cardUseButton: props.basicCardUseButton,
-          cardTitleColor: props.basicCardTitleColor,
         };
         setEvent(CardEventTemp);
       }
@@ -140,10 +128,10 @@ const Event = (props: EventProps) => {
         buttonColor={"red"}
         buttonUrl={"test"}
         imageURL={event?.image}
-        useButton={event?.cardUseButton}
+        useButton={true}
         centerText={false}
         smallTitles={false}
-        titleColor={event?.cardTitleColor}
+        titleColor={"red"}
       />
     );
   }
