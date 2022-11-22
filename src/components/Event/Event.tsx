@@ -12,11 +12,12 @@ export interface EventProps {
   image?: string;
   date?: string;
   title?: string;
+  buttonUrl?: string;
+
 
   //BasicCard Props
   basicCardDescription?: string;
-  basicCardUseButton?: boolean;
-  basicCardTitleColor?: string;
+  
 }
 
 interface EventContent {
@@ -25,12 +26,8 @@ interface EventContent {
 
   image?: string;
 
-  cardSubtitle?: string;
   cardDescription?: string;
-  cardUseButton?: boolean;
-  cardCenterText?: false;
-  cardSmallTitles?: false;
-  cardTitleColor?: string;
+  buttonUrl?: string;
 }
 
 const Event = (props: EventProps) => {
@@ -66,13 +63,9 @@ const Event = (props: EventProps) => {
             } else {
               const CardEventTemp: EventContent = {
                 header: "Error",
-                cardSubtitle: "Error",
                 cardDescription: "Error",
                 image: "error",
-                cardUseButton: false,
-                cardCenterText: false,
-                cardSmallTitles: false,
-                cardTitleColor: "red",
+                buttonUrl: "error"
               };
               setEvent(CardEventTemp);
             }
@@ -98,8 +91,7 @@ const Event = (props: EventProps) => {
           body: props.date,
           cardDescription: props.basicCardDescription,
           image: props.image,
-          cardUseButton: props.basicCardUseButton,
-          cardTitleColor: props.basicCardTitleColor,
+          buttonUrl: props.buttonUrl
         };
         setEvent(CardEventTemp);
       }
@@ -137,13 +129,13 @@ const Event = (props: EventProps) => {
         copy={event?.cardDescription}
         buttonLabel={"More Info"}
         buttonType={"primary"}
-        buttonColor={"red"}
-        buttonUrl={"test"}
+        buttonColor="red"
+        buttonUrl={event?.buttonUrl}
         imageURL={event?.image}
-        useButton={event?.cardUseButton}
+        useButton={true}
         centerText={false}
         smallTitles={false}
-        titleColor={event?.cardTitleColor}
+        titleColor="red"
       />
     );
   }
