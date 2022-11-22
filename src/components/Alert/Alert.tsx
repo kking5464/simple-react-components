@@ -12,18 +12,16 @@ export interface AlertProps {
 }
 
 const Alert = (props: AlertProps) => {
-  const [alertButton, closeAlertButton] = useState(true);
+  const [alertClosed, setAlertClosed] = useState<boolean | null>(false);
   return (
-    <div className="alert">
+    <div className={`alert ${alertClosed ? "alert--closed" : ""}`}>
       <div className="alert-icon">
         <SystemIcon name={props.alertIconName} color={props.alertIconColor} />
       </div>
-      <div className="alert-header">
-      <p>{props.header}</p>
-      </div>
-      <div className="alert-close" onClick={() => closeAlertButton(!alertButton)}>
+      <p className="alert-header">{props.header}</p>
+      <button className="alert-close" onClick={() => setAlertClosed(true)}>
         <SystemIcon name={props.closeIconName} color={props.closeIconColor} />
-      </div>
+      </button>
     </div>
   );
 };

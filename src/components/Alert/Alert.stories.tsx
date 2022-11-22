@@ -12,6 +12,10 @@ const Template: ComponentStory<typeof Alert> = (args) => <Alert {...args} />;
 
 export const AlertStory = Template.bind({});
 
+AlertStory.parameters = {
+  layout: "fullscreen",
+};
+
 AlertStory.argTypes = {
   header: {
     name: "Header",
