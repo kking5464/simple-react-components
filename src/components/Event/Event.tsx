@@ -15,8 +15,7 @@ export interface EventProps {
 
   //BasicCard Props
   basicCardDescription?: string;
-  basicCardUseButton?: boolean;
-  basicCardTitleColor?: string;
+  
 }
 
 interface EventContent {
@@ -27,10 +26,7 @@ interface EventContent {
 
   cardSubtitle?: string;
   cardDescription?: string;
-  cardUseButton?: boolean;
-  cardCenterText?: false;
-  cardSmallTitles?: false;
-  cardTitleColor?: string;
+  
 }
 
 const Event = (props: EventProps) => {
@@ -39,7 +35,7 @@ const Event = (props: EventProps) => {
   useEffect(() => {
     if (props.useApi) {
       fetch(
-        `https://epop03mstrt6av4inte.dxcloud.episerver.net/api/Event?Name=${props.eventName}`
+        `https://localhost:8001/api/event?Name=${props.eventName}`
       )
         .then((res) => res.json())
         .then(
@@ -69,10 +65,7 @@ const Event = (props: EventProps) => {
                 cardSubtitle: "Error",
                 cardDescription: "Error",
                 image: "error",
-                cardUseButton: false,
-                cardCenterText: false,
-                cardSmallTitles: false,
-                cardTitleColor: "red",
+                
               };
               setEvent(CardEventTemp);
             }
@@ -98,8 +91,6 @@ const Event = (props: EventProps) => {
           body: props.date,
           cardDescription: props.basicCardDescription,
           image: props.image,
-          cardUseButton: props.basicCardUseButton,
-          cardTitleColor: props.basicCardTitleColor,
         };
         setEvent(CardEventTemp);
       }
@@ -140,10 +131,10 @@ const Event = (props: EventProps) => {
         buttonColor={"red"}
         buttonUrl={"test"}
         imageURL={event?.image}
-        useButton={event?.cardUseButton}
+        useButton={true}
         centerText={false}
         smallTitles={false}
-        titleColor={event?.cardTitleColor}
+        titleColor={"red"}
       />
     );
   }
