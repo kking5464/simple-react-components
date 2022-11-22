@@ -1,0 +1,40 @@
+.event {
+    &__icon {
+        display: inline-block;
+        padding-right: 10px;
+    }
+
+    &__body {
+        display: inline-block;
+    }
+
+    &__name {
+        font-family: 'Apercu Pro', 'Lato', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 24px;
+        color: #37424a;
+    }
+
+    &__description {
+        font-family: 'Apercu Pro', 'Lato', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        color: #004f71;
+    }
+
+    &--preview {
+        .event__image {
+            display: inline;
+
+            img {
+                height: 80px;
+                width: 80px;
+                padding-right: 10px;
+            }
+        }
+    }
+}

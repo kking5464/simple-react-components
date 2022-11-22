@@ -1,0 +1,13 @@
+.brand-icon {
+    &--red {
+        path, ellipse {
+            fill: #dd0031;
+        }
+    }
+
+    &--blue {
+        path, ellipse {
+            fill: #004F71;
+        }
+    }
+}

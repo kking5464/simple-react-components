@@ -1,0 +1,21 @@
+.full-width-image {
+    display: flex;
+
+    img {
+        height: 196px;
+        max-width: 100%;
+        object-fit: cover;
+        width: 100%;
+
+        @media screen and (min-width: 425px) {
+            height: 250px;
+        }
+
+        @media screen and (min-width: 550px) {
+            height: auto;
+            margin: auto;
+            max-width: 100%;
+            width: 832px;
+        }
+    }
+}
