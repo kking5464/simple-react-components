@@ -17,7 +17,7 @@ describe("Navigation", () => {
             isActive: true,
           },
         ]}
-        header="Hello World"
+        header="Store is closing at 6:00 pm today for inventory"
         alertIconName="info-filled"
       />
     );

@@ -143,6 +143,9 @@ NavigationWithAlertStory.argTypes = {
     name: "Header",
     control: { type: "text" },
     description: "Alert header",
+    table: {
+      category: "Alert",
+    }
   },
   alertIconName: {
     name: "Alert Icon Name",
@@ -162,6 +165,9 @@ NavigationWithAlertStory.argTypes = {
         "warning-filled": "Warning - Filled",
       },
     },
+    table: {
+      category: "Alert",
+    }
   },
 };
 NavigationWithAlertStory.args = {
@@ -213,7 +219,7 @@ NavigationWithAlertStory.args = {
       isActive: false,
     },
   ],
-  header: "Describe your alert",
+  header: "Store is closing at 6:00 pm today for inventory",
   alertIconName: "info-filled",
 };
 
