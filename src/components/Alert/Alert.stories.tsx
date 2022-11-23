@@ -41,7 +41,6 @@ AlertStory.argTypes = {
       },
     },
   },
-  
 };
 AlertStory.args = {
   header: "Describe your alert",

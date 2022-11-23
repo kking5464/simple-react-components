@@ -10,7 +10,7 @@
   top: 72px;
   width: calc(100% - 52px);
 
-  &--closed{
+  &--closed {
     display: none;
   }
   &-container {
@@ -21,7 +21,7 @@
     margin: auto;
   }
   &-header {
-    font-family: 'Apercu Pro', 'Lato', sans-serif;
+    font-family: "Apercu Pro", "Lato", sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 12px;
@@ -41,7 +41,7 @@
 
       .system-icon--white path {
         fill: #d4d1d1;
-    }
+      }
     }
   }
 }
