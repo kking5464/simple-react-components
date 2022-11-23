@@ -1,39 +1,55 @@
 .event {
+    display:flex;
+
     &__icon {
-        display: inline-block;
-        padding-right: 10px;
+        margin-right: 15px;
     }
-
-    &__body {
-        display: inline-block;
-    }
-
+    
     &__name {
         font-family: 'Apercu Pro', 'Lato', sans-serif;
         font-style: normal;
-        font-weight: 700;
+        margin: 0;
+        font-weight: 800;
         font-size: 14px;
         line-height: 24px;
         color: #37424a;
+        
     }
 
     &__description {
         font-family: 'Apercu Pro', 'Lato', sans-serif;
         font-style: normal;
         font-weight: 500;
+        margin: 0;
         font-size: 12px;
         line-height: 16px;
-        color: #004f71;
+        color: #37424a;
     }
 
     &--preview {
+        border-radius: 4px;
+        box-shadow: 0px 2px 4px rgba(91, 103, 112, 0.24);
+
+        .event__body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 14px 14px 14px 0;
+
+            .event__description {
+                color: #004F71;
+            }
+        }
         .event__image {
-            display: inline;
+            display: flex;
 
             img {
-                height: 80px;
-                width: 80px;
-                padding-right: 10px;
+                object-fit: cover; 
+                min-height: 110px;   
+                height: auto;            
+                width: 104px;
+                padding-right: 16px;
+                border-radius: 4px;
             }
         }
     }

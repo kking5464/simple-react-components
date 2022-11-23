@@ -14,10 +14,8 @@ export interface EventProps {
   title?: string;
   buttonUrl?: string;
 
-
   //BasicCard Props
   basicCardDescription?: string;
-  
 }
 
 interface EventContent {
@@ -35,9 +33,7 @@ const Event = (props: EventProps) => {
 
   useEffect(() => {
     if (props.useApi) {
-      fetch(
-        `https://localhost:8001/api/Event?Name=${props.eventName}`
-      )
+      fetch(`https://epop03mstrt6av4inte.dxcloud.episerver.net/api/Event?Name=${props.eventName}`)
         .then((res) => res.json())
         .then(
           (result) => {
@@ -47,54 +43,24 @@ const Event = (props: EventProps) => {
           // instead of a catch() block so that we don't swallow
           // exceptions from actual bugs in components.
           (error) => {
-            if (props.eventType === "icon") {
-              const eventError: EventContent = {
-                header: "Error",
-                body: "Event could not be found",
-              };
-              setEvent(eventError);
-            } else if (props.eventType === "preview") {
-              const eventError: EventContent = {
-                header: "Error",
-                body: "Event could not be found",
-                image: "error",
-              };
-              setEvent(eventError);
-            } else {
-              const CardEventTemp: EventContent = {
-                header: "Error",
-                cardDescription: "Error",
-                image: "error",
-                buttonUrl: "error"
-              };
-              setEvent(CardEventTemp);
-            }
+            const CardEventTemp: EventContent = {
+              header: "Error",
+              cardDescription: "Error",
+              image: "error",
+              buttonUrl: "error",
+            };
+            setEvent(CardEventTemp);
           }
         );
     } else {
-      if (props.eventType === "icon") {
-        const eventTemp: EventContent = {
-          header: props.title,
-          body: props.date,
-        };
-        setEvent(eventTemp);
-      } else if (props.eventType === "preview") {
-        const eventTemp: EventContent = {
-          header: props.title,
-          body: props.date,
-          image: props.image,
-        };
-        setEvent(eventTemp);
-      } else {
-        const CardEventTemp: EventContent = {
-          header: props.title,
-          body: props.date,
-          cardDescription: props.basicCardDescription,
-          image: props.image,
-          buttonUrl: props.buttonUrl
-        };
-        setEvent(CardEventTemp);
-      }
+      const CardEventTemp: EventContent = {
+        header: props.title,
+        body: props.date,
+        cardDescription: props.basicCardDescription,
+        image: props.image,
+        buttonUrl: props.buttonUrl,
+      };
+      setEvent(CardEventTemp);
     }
   }, [props]);
   if (props.eventType === "icon") {
