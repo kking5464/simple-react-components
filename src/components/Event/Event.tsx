@@ -33,7 +33,7 @@ const Event = (props: EventProps) => {
 
   useEffect(() => {
     if (props.useApi) {
-      fetch(`https://localhost:8001/api/Event?Name=${props.eventName}`)
+      fetch(`https://epop03mstrt6av4inte.dxcloud.episerver.net/api/Event?Name=${props.eventName}`)
         .then((res) => res.json())
         .then(
           (result) => {
