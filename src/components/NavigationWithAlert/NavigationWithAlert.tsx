@@ -1,9 +1,6 @@
-import React, { useState } from "react";
-import RuleDivider from "../RuleDivider";
-import SideNavigation from "../SideNavigation";
+import React from "react";
 import Alert from "../Alert";
 import Navigation from "../Navigation/Navigation";
-import "./Navigation.scss";
 
 export interface NavigationWithAlertProps {
 }
@@ -25,8 +22,9 @@ const NavigationWithAlert = (props: NavigationWithAlertProps) => {
       ]}
     />
     <Alert 
-      header="Words"
+      header="Store is closing at 6:00 pm today for inventory"
       alertIconName="info-filled"
+    //Configurable
     />
     </>
   );

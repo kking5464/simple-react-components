@@ -8,6 +8,7 @@ export { default as FullWidthImage } from "./FullWidthImage";
 export { default as HeadingAndText } from "./HeadingAndText";
 export { default as SystemIcon } from "./SystemIcon";
 export { default as Navigation } from "./Navigation";
+export { default as NavigationWithAlert} from "./NavigationWithAlert";
 export { default as RuleDivider } from "./RuleDivider";
 export { default as SideNavigation } from "./SideNavigation";
 export { default as SideNavigationLink } from "./SideNavigationLink";
