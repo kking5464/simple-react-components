@@ -54,34 +54,9 @@ EventStory.argTypes = {
     options: ["card", "preview", "icon"],
     description: "What type of event block",
   },
-  basicCardTitleColor: {
-    name: "Title Color",
-    description: "Title text color",
-    options: ["gray", "red", "blue"],
-    control: {
-      type: "select",
-      labels: {
-        gray: "Gray",
-        red: "Red",
-        blue: "Blue",
-      },
-    },
-    table: {
-      category: "Card",
-      subcategory: "Title",
-    },
-  },
   basicCardDescription: {
     name: "Description",
     control: { type: "text" },
-    table: {
-      category: "Card",
-      subcategory: "Text",
-    },
-  },
-  basicCardUseButton: {
-    name: "Use Button",
-    control: { type: "boolean" },
     table: {
       category: "Card",
     },
@@ -93,16 +68,22 @@ EventStory.argTypes = {
       category: "Event Info",
     },
   },
+  buttonUrl: {
+    name: "Button Url",
+    control: { type: "text" },
+    table: {
+      category: "Card",
+    },
+  },
 };
 EventStory.args = {
   eventType: "card",
   eventName: "EventTest",
   title: "Default Title",
   date: "Tuesday, November the 15th",
+  buttonUrl: "google.com",
   useApi: false,
-  basicCardTitleColor: "gray",
   basicCardDescription: "In the back office at 10:00 AM",
-  basicCardUseButton: true,
   image:
     "https://images.unsplash.com/photo-1508184585643-6001cf47a1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80",
 };

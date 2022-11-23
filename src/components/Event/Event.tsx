@@ -12,11 +12,12 @@ export interface EventProps {
   image?: string;
   date?: string;
   title?: string;
+  buttonUrl?: string;
+
 
   //BasicCard Props
   basicCardDescription?: string;
-  basicCardUseButton?: boolean;
-  basicCardTitleColor?: string;
+  
 }
 
 interface EventContent {
@@ -25,12 +26,8 @@ interface EventContent {
 
   image?: string;
 
-  cardSubtitle?: string;
   cardDescription?: string;
-  cardUseButton?: boolean;
-  cardCenterText?: false;
-  cardSmallTitles?: false;
-  cardTitleColor?: string;
+  buttonUrl?: string;
 }
 
 const Event = (props: EventProps) => {
@@ -39,7 +36,7 @@ const Event = (props: EventProps) => {
   useEffect(() => {
     if (props.useApi) {
       fetch(
-        `https://epop03mstrt6av4inte.dxcloud.episerver.net/api/Event?Name=${props.eventName}`
+        `https://localhost:8001/api/Event?Name=${props.eventName}`
       )
         .then((res) => res.json())
         .then(
@@ -66,13 +63,9 @@ const Event = (props: EventProps) => {
             } else {
               const CardEventTemp: EventContent = {
                 header: "Error",
-                cardSubtitle: "Error",
                 cardDescription: "Error",
                 image: "error",
-                cardUseButton: false,
-                cardCenterText: false,
-                cardSmallTitles: false,
-                cardTitleColor: "red",
+                buttonUrl: "error"
               };
               setEvent(CardEventTemp);
             }
@@ -98,8 +91,7 @@ const Event = (props: EventProps) => {
           body: props.date,
           cardDescription: props.basicCardDescription,
           image: props.image,
-          cardUseButton: props.basicCardUseButton,
-          cardTitleColor: props.basicCardTitleColor,
+          buttonUrl: props.buttonUrl
         };
         setEvent(CardEventTemp);
       }
@@ -135,15 +127,15 @@ const Event = (props: EventProps) => {
         title={event?.header}
         subtitle={event?.body}
         copy={event?.cardDescription}
-        buttonLabel={"More Info"}
-        buttonType={"primary"}
-        buttonColor={"red"}
-        buttonUrl={"test"}
+        buttonLabel="More Info"
+        buttonType="primary"
+        buttonColor="red"
+        buttonUrl={event?.buttonUrl}
         imageURL={event?.image}
-        useButton={event?.cardUseButton}
+        useButton
         centerText={false}
         smallTitles={false}
-        titleColor={event?.cardTitleColor}
+        titleColor="red"
       />
     );
   }
