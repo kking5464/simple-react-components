@@ -1,0 +1,177 @@
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 0 1px 11px 0px rgb(91 103 112 / 0.3);
+    padding: 16px 20px;
+    position: fixed;
+    top: 0;
+    width: calc(100% - 40px);
+    z-index: 2;
+    left: 0;
+
+    &__logo {
+        &-link {
+            height: 40px;
+            display: flex;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+
+        &-profile {
+            margin-right: 20px;
+
+            &-button {
+                height: 40px;
+                display: flex;
+                border: none;
+                background-color: transparent;
+
+                &:hover {
+                    cursor: pointer;
+                    transition: opacity 200ms ease-in-out;
+                    opacity: 0.7;
+                }
+            }
+
+            &-image {
+                border-radius: 50%;
+                width: 40px;
+                object-fit: cover;
+                max-height: 100%;
+                height: 100%;
+            }
+
+            /* Dropdown Content (Hidden by Default) */
+            &-content {
+                display: block;
+                position: absolute;
+                background-color: white;
+                min-width: 260px;
+                box-shadow: 0 0 6px 3px rgb(0 0 0 / 0.1);
+                z-index: 1;
+                right: 70px;
+                top: 60px;
+                opacity: 0;
+                visibility: hidden;
+                border-radius: 3px;
+                padding: 12px 0;
+                transition: visibility 0s, opacity 0.5s ease-in-out;
+
+                &--open {
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                &-link {
+                    color: #004f71;
+                    padding: 18px 24px;
+                    text-decoration: none;
+                    display: block;
+                    font-family: 'Apercu Pro', 'Lato', sans-serif;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: normal;
+                    letter-spacing: 0.5px;
+                    line-height: 24px;
+                    transition: color 0.3s;
+
+                    &:hover {
+                        color: #1e86b3;
+                    }
+                }
+
+                &-location {
+                    padding: 24px;
+
+                    &-name {
+                        font-family: 'Apercu Pro', 'Lato', sans-serif;
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: normal;
+                        letter-spacing: 0.5px;
+                        line-height: 24px;
+                        color: #5b6770;
+                        margin: 0;
+                    }
+
+                    &-link {
+                        color: #004f71;
+                        font-family: 'Apercu Pro', 'Lato', sans-serif;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: normal;
+                        letter-spacing: 0.5px;
+                        line-height: 24px;
+                        transition: color 0.3s;
+
+                        &:hover {
+                            color: #1e86b3;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 28px;
+            width: 32px;
+            margin: auto;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &--open {
+                .navigation__buttons-toggle-bar {
+                    &:nth-of-type(1) {
+                        transform: rotate(45deg);
+                        transform-origin: top left;
+                        width: 36px;
+                    }
+
+                    &:nth-of-type(2) {
+                        transform-origin: center;
+                        width: 0;
+                    }
+
+                    &:nth-of-type(3) {
+                        transform: rotate(-45deg);
+                        transform-origin: bottom left;
+                        width: 36px;
+                    }
+                }
+            }
+
+            &-bar {
+                height: 3px;
+                width: 100%;
+                background-color: #5b6770;
+                transition: all 100ms ease-in-out;
+                border-radius: 3px;
+            }
+        }
+    }
+
+    &__screen {
+        opacity: 0;
+        transition: opacity 200ms ease-in-out;
+        z-index: 1;
+
+        &--open {
+            opacity: 1;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #5b6770c4;
+        }
+    }
+}
