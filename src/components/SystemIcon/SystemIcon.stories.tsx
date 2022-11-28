@@ -59,7 +59,8 @@ SystemIconStory.argTypes = {
       labels: {
         'gray': 'Gray',
         'red': 'Red',
-        'blue': 'Blue'
+        'blue': 'Blue',
+        'white': 'White',
       },
     },
   }
