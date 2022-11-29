@@ -1,6 +1,6 @@
 {
   "name": "@hannah.walsh/simple-react-components",
-  "version": "0.1.36",
+  "version": "0.1.37",
   "description": "A simple template for a custom React component library",
   "scripts": {
     "rollup": "rollup -c",
