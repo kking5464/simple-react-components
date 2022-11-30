@@ -15,11 +15,13 @@ export interface BasicCardProps {
   centerText?: boolean;
   smallTitles?: boolean;
   titleColor?: string;
+  marginTop?: string;
+  marginBottom?: string;
 }
 
 const BasicCard = (props: BasicCardProps) => {
   return (
-    <div className="basic-card">
+    <div className={`basic-card ${props.marginTop ? `mt-${props.marginTop}` : ''} ${props.marginBottom ? `mb-${props.marginBottom}` : ''}`}>
       {props.imageURL ? <img data-epi-edit="Image" src={props.imageURL} /> : ''}
       <div className={`basic-card__content ${props.centerText ? 'basic-card__content--center' : ''} ${props.smallTitles ? 'basic-card__content--small-titles' : ''}`}>
         {props.title ? <h1 className={`basic-card__content-title ${props.titleColor ? 'basic-card__content-title--' + props.titleColor : ''}`} data-epi-edit="Title">{props.title}</h1> : ''}

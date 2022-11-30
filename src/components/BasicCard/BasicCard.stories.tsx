@@ -126,6 +126,40 @@ BasicCardStory.argTypes = {
       category: 'Text',
     },
   },
+  marginTop: {
+    name: 'Margin Top',
+    description: 'Spacing on top of card',
+    options: ['', 'sm', 'md', 'lg'],
+    control: {
+      type: 'select',
+      labels: {
+        '': '',
+        'sm': 'Small',
+        'md': 'Medium',
+        'lg': 'Large'
+      },
+    },
+    table: {
+      category: 'Spacing',
+    },
+  },
+  marginBottom: {
+    name: 'Margin Bottom',
+    description: 'Spacing on bottom of card',
+    options: ['', 'sm', 'md', 'lg'],
+    control: {
+      type: 'select',
+      labels: {
+        '': '',
+        'sm': 'Small',
+        'md': 'Medium',
+        'lg': 'Large'
+      },
+    },
+    table: {
+      category: 'Spacing',
+    },
+  }
 }
 BasicCardStory.args = {
   title: 'Primary Title',
@@ -140,6 +174,7 @@ BasicCardStory.args = {
   centerText: false,
   smallTitles: false,
   imageURL: 'https://images.unsplash.com/photo-1508184585643-6001cf47a1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
+  marginTop: '',
 };
 
 BasicCardStory.storyName = "Basic Card";

@@ -79,3 +79,31 @@
     }
   }
 }
+
+.mt {
+  &-sm {
+    margin-top: 8px;
+  }
+
+  &-md {
+    margin-top: 16px;
+  }
+
+  &-lg {
+    margin-top: 32px;
+  }
+}
+
+.mb {
+  &-sm {
+    margin-bottom: 8px;
+  }
+
+  &-md {
+    margin-bottom: 16px;
+  }
+
+  &-lg {
+    margin-bottom: 32px;
+  }
+}
