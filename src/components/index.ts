@@ -1,4 +1,5 @@
 export { default as Accordion } from "./Accordion";
+export { default as Alert } from "./Alert";
 export { default as Banner } from "./Banner";
 export { default as BasicCard } from "./BasicCard";
 export { default as BrandIcon } from "./BrandIcon";
