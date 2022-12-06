@@ -44,14 +44,16 @@ BrandIconStory.argTypes = {
     options: [
       'gray',
       'red',
-      'blue'
+      'blue',
+      'teal'
     ],
     control: {
       type: 'select',
       labels: {
         'gray': 'Gray',
         'red': 'Red',
-        'blue': 'Blue'
+        'blue': 'Blue',
+        'teal': 'Teal'
       },
     },
   }

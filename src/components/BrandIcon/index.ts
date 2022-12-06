@@ -1,1 +1,1 @@
-export { default } from "./BrandIcon.stories";
+export { default } from "./BrandIcon";
