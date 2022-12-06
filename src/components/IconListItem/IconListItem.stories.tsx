@@ -46,7 +46,9 @@ IconListItemStory.argTypes = {
       'occasions_collaboration',
       'occasions_disco',
       'restaurant_team-member',
-      'technology_tablet-and-desktop'
+      'technology_tablet-and-desktop',
+      'occasions_celebration',
+      'occasions_celebration-2'
     ],
     control: {
       type: 'select',
@@ -54,6 +56,8 @@ IconListItemStory.argTypes = {
         'occasions_birthday-cake' : 'Occasions | Birthday Cake',
         'occasions_calendar' : 'Occasions | Calendar',
         'occasions_collaboration' : 'Occasions | Collaboration',
+        'occasions_celebration' : 'Occasions | Celebration',
+        'occasions_celebration-2' : 'Occasions | Celebration 2',
         'occasions_disco' : 'Occasions | Disco',
         'restaurant_team-member' : 'Restaurant | Team Member',
         'technology_tablet-and-desktop': 'Technology | Tablet and Desktop'
@@ -81,7 +85,7 @@ IconListItemStory.argTypes = {
   }
 };
 IconListItemStory.args = {
-  iconName: "occasions_disco",
+  iconName: "occasions_celebration-2",
   iconColor: "teal",
   header: "We hire top talent",
   headerColor: "gray",
