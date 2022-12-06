@@ -21,6 +21,8 @@ BrandIconStory.argTypes = {
     options: [
       'occasions_birthday-cake',
       'occasions_calendar',
+      'occasions_celebration',
+      'occasions_celebration-2',
       'occasions_collaboration',
       'occasions_disco',
       'restaurant_team-member',
@@ -31,6 +33,8 @@ BrandIconStory.argTypes = {
       labels: {
         'occasions_birthday-cake' : 'Occasions | Birthday Cake',
         'occasions_calendar' : 'Occasions | Calendar',
+        'occasions_celebration' : 'Occasions | Celebration',
+        'occasions_celebration-2' : 'Occasions | Celebration 2',
         'occasions_collaboration' : 'Occasions | Collaboration',
         'occasions_disco' : 'Occasions | Disco',
         'restaurant_team-member' : 'Restaurant | Team Member',
