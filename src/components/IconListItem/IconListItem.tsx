@@ -1,7 +1,6 @@
 import React from "react";
 import "./IconListItem.scss";
 import BrandIcon from "../BrandIcon";
-import "./IconListItem.scss";
 
 export interface IconListItemProps {
   header: string;
