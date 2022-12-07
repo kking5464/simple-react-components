@@ -89,7 +89,8 @@ IconListStory.argTypes = {
       'restaurant_team-member',
       'technology_tablet-and-desktop',
       'occasions_celebration',
-      'occasions_celebration-2'
+      'occasions_celebration-2',
+      ''
     ],
     control: {
       type: 'select',
@@ -101,7 +102,8 @@ IconListStory.argTypes = {
         'occasions_celebration-2' : 'Occasions | Celebration 2',
         'occasions_disco' : 'Occasions | Disco',
         'restaurant_team-member' : 'Restaurant | Team Member',
-        'technology_tablet-and-desktop': 'Technology | Tablet and Desktop'
+        'technology_tablet-and-desktop': 'Technology | Tablet and Desktop',
+        '': 'None'
       },
     },
     table: {
@@ -173,7 +175,8 @@ IconListStory.argTypes = {
       'restaurant_team-member',
       'technology_tablet-and-desktop',
       'occasions_celebration',
-      'occasions_celebration-2'
+      'occasions_celebration-2',
+      ''
     ],
     control: {
       type: 'select',
@@ -185,7 +188,8 @@ IconListStory.argTypes = {
         'occasions_celebration-2' : 'Occasions | Celebration 2',
         'occasions_disco' : 'Occasions | Disco',
         'restaurant_team-member' : 'Restaurant | Team Member',
-        'technology_tablet-and-desktop': 'Technology | Tablet and Desktop'
+        'technology_tablet-and-desktop': 'Technology | Tablet and Desktop',
+        '': 'None'
       },
     },
     table: {
@@ -257,7 +261,8 @@ IconListStory.argTypes = {
       'restaurant_team-member',
       'technology_tablet-and-desktop',
       'occasions_celebration',
-      'occasions_celebration-2'
+      'occasions_celebration-2',
+      ''
     ],
     control: {
       type: 'select',
@@ -269,7 +274,8 @@ IconListStory.argTypes = {
         'occasions_celebration-2' : 'Occasions | Celebration 2',
         'occasions_disco' : 'Occasions | Disco',
         'restaurant_team-member' : 'Restaurant | Team Member',
-        'technology_tablet-and-desktop': 'Technology | Tablet and Desktop'
+        'technology_tablet-and-desktop': 'Technology | Tablet and Desktop',
+        '': 'None'
       },
     },
     table: {
@@ -341,7 +347,8 @@ IconListStory.argTypes = {
       'restaurant_team-member',
       'technology_tablet-and-desktop',
       'occasions_celebration',
-      'occasions_celebration-2'
+      'occasions_celebration-2',
+      ''
     ],
     control: {
       type: 'select',
@@ -353,7 +360,8 @@ IconListStory.argTypes = {
         'occasions_celebration-2' : 'Occasions | Celebration 2',
         'occasions_disco' : 'Occasions | Disco',
         'restaurant_team-member' : 'Restaurant | Team Member',
-        'technology_tablet-and-desktop': 'Technology | Tablet and Desktop'
+        'technology_tablet-and-desktop': 'Technology | Tablet and Desktop',
+        '': 'None'
       },
     },
     table: {
