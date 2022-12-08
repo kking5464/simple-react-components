@@ -15,9 +15,9 @@ const Template: ComponentStory<typeof IconList> = (args) => <IconList {...args} 
 export const IconListStory = Template.bind({});
 IconListStory.argTypes = {
   title: {
-    name: "Title",
-    control: { type: "text"},
-    description: "Icon list title",
+    name: 'Title',
+    control: { type: 'text'},
+    description: 'Icon list title',
   },
   titleColor: {
     name: 'Title Color',
@@ -47,11 +47,11 @@ IconListStory.argTypes = {
     },
   },
   iconListItem1Header: {
-    name: "Header",
-    control: { type: "text" },
-    description: "Icon list item header",
+    name: 'Header',
+    control: { type: 'text' },
+    description: 'Icon list item header',
     table: {
-      category: "List Item 1",
+      category: 'List Item 1',
     },
   },
   iconListItem1HeaderColor: {
@@ -67,15 +67,15 @@ IconListStory.argTypes = {
       },
     },
     table: {
-      category: "List Item 1",
+      category: 'List Item 1',
     },
   },
   iconListItem1Subheader: {
-    name: "Subheader",
-    control: { type: "text" },
-    description: "Icon list item subheader",
+    name: 'Subheader',
+    control: { type: 'text' },
+    description: 'Icon list item subheader',
     table: {
-      category: "List Item 1",
+      category: 'List Item 1',
     },
   },
   iconListItem1IconName: {
@@ -107,7 +107,7 @@ IconListStory.argTypes = {
       },
     },
     table: {
-      category: "List Item 1",
+      category: 'List Item 1',
     },
   },
   iconListItem1IconColor: {
@@ -129,15 +129,15 @@ IconListStory.argTypes = {
       },
     },
     table: {
-      category: "List Item 1",
+      category: 'List Item 1',
     },
   },
   iconListItem2Header: {
-    name: "Header",
-    control: { type: "text" },
-    description: "Icon list item header",
+    name:'Header',
+    control: { type: 'text' },
+    description: 'Icon list item header',
     table: {
-      category: "List Item 2",
+      category: 'List Item 2',
     },
   },
   iconListItem2HeaderColor: {
@@ -153,15 +153,15 @@ IconListStory.argTypes = {
       },
     },
     table: {
-      category: "List Item 2",
+      category: 'List Item 2',
     },
   },
   iconListItem2Subheader: {
-    name: "Subheader",
-    control: { type: "text" },
-    description: "Icon list item subheader",
+    name: 'Subheader',
+    control: { type: 'text' },
+    description: 'Icon list item subheader',
     table: {
-      category: "List Item 2",
+      category: 'List Item 2',
     },
   },
   iconListItem2IconName: {
@@ -193,7 +193,7 @@ IconListStory.argTypes = {
       },
     },
     table: {
-      category: "List Item 2",
+      category: 'List Item 2',
     },
   },
   iconListItem2IconColor: {
@@ -215,15 +215,15 @@ IconListStory.argTypes = {
       },
     },
     table: {
-      category: "List Item 2",
+      category: 'List Item 2',
     },
   },
   iconListItem3Header: {
-    name: "Header",
-    control: { type: "text" },
-    description: "Icon list item header",
+    name: 'Header',
+    control: { type: 'text' },
+    description: 'Icon list item header',
     table: {
-      category: "List Item 3",
+      category: 'List Item 3',
     },
   },
   iconListItem3HeaderColor: {
@@ -239,15 +239,15 @@ IconListStory.argTypes = {
       },
     },
     table: {
-      category: "List Item 3",
+      category: 'List Item 3',
     },
   },
   iconListItem3Subheader: {
-    name: "Subheader",
-    control: { type: "text" },
-    description: "Icon list item subheader",
+    name: 'Subheader',
+    control: { type: 'text' },
+    description: 'Icon list item subheader',
     table: {
-      category: "List Item 3",
+      category: 'List Item 3',
     },
   },
   iconListItem3IconName: {
@@ -279,7 +279,7 @@ IconListStory.argTypes = {
       },
     },
     table: {
-      category: "List Item 3",
+      category: 'List Item 3',
     },
   },
   iconListItem3IconColor: {
@@ -301,15 +301,15 @@ IconListStory.argTypes = {
       },
     },
     table: {
-      category: "List Item 3",
+      category: 'List Item 3',
     },
   },
   iconListItem4Header: {
-    name: "Header",
-    control: { type: "text" },
-    description: "Icon list item header",
+    name: 'Header',
+    control: { type: 'text' },
+    description: 'Icon list item header',
     table: {
-      category: "List Item 4",
+      category: 'List Item 4',
     },
   },
   iconListItem4HeaderColor: {
@@ -325,15 +325,15 @@ IconListStory.argTypes = {
       },
     },
     table: {
-      category: "List Item 4",
+      category: 'List Item 4',
     },
   },
   iconListItem4Subheader: {
-    name: "Subheader",
-    control: { type: "text" },
-    description: "Icon list item subheader",
+    name: 'Subheader',
+    control: { type: 'text' },
+    description: 'Icon list item subheader',
     table: {
-      category: "List Item 4",
+      category: 'List Item 4',
     },
   },
   iconListItem4IconName: {
@@ -365,7 +365,7 @@ IconListStory.argTypes = {
       },
     },
     table: {
-      category: "List Item 4",
+      category: 'List Item 4',
     },
   },
   iconListItem4IconColor: {
@@ -387,7 +387,7 @@ IconListStory.argTypes = {
       },
     },
     table: {
-      category: "List Item 4",
+      category: 'List Item 4',
     },
   }
 };
