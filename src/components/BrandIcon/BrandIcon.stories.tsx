@@ -26,7 +26,8 @@ BrandIconStory.argTypes = {
       'occasions_collaboration',
       'occasions_disco',
       'restaurant_team-member',
-      'technology_tablet-and-desktop'
+      'technology_tablet-and-desktop',
+      'business_quote'
     ],
     control: {
       type: 'select',
@@ -38,7 +39,8 @@ BrandIconStory.argTypes = {
         'occasions_collaboration' : 'Occasions | Collaboration',
         'occasions_disco' : 'Occasions | Disco',
         'restaurant_team-member' : 'Restaurant | Team Member',
-        'technology_tablet-and-desktop': 'Technology | Tablet and Desktop'
+        'technology_tablet-and-desktop': 'Technology | Tablet and Desktop',
+        'business_quote': 'Business | Quote'
       },
     },
   },

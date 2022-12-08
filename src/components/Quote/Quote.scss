@@ -1,0 +1,50 @@
+.quote {
+  padding: 108px 16px;
+  display: flex;
+  position: relative;
+
+  @media screen and (min-width: 550px) {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .brand-icon {
+    position: absolute;
+    top: 60px;
+    left: 16px;
+  }
+
+  &__quote-text {
+    color: #37424A;
+    font-family: "Apercu Pro", "Lato", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    text-align: center;
+    margin: 0 0 24px;
+
+    &--red {
+      color: #dd0031;
+    }
+
+    &--blue {
+      color: #004f71;
+    }
+
+    &--teal {
+      color: #3EB1C8;
+    }
+  }
+
+  &__owner {
+    color: #80878C;
+    font-family: "Apercu Pro", "Lato", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    margin: 0;
+  }
+}

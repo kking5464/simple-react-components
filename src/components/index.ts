@@ -15,4 +15,5 @@ export { default as NavigationWithAlert} from "./NavigationWithAlert";
 export { default as RuleDivider } from "./RuleDivider";
 export { default as SideNavigation } from "./SideNavigation";
 export { default as SideNavigationLink } from "./SideNavigationLink";
+export { default as Quote } from "./Quote";
 export { default as Video } from "./Video";
