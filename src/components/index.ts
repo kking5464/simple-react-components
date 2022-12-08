@@ -7,6 +7,7 @@ export { default as Button } from "./Button";
 export { default as Event } from "./Event";
 export { default as FullWidthImage } from "./FullWidthImage";
 export { default as HeadingAndText } from "./HeadingAndText";
+export { default as IconList } from "./IconList";
 export { default as IconListItem } from "./IconListItem";
 export { default as SystemIcon } from "./SystemIcon";
 export { default as Navigation } from "./Navigation";

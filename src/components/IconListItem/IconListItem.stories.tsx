@@ -15,9 +15,9 @@ const Template: ComponentStory<typeof IconListItem> = (args) => <IconListItem {.
 export const IconListItemStory = Template.bind({});
 IconListItemStory.argTypes = {
   header: {
-    name: "Header",
-    control: { type: "text" },
-    description: "Icon list item header",
+    name: 'Header',
+    control: { type: 'text' },
+    description: 'Icon list item header',
   },
   headerColor: {
     name: 'Header Color',
@@ -33,9 +33,9 @@ IconListItemStory.argTypes = {
     },
   },
   subheader: {
-    name: "Subheader",
-    control: { type: "text" },
-    description: "Icon list item subheader",
+    name: 'Subheader',
+    control: { type: 'text' },
+    description: 'Icon list item subheader',
   },
   iconName: {
     name: 'Icon Name',
