@@ -19,7 +19,7 @@ const Quote = (props: QuoteProps) => {
           {props.quoteText}
         </h2>
         <p className="quote__owner">
-          {props.owner}
+          - {props.owner}
         </p>
       </div>
     </div>

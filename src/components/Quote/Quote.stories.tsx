@@ -82,7 +82,7 @@ QuoteStory.args = {
   iconColor: "gray",
   quoteText: "Serving others helps us to focus on our relationships with our customers and each other.",
   quoteColor: "blue",
-  owner: "- Jeremiah Cillpam, CEO",
+  owner: "Jeremiah Cillpam, CEO",
 };
 
 QuoteStory.storyName = "Quote";
