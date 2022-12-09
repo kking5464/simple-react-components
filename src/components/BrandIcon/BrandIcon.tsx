@@ -9,6 +9,8 @@ import OccasionsCollaborationIcon from '../../public/icons/brand-icons/occasions
 import OccasionsDiscoIcon from '../../public/icons/brand-icons/occasions_disco.svg';
 import RestaurantTeamMemberIcon from '../../public/icons/brand-icons/restaurant_team-member.svg';
 import TechnologyTabletAndDesktopIcon from '../../public/icons/brand-icons/technology_tablet-and-desktop.svg';
+import BusinessQuoteIcon from '../../public/icons/brand-icons/business_quote.svg';
+
 
 export interface BrandIconProps {
   name?: string;
@@ -34,6 +36,8 @@ const BrandIcon = (props: BrandIconProps) => {
         return <RestaurantTeamMemberIcon />;
       case 'technology_tablet-and-desktop':
         return <TechnologyTabletAndDesktopIcon />;
+      case 'business_quote':
+        return <BusinessQuoteIcon />;
       default:
         return "";
     }
