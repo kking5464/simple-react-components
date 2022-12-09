@@ -24,6 +24,7 @@ BrandIconStory.argTypes = {
       'occasions_celebration',
       'occasions_celebration-2',
       'occasions_collaboration',
+      'occasions_collaboration-2',
       'occasions_disco',
       'restaurant_team-member',
       'technology_tablet-and-desktop'
@@ -36,6 +37,7 @@ BrandIconStory.argTypes = {
         'occasions_celebration' : 'Occasions | Celebration',
         'occasions_celebration-2' : 'Occasions | Celebration 2',
         'occasions_collaboration' : 'Occasions | Collaboration',
+        'occasions_collaboration-2' : 'Occasions | Collaboration 2',
         'occasions_disco' : 'Occasions | Disco',
         'restaurant_team-member' : 'Restaurant | Team Member',
         'technology_tablet-and-desktop': 'Technology | Tablet and Desktop'
@@ -49,7 +51,8 @@ BrandIconStory.argTypes = {
       'gray',
       'red',
       'blue',
-      'teal'
+      'teal',
+      'white'
     ],
     control: {
       type: 'select',
@@ -57,7 +60,8 @@ BrandIconStory.argTypes = {
         'gray': 'Gray',
         'red': 'Red',
         'blue': 'Blue',
-        'teal': 'Teal'
+        'teal': 'Teal',
+        'white': 'White'
       },
     },
   }
