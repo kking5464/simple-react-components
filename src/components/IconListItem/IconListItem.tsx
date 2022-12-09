@@ -16,9 +16,9 @@ const IconListItem = (props: IconListItemProps) => {
     <BrandIcon name={props.iconName} color={props.iconColor} />
     <div className="icon-list-item__text-container">
       {props.header ? (
-        <h2 className={`icon-list-item__header ${props.headerColor ? 'icon-list-item__header--' + props.headerColor : ''}`}>
+        <h3 className={`icon-list-item__header ${props.headerColor ? 'icon-list-item__header--' + props.headerColor : ''}`}>
           {props.header}
-        </h2>
+        </h3>
       ):''}
       {props.subheader ? <p className="icon-list-item__subheader">{props.subheader}</p> : ''}
     </div>

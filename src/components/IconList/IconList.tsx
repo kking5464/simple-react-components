@@ -37,9 +37,9 @@ const IconList = (props: IconListProps) => {
   return (
   <div className={`icon-list ${props.backgroundColor ? 'icon-list--' + props.backgroundColor : ''}`}>
     {props.title ? (
-      <h1 className={`icon-list__title ${props.titleColor ? 'icon-list__title--' + props.titleColor : ''}`}>
+      <h2 className={`icon-list__title ${props.titleColor ? 'icon-list__title--' + props.titleColor : ''}`}>
        {props.title}
-      </h1>
+      </h2>
     ):''}
     <div className="icon-list__item-container">
       <IconListItem header={props.iconListItem1Header} headerColor={props.iconListItem1HeaderColor} subheader={props.iconListItem1Subheader} iconName={props.iconListItem1IconName} iconColor={props.iconListItem1IconColor} />
