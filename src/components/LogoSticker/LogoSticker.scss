@@ -1,26 +1,19 @@
 .logo-sticker {
-    margin: auto;
-    display: flex;
-    position: absolute;
-    top: -4px;
-    border-radius: 50%;
-    border-width: 0;
-    width: 70px;
-    height: 70px;
+  position: absolute;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  
+  &--tan {
+    background-color: rgba(245, 227, 204, 0.4);
+  }
 
+  &--lightTan {
+    background-color: rgba(245, 227, 204, 0.15);
+  }
 
-    @media screen and (min-width: 550px) {
-        max-width: 800px;
-        position: relative;
-      }
-
-      &--tan {
-        background-color: rgba(245, 227, 204, 0.4);
-      }
-    
-      &--lightTan {
-        background-color: rgba(245, 227, 204, 0.15);
-      }
-    }
-
-    
+  .logo-icon {
+    margin-left: -2px;
+    margin-top: -2px;
+  }
+}

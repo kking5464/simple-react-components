@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import LogoSticker from "./LogoSticker";
 
 export default {
-  title: "React Component Library/LogoSticker",
+  title: "React Component Library/Sticker/Logo Sticker",
   component: LogoSticker,
 } as ComponentMeta<typeof LogoSticker>;
 
@@ -25,28 +25,9 @@ LogoStickerStory.argTypes = {
       },
     },
   },
-  iconColor: {
-    name: 'Icon Color',
-    description: 'Icon color',
-    options: [
-      'gray',
-      'red',
-      'blue',
-      'teal'
-    ],
-    control: {
-      type: 'select',
-      labels: {
-        'gray': 'Gray',
-        'red': 'Red',
-        'blue': 'Blue',
-        'teal': 'Teal'
-      },
-    },
-  },
-  backgroundColor: {
-    name: 'Background Color',
-    description: 'Background color',
+  stickerColor: {
+    name: 'Sticker Color',
+    description: 'Sticker color',
     options: ['white', 'tan', 'lightTan'],
     control: {
       type: 'select',
@@ -60,7 +41,7 @@ LogoStickerStory.argTypes = {
 };
 LogoStickerStory.args = {
   iconName: "cfa-tagline",
-  backgroundColor: "tan"
+  stickerColor: "tan"
 };
 
 LogoStickerStory.storyName = "Logo Sticker";

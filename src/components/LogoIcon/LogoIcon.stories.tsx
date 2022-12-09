@@ -24,7 +24,7 @@ LogoIconStory.argTypes = {
     control: {
       type: 'select',
       labels: {
-        'cfa-tagline' : 'Logo - CFA Tagline'
+        'cfa-tagline': 'Logo - CFA Tagline'
       },
     },
   },

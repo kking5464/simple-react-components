@@ -1,5 +1,4 @@
 import React from "react";
-import "./LogoIcon.scss";
 
 import CfaTaglineIcon from '../../public/icons/logo-icons/cfa-tagline.svg';
 
@@ -11,14 +10,14 @@ const LogoIcon = (props: LogoIconProps) => {
   function renderIcon(iconName: string) {
     switch (iconName) {
       case 'cfa-tagline':
-        return <CfaTaglineIcon/>;
+        return <CfaTaglineIcon />;
       default:
         return "";
     }
   }
 
   return (
-    <div>
+    <div className="logo-icon">
       {props.name ? renderIcon(props.name) : ''}
     </div>
   );
