@@ -29,19 +29,13 @@ IconStickerStory.argTypes = {
         name: 'Icon Color',
         description: 'Icon color',
         options: [
-            'gray',
             'red',
-            'blue',
-            'teal',
             'white'
         ],
         control: {
             type: 'select',
             labels: {
-                'gray': 'Gray',
                 'red': 'Red',
-                'blue': 'Blue',
-                'teal': 'Teal',
                 'white': 'White'
             },
         },
@@ -49,14 +43,14 @@ IconStickerStory.argTypes = {
     stickerColor: {
         name: 'Sticker Color',
         description: 'Sticker color',
-        options: ['white', 'tan', 'lightTan', 'red'],
+        options: ['primaryRed', 'secondaryBlue', 'secondaryTeal', 'tertiaryTan'],
         control: {
             type: 'select',
             labels: {
-                'white': 'White',
-                'tan': 'Tan',
-                'lightTan': 'Light Tan',
-                'red': 'Red'
+                'primaryRed': 'Red',
+                'secondaryBlue': 'Blue',
+                'secondaryTeal': 'Teal',
+                'tertiaryTan': 'Tan'
             },
         },
     },
@@ -64,7 +58,7 @@ IconStickerStory.argTypes = {
 IconStickerStory.args = {
     iconName: "occasions_collaboration-2",
     iconColor: "white",
-    stickerColor: "red"
+    stickerColor: "primaryRed"
 };
 
 IconStickerStory.storyName = "Icon Sticker";

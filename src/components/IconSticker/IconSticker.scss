@@ -4,16 +4,20 @@
   width: 96px;
   height: 96px;
 
-  &--tan {
-    background-color: rgba(245, 227, 204, 0.4);
+  &--primaryRed {
+    background-color: #DD0031;
   }
 
-  &--lightTan {
-    background-color: rgba(245, 227, 204, 0.15);
+  &--secondaryBlue {
+    background-color: #004F71;
   }
 
-  &--red {
-    background-color: rgba(221, 0, 49, 1);
+  &--secondaryTeal {
+    background-color: #3EB1C8;
+  }
+  
+  &--tertiaryTan {
+    background-color: #F5E3CC;
   }
 
   .brand-icon {
