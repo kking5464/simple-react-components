@@ -3,13 +3,9 @@
   border-radius: 50%;
   width: 70px;
   height: 70px;
-  
-  &--tan {
-    background-color: rgba(245, 227, 204, 0.4);
-  }
-
-  &--lightTan {
-    background-color: rgba(245, 227, 204, 0.15);
+    
+  &--primaryWhite {
+    background-color: rgb(255, 255, 255);
   }
 
   .logo-icon {

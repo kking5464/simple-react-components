@@ -28,20 +28,18 @@ LogoStickerStory.argTypes = {
   stickerColor: {
     name: 'Sticker Color',
     description: 'Sticker color',
-    options: ['white', 'tan', 'lightTan'],
+    options: ['primaryWhite'],
     control: {
       type: 'select',
       labels: {
-        'white': 'White',
-        'tan': 'Tan',
-        'lightTan': 'Light Tan'
+        'primaryWhite': 'White',
       },
     },
   },
 };
 LogoStickerStory.args = {
   iconName: "cfa-tagline",
-  stickerColor: "tan"
+  stickerColor: "primaryWhite"
 };
 
 LogoStickerStory.storyName = "Logo Sticker";

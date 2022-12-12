@@ -1,0 +1,41 @@
+.image-with-stickers {
+    display: flex;
+    position: relative;
+    padding: 35px 0;
+    max-width: 832px;
+    margin: 0 auto;
+
+    @media screen and (min-width: 425px) {
+        padding: 35px 0 48px;
+    }
+
+    img {
+        height: 196px;
+        width: 100%;
+        max-width: 100%;
+        object-fit: cover;
+
+        @media screen and (min-width: 425px) {
+            height: 250px;
+        }
+
+        @media screen and (min-width: 550px) {
+            height: auto;
+            margin: auto;
+            max-width: 100%;
+            width: 832px;
+        }
+    }
+
+    .logo-sticker {
+        position: absolute;
+        left: 20px;
+        top: 0;
+    }
+
+    .icon-sticker {
+        position: absolute;
+        right: 16px;
+        bottom: 0;
+    }
+}
