@@ -10,18 +10,15 @@ export interface ImageWithStickersProps {
   bottomStickerName?: string;
   bottomStickerColor?: string;
   removeTopSticker?: boolean;
+  removeBottomSticker?: boolean;
 }
 
 const ImageWithStickers = (props: ImageWithStickersProps) => {
   return (
-    <div className={`image-with-stickers ${props.removeTopSticker ? `image-with-stickers--remove-space` : ''}`}>
+    <div className={`image-with-stickers ${props.removeTopSticker ? `image-with-stickers--remove-top-sticker` : ''} ${props.removeBottomSticker ? `image-with-stickers--remove-bottom-sticker` : ''}`}>
       <img src={props.imageSource} />
-      <div className="image-with-stickers__top-sticker">
-        <TopSticker iconName={props.topStickerName} color={props.topStickerColor} />
-      </div>
-      <div className="image-with-stickers__bottom-sticker">
-        <BottomSticker iconName={props.bottomStickerName} color={props.bottomStickerColor} />
-      </div>
+      {props.removeTopSticker ? "" : <TopSticker iconName={props.topStickerName} color={props.topStickerColor} />}
+      {props.removeBottomSticker ? "" : <BottomSticker iconName={props.bottomStickerName} color={props.bottomStickerColor} />}
     </div>
   );
 };

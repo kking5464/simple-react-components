@@ -21,7 +21,7 @@ ImageWithStickersStory.argTypes = {
     description: 'Source of image',
   },
   removeTopSticker: {
-    name: 'Remove top sticker space?',
+    name: 'Remove top sticker?',
     control: { type: 'boolean' },
     table: {
       category: 'Top Sticker',
@@ -58,6 +58,13 @@ ImageWithStickersStory.argTypes = {
     table: {
       category: 'Top Sticker',
     }
+  },
+  removeBottomSticker: {
+    name: 'Remove bottom sticker?',
+    control: { type: 'boolean' },
+    table: {
+      category: 'Bottom Sticker',
+    },
   },
   bottomStickerName: {
     name: 'Icon Name',
@@ -99,6 +106,7 @@ ImageWithStickersStory.args = {
   removeTopSticker: false,
   topStickerName: "cfa-tagline",
   topStickerColor: "1",
+  removeBottomSticker: false,
   bottomStickerName: "occasions_collaboration-2",
   bottomStickerColor: "1",
 };

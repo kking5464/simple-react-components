@@ -5,8 +5,12 @@
     max-width: 832px;
     margin: 0 auto;
 
-    &--remove-space {
-        margin-top: -35px;
+    &--remove-top-sticker {
+        padding-top: 0;
+    }
+
+    &--remove-bottom-sticker {
+        padding-bottom: 0;
     }
 
     img {
