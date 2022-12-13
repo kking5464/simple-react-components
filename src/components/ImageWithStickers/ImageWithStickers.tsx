@@ -1,27 +1,27 @@
 import React from "react";
 import "./ImageWithStickers.scss";
-import LogoSticker from "../LogoSticker";
-import IconSticker from "../IconSticker";
+import TopSticker from "../TopSticker";
+import BottomSticker from "../BottomSticker";
 
 export interface ImageWithStickersProps {
-  imageSource: string;
-  logoStickerIconName?: string;
-  logoStickerColor?: string;
-  iconStickerIconName?: string;
-  iconStickerIconColor?: string;
-  iconStickerColor?: string;
+  imageSource?: string;
+  topStickerName?: string;
+  topStickerColor?: string;
+  bottomStickerName?: string;
+  bottomStickerColor?: string;
+  removeTopSticker?: boolean;
 }
 
 const ImageWithStickers = (props: ImageWithStickersProps) => {
   return (
-    <div className="image-with-stickers">
+      <div className={`image-with-stickers ${props.removeTopSticker ? `image-with-stickers--remove-space` : ''}`}>
       <img src={props.imageSource} />
-    <div className="image-with-stickers__logo-sticker">
-      <LogoSticker iconName={props.logoStickerIconName} stickerColor={props.logoStickerColor}/>
-    </div>
-    <div className="image-with-stickers__icon-sticker">
-      <IconSticker iconName={props.iconStickerIconName} iconColor={props.iconStickerIconColor} stickerColor={props.iconStickerColor}/>
-    </div>
+      <div className="image-with-stickers__top-sticker">
+        <TopSticker iconName={props.topStickerName} color={props.topStickerColor} />
+      </div>
+      <div className="image-with-stickers__bottom-sticker">
+        <BottomSticker iconName={props.bottomStickerName} color={props.bottomStickerColor} />
+      </div>
     </div>
   );
 };
