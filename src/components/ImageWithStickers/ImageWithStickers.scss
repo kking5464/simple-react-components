@@ -6,12 +6,8 @@
     margin: 0 auto;
 
     &--remove-space {
-    margin-top: -35px;
+        margin-top: -35px;
     }
-
-    // @media screen and (min-width: 425px) {
-    //     padding: 35px 0 48px;
-    // }
 
     img {
         height: 196px;
@@ -43,4 +39,3 @@
         bottom: 0;
     }
 }
-

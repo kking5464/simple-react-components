@@ -14,7 +14,7 @@ export interface ImageWithStickersProps {
 
 const ImageWithStickers = (props: ImageWithStickersProps) => {
   return (
-      <div className={`image-with-stickers ${props.removeTopSticker ? `image-with-stickers--remove-space` : ''}`}>
+    <div className={`image-with-stickers ${props.removeTopSticker ? `image-with-stickers--remove-space` : ''}`}>
       <img src={props.imageSource} />
       <div className="image-with-stickers__top-sticker">
         <TopSticker iconName={props.topStickerName} color={props.topStickerColor} />
