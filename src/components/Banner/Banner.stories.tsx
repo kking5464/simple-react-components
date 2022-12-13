@@ -1,11 +1,11 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Banner from "./Banner";
+import Banner from './Banner';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "React Component Library/Banner",
+  title: 'React Component Library/Banner',
   component: Banner,
 } as ComponentMeta<typeof Banner>;
 
@@ -15,36 +15,36 @@ const Template: ComponentStory<typeof Banner> = (args) => <Banner {...args} />;
 export const BannerStory = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 BannerStory.argTypes = {
-  label: {
-    name: "Label",
-    control: { type: "text" },
-    description: "Banner label",
+  title: {
+    name: 'Title',
+    control: { type: 'text' },
+    description: 'Banner title',
   },
-  description: {
-    name: "Description",
-    control: { type: "text" },
-    description: "Banner description",
+  subtitle: {
+    name: 'Subtitle',
+    control: { type: 'text' },
+    description: 'Banner subtitle',
   },
   bannerName: {
-    name: "Banner Name",
-    control: { type: "text" },
-    description: "Banner trying to hit",
+    name: 'Banner Name',
+    control: { type: 'text' },
+    description: 'Banner trying to hit',
     table: {
-      category: "API",
+      category: 'API',
     },
   },
   useApi: {
-    name: "Use API?",
-    control: { type: "boolean" },
-    description: "using API or not",
+    name: 'Use API?',
+    control: { type: 'boolean' },
+    description: 'using API or not',
     table: {
-      category: "API",
+      category: 'API',
     },
   },
 };
 BannerStory.args = {
-  label: "label",
-  description: "description",
+  title: "We're here for one another.",
+  subtitle: "We are a team-obsessed and customer-focused organization.",
   bannerName: "BannerTest",
   useApi: false,
 };
