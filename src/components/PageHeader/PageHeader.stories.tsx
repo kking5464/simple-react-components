@@ -29,80 +29,87 @@ PageHeaderStory.argTypes = {
         name: 'Image Source',
         control: { type: 'text' },
         description: 'Source of image',
-    },
-    removeTopSticker: {
-        name: 'Remove top sticker space?',
+      },
+      removeTopSticker: {
+        name: 'Remove top sticker?',
         control: { type: 'boolean' },
         table: {
-            category: 'Top Sticker',
+          category: 'Top Sticker',
         },
-    },
-    topSticker: {
+      },
+      topSticker: {
         name: 'Icon Name',
         description: 'Name of icon',
         options: [
-            '',
-            'cfa-tagline',
+          '',
+          'cfa-tagline',
         ],
         control: {
-            type: 'select',
-            labels: {
-                'cfa-tagline': 'Logo - CFA Tagline'
-            },
+          type: 'select',
+          labels: {
+            'cfa-tagline': 'Logo - CFA Tagline'
+          },
         },
         table: {
-            category: 'Top Sticker',
+          category: 'Top Sticker',
         }
-    },
-    topStickerColor: {
+      },
+      topStickerColor: {
         name: 'Color',
         description: 'Icon and sticker color',
         options: ['', '1', '2'],
         control: {
-            type: 'select',
-            labels: {
-                '1': 'Primary white background | Primary red icon',
-                '2': 'Tertiary tan background | Primary red icon',
-            },
+          type: 'select',
+          labels: {
+            '1': 'Primary white background | Primary red icon',
+            '2': 'Tertiary tan background | Primary red icon',
+          },
         },
         table: {
-            category: 'Top Sticker',
+          category: 'Top Sticker',
         }
-    },
-    bottomSticker: {
+      },
+      removeBottomSticker: {
+        name: 'Remove bottom sticker?',
+        control: { type: 'boolean' },
+        table: {
+          category: 'Bottom Sticker',
+        },
+      },
+      bottomSticker: {
         name: 'Icon Name',
         description: 'Name of icon',
         options: [
-            '',
-            'occasions_collaboration-2'
+          '',
+          'occasions_collaboration-2'
         ],
         control: {
-            type: 'select',
-            labels: {
-                'occasions_collaboration-2': 'Occasions | Collaboration 2',
-            },
+          type: 'select',
+          labels: {
+            'occasions_collaboration-2': 'Occasions | Collaboration 2',
+          },
         },
         table: {
-            category: 'Bottom Sticker',
+          category: 'Bottom Sticker',
         }
-    },
-    bottomStickerColor: {
+      },
+      bottomStickerColor: {
         name: 'Color',
         description: 'Icon and sticker color',
         options: ['', '1', '2', '3', '4'],
         control: {
-            type: 'select',
-            labels: {
-                '1': 'Primary red background | Primary white icon',
-                '2': 'Secondary blue background | Primary white icon',
-                '3': 'Secondary teal background | Primary white icon',
-                '4': 'Tertiary tan background | Primary red icon'
-            },
+          type: 'select',
+          labels: {
+            '1': 'Primary red background | Primary white icon',
+            '2': 'Secondary blue background | Primary white icon',
+            '3': 'Secondary teal background | Primary white icon',
+            '4': 'Tertiary tan background | Primary red icon'
+          },
         },
         table: {
-            category: 'Bottom Sticker',
+          category: 'Bottom Sticker',
         }
-    }
+      }
 }
 PageHeaderStory.args = {
     title: "We're here for one another.",
@@ -111,6 +118,7 @@ PageHeaderStory.args = {
     removeTopSticker: false,
     topSticker: "cfa-tagline",
     topStickerColor: "1",
+    removeBottomSticker: false,
     bottomSticker: "occasions_collaboration-2",
     bottomStickerColor: "1",
 };

@@ -9,6 +9,7 @@ export interface PageHeaderProps {
     removeTopSticker?: boolean;
     topSticker?: string;
     topStickerColor?: string;
+    removeBottomSticker?: boolean;
     bottomSticker?: string;
     bottomStickerColor?: string;
 }
@@ -17,7 +18,7 @@ const PageHeader = (props: PageHeaderProps) => {
     return (
         <div className="page-header">
             <Banner title={props.title} subtitle={props.subtitle} />
-            <ImageWithStickers imageSource={props.image} removeTopSticker={props.removeTopSticker} topStickerName={props.topSticker} topStickerColor={props.topStickerColor} bottomStickerName={props.bottomSticker} bottomStickerColor={props.bottomStickerColor} />
+            <ImageWithStickers imageSource={props.image} removeTopSticker={props.removeTopSticker} topStickerName={props.topSticker} topStickerColor={props.topStickerColor} removeBottomSticker={props.removeBottomSticker} bottomStickerName={props.bottomSticker} bottomStickerColor={props.bottomStickerColor} />
         </div>
     );
 };
