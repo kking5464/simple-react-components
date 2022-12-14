@@ -20,7 +20,14 @@ ImageWithStickersStory.argTypes = {
     control: { type: 'text' },
     description: 'Source of image',
   },
-  logoStickerIconName: {
+  removeTopSticker: {
+    name: 'Remove top sticker?',
+    control: { type: 'boolean' },
+    table: {
+      category: 'Top Sticker',
+    },
+  },
+  topStickerName: {
     name: 'Icon Name',
     description: 'Name of icon',
     options: [
@@ -37,21 +44,29 @@ ImageWithStickersStory.argTypes = {
       category: 'Top Sticker',
     }
   },
-  logoStickerColor: {
-    name: 'Sticker Color',
-    description: 'Sticker color',
-    options: ['', 'primaryWhite'],
+  topStickerColor: {
+    name: 'Color',
+    description: 'Icon and sticker color',
+    options: ['', '1', '2'],
     control: {
       type: 'select',
       labels: {
-        'primaryWhite': 'White'
+        '1': 'Primary white background | Primary red icon',
+        '2': 'Tertiary tan background | Primary red icon',
       },
     },
     table: {
       category: 'Top Sticker',
     }
   },
-  iconStickerIconName: {
+  removeBottomSticker: {
+    name: 'Remove bottom sticker?',
+    control: { type: 'boolean' },
+    table: {
+      category: 'Bottom Sticker',
+    },
+  },
+  bottomStickerName: {
     name: 'Icon Name',
     description: 'Name of icon',
     options: [
@@ -68,49 +83,32 @@ ImageWithStickersStory.argTypes = {
       category: 'Bottom Sticker',
     }
   },
-  iconStickerIconColor: {
-    name: 'Icon Color',
-    description: 'Icon color',
-    options: [
-      'red',
-      'white'
-    ],
+  bottomStickerColor: {
+    name: 'Color',
+    description: 'Icon and sticker color',
+    options: ['', '1', '2', '3', '4'],
     control: {
       type: 'select',
       labels: {
-        'red': 'Red',
-        'white': 'White'
+        '1': 'Primary red background | Primary white icon',
+        '2': 'Secondary blue background | Primary white icon',
+        '3': 'Secondary teal background | Primary white icon',
+        '4': 'Tertiary tan background | Primary red icon'
       },
     },
     table: {
       category: 'Bottom Sticker',
     }
-  },
-  iconStickerColor: {
-    name: 'Sticker Color',
-    description: 'Sticker color',
-    options: ['', 'primaryRed', 'secondaryBlue', 'secondaryTeal', 'tertiaryTan'],
-    control: {
-      type: 'select',
-      labels: {
-        'primaryRed': 'Red',
-        'secondaryBlue': 'Blue',
-        'secondaryTeal': 'Teal',
-        'tertiaryTan': 'Tan'
-      },
-    },
-    table: {
-      category: 'Bottom Sticker',
-    }
-  },
+  }
 }
 ImageWithStickersStory.args = {
   imageSource: 'https://images.unsplash.com/photo-1508184585643-6001cf47a1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
-  logoStickerIconName: "cfa-tagline",
-  logoStickerColor: "primaryWhite",
-  iconStickerIconName: "occasions_collaboration-2",
-  iconStickerIconColor: "white",
-  iconStickerColor: "primaryRed"
+  removeTopSticker: false,
+  topStickerName: "cfa-tagline",
+  topStickerColor: "1",
+  removeBottomSticker: false,
+  bottomStickerName: "occasions_collaboration-2",
+  bottomStickerColor: "1",
 };
 
 ImageWithStickersStory.storyName = "Image with Stickers";
