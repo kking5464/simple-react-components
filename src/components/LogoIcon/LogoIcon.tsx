@@ -1,6 +1,6 @@
 import React from "react";
 
-import CfaTaglineIcon from '../../public/icons/logo-icons/cfa-tagline.svg';
+import CfaTaglineIcon from '../../public/icons/logo-icons/logo-tagline.svg';
 
 export interface LogoIconProps {
   name?: string;
