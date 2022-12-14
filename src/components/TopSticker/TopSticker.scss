@@ -1,15 +1,15 @@
-.logo-sticker {
+.top-sticker {
   position: absolute;
   border-radius: 50%;
   width: 70px;
   height: 70px;
-  
-  &--tan {
-    background-color: rgba(245, 227, 204, 0.4);
+
+  &--primaryWhite {
+    background-color: rgb(255, 255, 255);
   }
 
-  &--lightTan {
-    background-color: rgba(245, 227, 204, 0.15);
+  &--tertiaryTan {
+    background-color: #F5E3CC;
   }
 
   .logo-icon {

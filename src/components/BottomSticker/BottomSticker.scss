@@ -1,0 +1,27 @@
+.bottom-sticker {
+  position: absolute;
+  border-radius: 50%;
+  width: 96px;
+  height: 96px;
+
+  &--primaryRed {
+    background-color: #DD0031;
+  }
+
+  &--secondaryBlue {
+    background-color: #004F71;
+  }
+
+  &--secondaryTeal {
+    background-color: #3EB1C8;
+  }
+
+  &--tertiaryTan {
+    background-color: #F5E3CC;
+  }
+
+  .brand-icon {
+    margin-left: 5px;
+    margin-top: 4px;
+  }
+}

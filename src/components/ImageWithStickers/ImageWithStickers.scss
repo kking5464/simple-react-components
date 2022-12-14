@@ -1,0 +1,45 @@
+.image-with-stickers {
+    display: flex;
+    position: relative;
+    padding: 35px 0 48px;
+    max-width: 832px;
+    margin: 0 auto;
+
+    &--remove-top-sticker {
+        padding-top: 0;
+    }
+
+    &--remove-bottom-sticker {
+        padding-bottom: 0;
+    }
+
+    img {
+        height: 196px;
+        width: 100%;
+        max-width: 100%;
+        object-fit: cover;
+
+        @media screen and (min-width: 425px) {
+            height: 250px;
+        }
+
+        @media screen and (min-width: 550px) {
+            height: auto;
+            margin: auto;
+            max-width: 100%;
+            width: 832px;
+        }
+    }
+
+    .top-sticker {
+        position: absolute;
+        left: 20px;
+        top: 0;
+    }
+
+    .bottom-sticker {
+        position: absolute;
+        right: 16px;
+        bottom: 0;
+    }
+}
