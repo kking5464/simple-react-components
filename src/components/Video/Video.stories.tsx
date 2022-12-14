@@ -40,8 +40,8 @@ VideoStory.argTypes = {
 }
 VideoStory.args = {
   videoType: 'youtube',
-  embedId: '1sAQY0IpOiQ',
-  videoTitle: 'The Snow Globe | Stories of Evergreen Hills | Created by Chick-fil-A',
+  embedId: 'qsMpKU5Ld94',
+  videoTitle: 'Test Video',
 };
 
 VideoStory.storyName = "Video";
