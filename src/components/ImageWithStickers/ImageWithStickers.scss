@@ -1,12 +1,16 @@
 .image-with-stickers {
     display: flex;
     position: relative;
-    padding: 35px 0;
+    padding: 35px 0 48px;
     max-width: 832px;
     margin: 0 auto;
 
-    @media screen and (min-width: 425px) {
-        padding: 35px 0 48px;
+    &--remove-top-sticker {
+        padding-top: 0;
+    }
+
+    &--remove-bottom-sticker {
+        padding-bottom: 0;
     }
 
     img {
@@ -27,13 +31,13 @@
         }
     }
 
-    .logo-sticker {
+    .top-sticker {
         position: absolute;
         left: 20px;
         top: 0;
     }
 
-    .icon-sticker {
+    .bottom-sticker {
         position: absolute;
         right: 16px;
         bottom: 0;
