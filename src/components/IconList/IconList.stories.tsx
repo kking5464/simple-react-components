@@ -22,12 +22,12 @@ IconListStory.argTypes = {
   backgroundColor: {
     name: 'Background Color',
     description: 'Background color',
-    options: ['white', 'tertiaryTan'],
+    options: ['primaryWhite', 'tan'],
     control: {
       type: 'select',
       labels: {
-        'white': 'White',
-        'tertiaryTan': 'Tertiary Tan',
+        'primaryWhite': 'Primary White',
+        'tan': 'Tan',
       },
     },
   },
@@ -126,7 +126,7 @@ IconListStory.argTypes = {
 };
 IconListStory.args = {
   title: "What's Unique About My Restaurant?",
-  backgroundColor: "tertiaryTan",
+  backgroundColor: "tan",
   
   removeListItem1: false,
   iconListItem1Header: "We hire top talent",
