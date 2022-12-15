@@ -15,6 +15,18 @@ const Template: ComponentStory<typeof Video> = (args) => <Video {...args} />;
 export const VideoStory = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 VideoStory.argTypes = {
+  videoType: {
+    name: 'Video Type',
+    description: 'Type of video',
+    options: ['youtube', 'vimeo'],
+    control: {
+      type: 'select',
+      labels: {
+        'youtube': 'YouTube',
+        'vimeo': 'Vimeo'
+      },
+    }
+  },
   embedId: {
     name: 'Embed Code ID',
     control: { type: 'text' },
@@ -27,8 +39,9 @@ VideoStory.argTypes = {
   },
 }
 VideoStory.args = {
+  videoType: 'youtube',
   embedId: 'qsMpKU5Ld94',
-  videoTitle: 'Test video',
+  videoTitle: 'Test Video',
 };
 
 VideoStory.storyName = "Video";
