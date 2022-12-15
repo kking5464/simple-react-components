@@ -19,53 +19,29 @@ IconListStory.argTypes = {
     control: { type: 'text'},
     description: 'Icon list title',
   },
-  titleColor: {
-    name: 'Title Color',
-    description: 'Title text color',
-    options: ['gray', 'red', 'blue', 'teal'],
-    control: {
-      type: 'select',
-      labels: {
-        'gray': 'Gray',
-        'red': 'Red',
-        'blue': 'Blue',
-        'teal': 'Teal'
-      },
-    },
-  },
   backgroundColor: {
     name: 'Background Color',
     description: 'Background color',
-    options: ['white', 'tan', 'lightTan'],
+    options: ['primaryWhite', 'tan'],
     control: {
       type: 'select',
       labels: {
-        'white': 'White',
+        'primaryWhite': 'Primary White',
         'tan': 'Tan',
-        'lightTan': 'Light Tan'
       },
+    },
+  },
+  removeListItem1: {
+    name: 'Remove list item?',
+    control: { type: 'boolean' },
+    table: {
+      category: 'List Item 1',
     },
   },
   iconListItem1Header: {
     name: 'Header',
     control: { type: 'text' },
     description: 'Icon list item header',
-    table: {
-      category: 'List Item 1',
-    },
-  },
-  iconListItem1HeaderColor: {
-    name: 'Header Color',
-    description: 'Header text color',
-    options: ['gray', 'red', 'blue'],
-    control: {
-      type: 'select',
-      labels: {
-        'gray': 'Gray',
-        'red': 'Red',
-        'blue': 'Blue'
-      },
-    },
     table: {
       category: 'List Item 1',
     },
@@ -78,79 +54,17 @@ IconListStory.argTypes = {
       category: 'List Item 1',
     },
   },
-  iconListItem1IconName: {
-    name: 'Icon Name',
-    description: 'Name of icon',
-    options: [
-      '',
-      'occasions_birthday-cake',
-      'occasions_calendar',
-      'occasions_collaboration',
-      'occasions_disco',
-      'restaurant_team-member',
-      'technology_tablet-and-desktop',
-      'occasions_celebration',
-      'occasions_celebration-2'
-    ],
-    control: {
-      type: 'select',
-      labels: {
-        'occasions_birthday-cake' : 'Occasions | Birthday Cake',
-        'occasions_calendar' : 'Occasions | Calendar',
-        'occasions_collaboration' : 'Occasions | Collaboration',
-        'occasions_celebration' : 'Occasions | Celebration',
-        'occasions_celebration-2' : 'Occasions | Celebration 2',
-        'occasions_disco' : 'Occasions | Disco',
-        'restaurant_team-member' : 'Restaurant | Team Member',
-        'technology_tablet-and-desktop': 'Technology | Tablet and Desktop'
-      },
-    },
+  removeListItem2: {
+    name: 'Remove list item?',
+    control: { type: 'boolean' },
     table: {
-      category: 'List Item 1',
-    },
-  },
-  iconListItem1IconColor: {
-    name: 'Icon Color',
-    description: 'Icon color',
-    options: [
-      'gray',
-      'red',
-      'blue',
-      'teal'
-    ],
-    control: {
-      type: 'select',
-      labels: {
-        'gray': 'Gray',
-        'red': 'Red',
-        'blue': 'Blue',
-        'teal': 'Teal'
-      },
-    },
-    table: {
-      category: 'List Item 1',
+      category: 'List Item 2',
     },
   },
   iconListItem2Header: {
     name:'Header',
     control: { type: 'text' },
     description: 'Icon list item header',
-    table: {
-      category: 'List Item 2',
-    },
-  },
-  iconListItem2HeaderColor: {
-    name: 'Header Color',
-    description: 'Header text color',
-    options: ['gray', 'red', 'blue'],
-    control: {
-      type: 'select',
-      labels: {
-        'gray': 'Gray',
-        'red': 'Red',
-        'blue': 'Blue'
-      },
-    },
     table: {
       category: 'List Item 2',
     },
@@ -163,79 +77,17 @@ IconListStory.argTypes = {
       category: 'List Item 2',
     },
   },
-  iconListItem2IconName: {
-    name: 'Icon Name',
-    description: 'Name of icon',
-    options: [
-      '',
-      'occasions_birthday-cake',
-      'occasions_calendar',
-      'occasions_collaboration',
-      'occasions_disco',
-      'restaurant_team-member',
-      'technology_tablet-and-desktop',
-      'occasions_celebration',
-      'occasions_celebration-2'
-    ],
-    control: {
-      type: 'select',
-      labels: {
-        'occasions_birthday-cake' : 'Occasions | Birthday Cake',
-        'occasions_calendar' : 'Occasions | Calendar',
-        'occasions_collaboration' : 'Occasions | Collaboration',
-        'occasions_celebration' : 'Occasions | Celebration',
-        'occasions_celebration-2' : 'Occasions | Celebration 2',
-        'occasions_disco' : 'Occasions | Disco',
-        'restaurant_team-member' : 'Restaurant | Team Member',
-        'technology_tablet-and-desktop': 'Technology | Tablet and Desktop'
-      },
-    },
+  removeListItem3: {
+    name: 'Remove list item?',
+    control: { type: 'boolean' },
     table: {
-      category: 'List Item 2',
-    },
-  },
-  iconListItem2IconColor: {
-    name: 'Icon Color',
-    description: 'Icon color',
-    options: [
-      'gray',
-      'red',
-      'blue',
-      'teal'
-    ],
-    control: {
-      type: 'select',
-      labels: {
-        'gray': 'Gray',
-        'red': 'Red',
-        'blue': 'Blue',
-        'teal': 'Teal'
-      },
-    },
-    table: {
-      category: 'List Item 2',
+      category: 'List Item 3',
     },
   },
   iconListItem3Header: {
     name: 'Header',
     control: { type: 'text' },
     description: 'Icon list item header',
-    table: {
-      category: 'List Item 3',
-    },
-  },
-  iconListItem3HeaderColor: {
-    name: 'Header Color',
-    description: 'Header text color',
-    options: ['gray', 'red', 'blue'],
-    control: {
-      type: 'select',
-      labels: {
-        'gray': 'Gray',
-        'red': 'Red',
-        'blue': 'Blue'
-      },
-    },
     table: {
       category: 'List Item 3',
     },
@@ -248,79 +100,17 @@ IconListStory.argTypes = {
       category: 'List Item 3',
     },
   },
-  iconListItem3IconName: {
-    name: 'Icon Name',
-    description: 'Name of icon',
-    options: [
-      '',
-      'occasions_birthday-cake',
-      'occasions_calendar',
-      'occasions_collaboration',
-      'occasions_disco',
-      'restaurant_team-member',
-      'technology_tablet-and-desktop',
-      'occasions_celebration',
-      'occasions_celebration-2'
-    ],
-    control: {
-      type: 'select',
-      labels: {
-        'occasions_birthday-cake' : 'Occasions | Birthday Cake',
-        'occasions_calendar' : 'Occasions | Calendar',
-        'occasions_collaboration' : 'Occasions | Collaboration',
-        'occasions_celebration' : 'Occasions | Celebration',
-        'occasions_celebration-2' : 'Occasions | Celebration 2',
-        'occasions_disco' : 'Occasions | Disco',
-        'restaurant_team-member' : 'Restaurant | Team Member',
-        'technology_tablet-and-desktop': 'Technology | Tablet and Desktop'
-      },
-    },
+  removeListItem4: {
+    name: 'Remove list item?',
+    control: { type: 'boolean' },
     table: {
-      category: 'List Item 3',
-    },
-  },
-  iconListItem3IconColor: {
-    name: 'Icon Color',
-    description: 'Icon color',
-    options: [
-      'gray',
-      'red',
-      'blue',
-      'teal'
-    ],
-    control: {
-      type: 'select',
-      labels: {
-        'gray': 'Gray',
-        'red': 'Red',
-        'blue': 'Blue',
-        'teal': 'Teal'
-      },
-    },
-    table: {
-      category: 'List Item 3',
+      category: 'List Item 4',
     },
   },
   iconListItem4Header: {
     name: 'Header',
     control: { type: 'text' },
     description: 'Icon list item header',
-    table: {
-      category: 'List Item 4',
-    },
-  },
-  iconListItem4HeaderColor: {
-    name: 'Header Color',
-    description: 'Header text color',
-    options: ['gray', 'red', 'blue'],
-    control: {
-      type: 'select',
-      labels: {
-        'gray': 'Gray',
-        'red': 'Red',
-        'blue': 'Blue'
-      },
-    },
     table: {
       category: 'List Item 4',
     },
@@ -332,88 +122,26 @@ IconListStory.argTypes = {
     table: {
       category: 'List Item 4',
     },
-  },
-  iconListItem4IconName: {
-    name: 'Icon Name',
-    description: 'Name of icon',
-    options: [
-      '',
-      'occasions_birthday-cake',
-      'occasions_calendar',
-      'occasions_collaboration',
-      'occasions_disco',
-      'restaurant_team-member',
-      'technology_tablet-and-desktop',
-      'occasions_celebration',
-      'occasions_celebration-2'
-    ],
-    control: {
-      type: 'select',
-      labels: {
-        'occasions_birthday-cake' : 'Occasions | Birthday Cake',
-        'occasions_calendar' : 'Occasions | Calendar',
-        'occasions_collaboration' : 'Occasions | Collaboration',
-        'occasions_celebration' : 'Occasions | Celebration',
-        'occasions_celebration-2' : 'Occasions | Celebration 2',
-        'occasions_disco' : 'Occasions | Disco',
-        'restaurant_team-member' : 'Restaurant | Team Member',
-        'technology_tablet-and-desktop': 'Technology | Tablet and Desktop',
-      },
-    },
-    table: {
-      category: 'List Item 4',
-    },
-  },
-  iconListItem4IconColor: {
-    name: 'Icon Color',
-    description: 'Icon color',
-    options: [
-      'gray',
-      'red',
-      'blue',
-      'teal'
-    ],
-    control: {
-      type: 'select',
-      labels: {
-        'gray': 'Gray',
-        'red': 'Red',
-        'blue': 'Blue',
-        'teal': 'Teal'
-      },
-    },
-    table: {
-      category: 'List Item 4',
-    },
   }
 };
 IconListStory.args = {
   title: "What's Unique About My Restaurant?",
-  titleColor: "teal",
   backgroundColor: "tan",
   
-  iconListItem1IconName: "occasions_celebration-2",
-  iconListItem1IconColor: "teal",
+  removeListItem1: false,
   iconListItem1Header: "We hire top talent",
-  iconListItem1HeaderColor: "gray",
   iconListItem1Subheader: "And our team's well-being is a top priority.",
 
-  iconListItem2IconName: "occasions_celebration-2",
-  iconListItem2IconColor: "teal",
+  removeListItem2: false,
   iconListItem2Header: "We use cutting-edge technology",
-  iconListItem2HeaderColor: "gray",
   iconListItem2Subheader: "We use state-of-the-art systems to deliver for our customers.",
 
-  iconListItem3IconName: "occasions_celebration-2",
-  iconListItem3IconColor: "teal",
+  removeListItem3: false,
   iconListItem3Header: "We are a high-performing operation",
-  iconListItem3HeaderColor: "gray",
   iconListItem3Subheader: "Our approaches enable us to run a top operation.",
 
-  iconListItem4IconName: "occasions_celebration-2",
-  iconListItem4IconColor: "teal",
+  removeListItem4: false,
   iconListItem4Header: "We give back",
-  iconListItem4HeaderColor: "gray",
   iconListItem4Subheader: "Community impact is what gets us out of bed each day."
 };
 
