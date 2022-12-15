@@ -27,14 +27,13 @@ QuoteStory.argTypes = {
   quoteColor: {
     name: 'Quote Color',
     description: 'Quote text color',
-    options: ['gray', 'red', 'blue', 'teal'],
+    options: ['primaryRed', 'secondaryBlue', 'secondaryTeal'],
     control: {
       type: 'select',
       labels: {
-        'gray': 'Gray',
-        'red': 'Red',
-        'blue': 'Blue',
-        'teal': 'Teal'
+        'primaryRed': 'Primary Red',
+        'secondaryBlue': 'Secondary Blue',
+        'secondaryTeal': 'Secondary Teal'
       },
     },
   },
@@ -43,47 +42,11 @@ QuoteStory.argTypes = {
     control: { type: "text" },
     description: 'Quote owner',
   },
-  iconName: {
-    name: 'Icon Name',
-    description: 'Name of icon',
-    options: [
-      '',
-      'business_quote'
-    ],
-    control: {
-      type: 'select',
-      labels: {
-        'business_quote': 'Business | Quote',
-      },
-    },
-  },
-  iconColor: {
-    name: 'Icon Color',
-    description: 'Icon color',
-    options: [
-      'gray',
-      'red',
-      'blue',
-      'teal'
-    ],
-    control: {
-      type: 'select',
-      labels: {
-        'gray': 'Gray',
-        'red': 'Red',
-        'blue': 'Blue',
-        'teal': 'Teal'
-      },
-    },
-  }
 };
 QuoteStory.args = {
-  iconName: "business_quote",
-  iconColor: "gray",
   quoteText: "Serving others helps us to focus on our relationships with our customers and each other.",
-  quoteColor: "blue",
-  owner: "Jeremiah Cillpam, CEO",
+  quoteColor: "secondaryBlue",
+  owner: "Jeremiah Cillpam, CEO"
 };
 
 QuoteStory.storyName = "Quote";
-

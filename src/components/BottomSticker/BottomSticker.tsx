@@ -8,7 +8,7 @@ export interface BottomStickerProps {
 }
 
 const BottomSticker = (props: BottomStickerProps) => {
-  let iconColor: string = "white";
+  let iconColor: string = "primaryWhite";
   let stickerColor: string = "primaryRed";
 
   if (props.color === "2") {
@@ -21,7 +21,7 @@ const BottomSticker = (props: BottomStickerProps) => {
 
   if (props.color === "4") {
     stickerColor = "tertiaryTan"
-    iconColor = "red"
+    iconColor = "primaryRed"
   }
 
   if (props.color === "") {

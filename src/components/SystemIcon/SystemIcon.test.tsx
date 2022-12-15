@@ -5,6 +5,6 @@ import SystemIcon from "./SystemIcon";
 
 describe("System Icon", () => {
   test("renders the SystemIcon component", () => {
-    render(<SystemIcon name="error-filled" color="blue" />);
+    render(<SystemIcon name="error-filled" color="secondaryBlue" />);
   });
 });

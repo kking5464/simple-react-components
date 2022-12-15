@@ -15,7 +15,7 @@
   }
 
   &__quote-text {
-    color: #37424A;
+    color: #004f71;
     font-family: "Apercu Pro", "Lato", sans-serif;
     font-size: 24px;
     font-style: normal;
@@ -24,21 +24,17 @@
     text-align: center;
     margin: 0 0 24px;
 
-    &--red {
+    &--primaryRed {
       color: #dd0031;
     }
 
-    &--blue {
-      color: #004f71;
-    }
-
-    &--teal {
+    &--secondaryTeal {
       color: #3EB1C8;
     }
   }
 
   &__owner {
-    color: #80878C;
+    color: #5B6770;
     font-family: "Apercu Pro", "Lato", sans-serif;
     font-size: 14px;
     font-style: normal;
