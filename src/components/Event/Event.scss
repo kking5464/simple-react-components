@@ -1,23 +1,46 @@
 .event {
-    display:flex;
+    &__icon-container {
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        top: 4px;
+        right: 4px;
+    }
 
     &__icon {
         margin-right: 15px;
     }
-    
+
+    &__body {
+        width: 100%;
+    }
+
     &__name {
-        font-family: 'Apercu Pro', 'Lato', sans-serif;
+        font-family: "Apercu Pro", "Lato", sans-serif;
         font-style: normal;
         margin: 0;
         font-weight: 800;
         font-size: 14px;
         line-height: 24px;
         color: #37424a;
-        
+    }
+
+    &__time-container {
+        display: flex;
+    }
+
+    &__time {
+        font-family: "Apercu Pro", "Lato", sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        color: #00635b;
+        margin: 0;
     }
 
     &__description {
-        font-family: 'Apercu Pro', 'Lato', sans-serif;
+        font-family: "Apercu Pro", "Lato", sans-serif;
         font-style: normal;
         font-weight: 500;
         margin: 0;
@@ -26,9 +49,44 @@
         color: #37424a;
     }
 
+    &__details-link {
+        font-family: "Apercu Pro", "Lato", sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        color: #00635b;
+        margin: 0;
+        text-align: right;
+        text-decoration: none;
+    }
+
+    &--icon,
     &--preview {
+        display: flex;
+    }
+
+    &--icon {
+        @media screen and (min-width: 550px) {
+            margin: 0 auto;
+            max-width: 832px;
+        }
+    }
+
+    &--preview {
+        position: relative;
         border-radius: 4px;
         box-shadow: 0px 2px 4px rgba(91, 103, 112, 0.24);
+
+        @media screen and (min-width: 550px) {
+            margin: 0 auto;
+            max-width: 832px;
+        }
+
+        .event__name {
+            font-weight: 700;
+            font-size: 16px;
+        }
 
         .event__body {
             display: flex;
@@ -37,20 +95,54 @@
             padding: 14px 14px 14px 0;
 
             .event__description {
-                color: #004F71;
+                color: #004f71;
             }
         }
+
         .event__image {
             display: flex;
 
             img {
-                object-fit: cover; 
-                min-height: 110px;   
-                height: auto;            
+                object-fit: cover;
+                min-height: 110px;
+                height: auto;
                 width: 104px;
                 padding-right: 16px;
                 border-radius: 4px;
             }
+        }
+    }
+
+    &--basic-card {
+        &__date-time-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__time-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__date,
+        &__start-time,
+        &__end-time {
+            color: #00635b;
+            font-family: "Apercu Pro", "Lato", sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        .basic-card__content-title {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 32px;
+        }
+
+        .button {
+            margin-top: 32px;
         }
     }
 }

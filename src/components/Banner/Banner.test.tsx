@@ -5,6 +5,6 @@ import Banner from "./Banner";
 
 describe("Banner", () => {
   test("renders the Banner component", () => {
-    render(<Banner label="Label" description="Description" />);
+    render(<Banner title="Label" subtitle="Description" />);
   });
 });

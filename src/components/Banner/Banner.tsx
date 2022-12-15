@@ -2,16 +2,16 @@ import React, { useEffect, useState } from "react";
 import "./Banner.scss";
 
 export interface BannerProps {
-  label: string;
-  description: string;
+  title: string;
+  subtitle?: string;
 
   bannerName?: string;
   useApi?: boolean | null;
 }
 
 interface BannerContent {
-  header: string;
-  body: string;
+  title: string;
+  subtitle?: string;
 }
 
 const Banner = (props: BannerProps) => {
@@ -32,16 +32,16 @@ const Banner = (props: BannerProps) => {
           // exceptions from actual bugs in components.
           (error) => {
             const bannerError: BannerContent = {
-              header: "Error",
-              body: "Banner could not be found",
+              title: "Error",
+              subtitle: "Banner could not be found",
             };
             setBanner(bannerError);
           }
         );
     } else {
       const bannerTemp: BannerContent = {
-        header: props.label,
-        body: props.description,
+        title: props.title,
+        subtitle: props.subtitle,
       };
       setBanner(bannerTemp);
     }
@@ -49,13 +49,13 @@ const Banner = (props: BannerProps) => {
 
   return (
     <div className="banner">
-      {banner?.header ? (
-        <h1 className="banner__label">{banner?.header}</h1>
+      {banner?.title ? (
+        <h1 className="banner__title">{banner?.title}</h1>
       ) : (
         ""
       )}
-      {banner?.body ? (
-        <h2 className="banner__description">{banner?.body}</h2>
+      {banner?.subtitle ? (
+        <h2 className="banner__subtitle">{banner?.subtitle}</h2>
       ) : (
         ""
       )}
