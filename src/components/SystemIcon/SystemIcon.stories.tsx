@@ -50,24 +50,25 @@ SystemIconStory.argTypes = {
     name: 'Color',
     description: 'Icon color',
     options: [
-      'gray',
-      'red',
-      'blue'
+      'gray6',
+      'primaryRed',
+      'secondaryBlue',
+      'primaryWhite'
     ],
     control: {
       type: 'select',
       labels: {
-        'gray': 'Gray',
-        'red': 'Red',
-        'blue': 'Blue',
-        'white': 'White',
+        'gray6': 'Gray 6',
+        'primaryRed': 'Primary Red',
+        'secondaryBlue': 'Secondary Blue',
+        'primaryWhite': 'Primary White',
       },
     },
   }
 };
 SystemIconStory.args = {
   name: 'error-filled',
-  color: 'gray'
+  color: 'gray6'
 };
 
 SystemIconStory.storyName = "System Icon";

@@ -6,14 +6,12 @@ export interface QuoteProps {
   quoteText: string;
   quoteColor?: string;
   owner: string;
-  iconName?: string;
-  iconColor?: string;
 }
 
 const Quote = (props: QuoteProps) => {
   return (
     <div className="quote">
-      <BrandIcon name={props.iconName} color={props.iconColor} />
+      <BrandIcon name={'business_quote'} color={'gray3'} />
       <div className="quote__text-container">
         <h2 className={`quote__quote-text ${props.quoteColor ? 'quote__quote-text--' + props.quoteColor : ''}`}>
           {props.quoteText}

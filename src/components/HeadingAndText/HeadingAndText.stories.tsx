@@ -20,19 +20,6 @@ HeadingAndTextStory.argTypes = {
     control: { type: 'text' },
     description: 'Heading text',
   },
-  headingColor: {
-    name: 'Heading Color',
-    description: 'Heading text color',
-    options: ['gray', 'red', 'blue'],
-    control: {
-      type: 'select',
-      labels: {
-        'gray': 'Gray',
-        'red': 'Red',
-        'blue': 'Blue'
-      },
-    },
-  },
   text: {
     name: 'Text',
     control: { type: 'text' },
@@ -41,22 +28,20 @@ HeadingAndTextStory.argTypes = {
   backgroundColor: {
     name: 'Background Color',
     description: 'Background color',
-    options: ['white', 'tan', 'lightTan'],
+    options: ['primaryWhite', 'tan'],
     control: {
       type: 'select',
       labels: {
-        'white': 'White',
+        'primaryWhite': 'Primary White',
         'tan': 'Tan',
-        'lightTan': 'Light Tan'
       },
     },
   },
 }
 HeadingAndTextStory.args = {
-  heading: 'Our Core Values',
-  headingColor: 'gray',
-  text: "Our core purpose at Chick-fil-A Hollywood is Change for the Better. These five values guide us in everything we do.",
-  backgroundColor: 'white'
+  heading: 'Content Header',
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  backgroundColor: 'tan'
 };
 
 HeadingAndTextStory.storyName = "Heading and Text";

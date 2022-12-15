@@ -26,13 +26,13 @@ BasicCardStory.argTypes = {
   titleColor: {
     name: 'Title Color',
     description: 'Title text color',
-    options: ['gray', 'red', 'blue'],
+    options: ['gray6', 'primaryRed', 'secondaryBlue'],
     control: {
       type: 'select',
       labels: {
-        'gray': 'Gray',
-        'red': 'Red',
-        'blue': 'Blue'
+        'gray6': 'Gray 6',
+        'primaryRed': 'Primary Red',
+        'secondaryBlue': 'Secondary Blue'
       },
     },
     table: {
@@ -93,12 +93,12 @@ BasicCardStory.argTypes = {
   buttonColor: {
     name: 'Button Color',
     description: 'Button color',
-    options: ['red', 'blue'],
+    options: ['primaryRed', 'secondaryBlue'],
     control: {
       type: 'select',
       labels: {
-        'red': 'Red',
-        'blue': 'Blue'
+        'primaryRed': 'Primary Red',
+        'secondaryBlue': 'Secondary Blue'
       },
     },
     table: {
@@ -161,13 +161,13 @@ BasicCardStory.argTypes = {
 };
 BasicCardStory.args = {
   title: 'Primary Title',
-  titleColor: 'gray',
+  titleColor: 'gray6',
   subtitle: 'Sub-title',
   copy: 'Detailed text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
   buttonLabel: 'Button Text',
   buttonType: 'secondary',
   buttonUrl: 'https://www.google.com',
-  buttonColor: 'red',
+  buttonColor: 'primaryRed',
   useButton: true,
   centerText: false,
   smallTitles: false,

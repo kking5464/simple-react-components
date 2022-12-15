@@ -50,27 +50,27 @@ BrandIconStory.argTypes = {
     name: 'Color',
     description: 'Icon color',
     options: [
-      'gray',
-      'red',
-      'blue',
-      'teal',
-      'white'
+      'gray6',
+      'primaryRed',
+      'secondaryBlue',
+      'secondaryTeal',
+      'primaryWhite'
     ],
     control: {
       type: 'select',
       labels: {
-        'gray': 'Gray',
-        'red': 'Red',
-        'blue': 'Blue',
-        'teal': 'Teal',
-        'white': 'White'
+        'gray6': 'Gray 6',
+        'primaryRed': 'Primary Red',
+        'secondaryBlue': 'Secondary Blue',
+        'secondaryTeal': 'Secondary Teal',
+        'primaryWhite': 'Primary White'
       },
     },
   }
 };
 BrandIconStory.args = {
   name: 'occasions_birthday-cake',
-  color: 'gray'
+  color: 'primaryRed'
 };
 
 BrandIconStory.storyName = "Brand Icon";

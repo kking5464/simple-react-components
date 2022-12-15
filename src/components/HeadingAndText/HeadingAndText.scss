@@ -10,30 +10,18 @@
     background-color: rgba(245, 227, 204, 0.4);
   }
 
-  &--lightTan {
-    background-color: rgba(245, 227, 204, 0.15);
-  }
-
   &__heading {
-    color: #5b6770;
+    color: #DD0031;
     font-family: "Apercu Pro", "Lato", sans-serif;
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
-    line-height: 32px;
-    margin: 0 0 16px;
-
-    &--red {
-      color: #dd0031;
-    }
-
-    &--blue {
-      color: #004f71;
-    }
+    line-height: 40px;
+    margin: 0 0 16px
   }
 
   &__text {
-    color: #37424a;
+    color: #37424A;
     font-family: "Apercu Pro", "Lato", sans-serif;
     font-size: 16px;
     font-style: normal;

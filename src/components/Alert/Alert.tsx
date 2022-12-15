@@ -13,12 +13,12 @@ const Alert = (props: AlertProps) => {
     <div className={`alert ${alertClosed ? "alert--closed" : ""}`}>
       <div className="alert-container">
         <div className="alert-icon">
-          <SystemIcon name={props.alertIconName} color="white" />
+          <SystemIcon name={props.alertIconName} color="primaryWhite" />
         </div>
         <p className="alert-header">{props.header}</p>
       </div>
       <button className="alert-close" onClick={() => setAlertClosed(true)}>
-        <SystemIcon name="close" color="white" />
+        <SystemIcon name="close" color="primaryWhite" />
       </button>
     </div>
   );

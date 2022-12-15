@@ -123,7 +123,7 @@ const Event = (props: EventProps) => {
             <Button
               label="View event details"
               type='secondary'
-              color='blue'
+              color='secondaryBlue'
               url={event?.buttonUrlLink}
             />
             : ''}

@@ -41,12 +41,12 @@ ButtonStory.argTypes = {
   color: {
     name: 'Color',
     description: 'Button color',
-    options: ['red', 'blue'],
+    options: ['primaryRed', 'secondaryBlue'],
     control: {
       type: 'select',
       labels: {
-        'red': 'Red',
-        'blue': 'Blue'
+        'primaryRed': 'Primary Red',
+        'secondaryBlue': 'Secondary Blue'
       },
     },
   }
@@ -55,7 +55,7 @@ ButtonStory.args = {
   label: 'Button Text',
   type: 'primary',
   url: 'https://www.google.com',
-  color: 'red',
+  color: 'primaryRed',
 };
 
 ButtonStory.storyName = "Button";
