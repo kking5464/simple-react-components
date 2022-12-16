@@ -33,7 +33,7 @@ TeamBioStory.argTypes = {
         description: "Url for Link",
       },
     linkText: {
-        name: 'Link text',
+        name: 'Link Text',
         control: { type: 'text' },
         description: 'Link text',
       },
