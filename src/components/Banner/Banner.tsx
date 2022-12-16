@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Banner.scss";
 
 export interface BannerProps {
-  title: string;
+  title?: string;
   subtitle?: string;
 
   bannerName?: string;
@@ -10,7 +10,7 @@ export interface BannerProps {
 }
 
 interface BannerContent {
-  title: string;
+  title?: string;
   subtitle?: string;
 }
 
@@ -49,13 +49,13 @@ const Banner = (props: BannerProps) => {
 
   return (
     <div className="banner">
-      {banner?.title ? (
-        <h1 className="banner__title">{banner?.title}</h1>
+      {(banner && banner.title) ? (
+        <h1 className="banner__title">{banner.title}</h1>
       ) : (
         ""
       )}
-      {banner?.subtitle ? (
-        <h2 className="banner__subtitle">{banner?.subtitle}</h2>
+      {(banner && banner.subtitle) ? (
+        <h2 className="banner__subtitle">{banner.subtitle}</h2>
       ) : (
         ""
       )}

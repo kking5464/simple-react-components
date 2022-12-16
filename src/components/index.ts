@@ -19,4 +19,5 @@ export { default as SideNavigationLink } from "./SideNavigationLink";
 export { default as PageHeader } from "./PageHeader";
 export { default as Quote } from "./Quote";
 export { default as TextLink } from "./TextLink";
+export { default as TeamMemberProfileImage } from "./TeamMemberProfileImage";
 export { default as Video } from "./Video";
