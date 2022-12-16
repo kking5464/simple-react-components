@@ -49,17 +49,16 @@ const Banner = (props: BannerProps) => {
 
   return (
     <div className="banner">
-      test
-      {/* {banner?.title ? (
+      {(banner && banner.title) ? (
         <h1 className="banner__title">{banner.title}</h1>
       ) : (
         ""
       )}
-      {banner?.subtitle ? (
+      {(banner && banner.subtitle) ? (
         <h2 className="banner__subtitle">{banner.subtitle}</h2>
       ) : (
         ""
-      )} */}
+      )}
     </div>
   );
 };

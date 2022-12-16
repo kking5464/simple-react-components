@@ -16,16 +16,18 @@ const renderLinks = (sideNavigationLinks: {
   linkUrl: string;
   isActive: boolean;
 }[]) => {
-  return sideNavigationLinks?.map((sideNavigationLink, key) => {
-    return (
-      <SideNavigationLink
-        key={key}
-        linkTitle={sideNavigationLink.linkTitle}
-        linkUrl={sideNavigationLink.linkUrl}
-        isActive={sideNavigationLink.isActive}
-      />
-    );
-  });
+  if (sideNavigationLinks) {
+    return sideNavigationLinks.map((sideNavigationLink, key) => {
+      return (
+        <SideNavigationLink
+          key={key}
+          linkTitle={sideNavigationLink.linkTitle}
+          linkUrl={sideNavigationLink.linkUrl}
+          isActive={sideNavigationLink.isActive}
+        />
+      );
+    });
+  }
 };
 
 const SideNavigation = (props: SideNavigationProps) => {
