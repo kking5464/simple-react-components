@@ -1,0 +1,31 @@
+.text-link {
+
+    color: #004F71;
+    font-family: "Apercu Pro", "Lato", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    position: relative;
+    text-decoration: underline 1px rgba(255, 255, 255, 0);
+    transition: text-decoration-color 300ms;
+
+    &:link, &:visited {
+      color: #004F71;
+    }
+
+    &:hover, &:active {
+      color: #003E59;
+      text-decoration: underline 1px #003E59;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: calc(100% + 24px);
+      height: calc(100% + 7px);
+      top: -5px;
+      left: -12px;
+      cursor: pointer;
+    }
+  }
