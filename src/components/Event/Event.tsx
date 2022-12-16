@@ -26,12 +26,31 @@ interface EventContent {
   buttonUrlLink?: string;
 }
 
+function formatDate(date: Date) {
+  const month = date.toLocaleString('default', { month: 'long' });
+  const dayOfMonth = date.getDate();
+  const year = date.getFullYear();
+  var strDate = month + ' ' + dayOfMonth + ', ' + year;
+  return strDate;
+}
+
+function formatAMPM(date: Date) {
+  var hours: number = date.getHours();
+  var minutes: number = date.getMinutes();
+  var ampm: string = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12;
+  hours = hours ? hours : 12;
+  var strMinutes: string = minutes < 10 ? '0'+minutes : minutes.toString();
+  var strTime = hours + ':' + strMinutes + ' ' + ampm;
+  return strTime;
+}
+
 const Event = (props: EventProps) => {
   const [event, setEvent] = useState<EventContent>();
 
   useEffect(() => {
     if (props.useApi) {
-      fetch(`https://epop03mstrt6av4inte.dxcloud.episerver.net/api/Event?Name=${props.eventName}`)
+      fetch(`https://localhost:8001/api/Event?Name=${props.eventName}`)
         .then((res) => res.json())
         .then(
           (result) => {
@@ -62,6 +81,25 @@ const Event = (props: EventProps) => {
     }
   }, [props]);
   if (event) {
+    if (event.date) {
+      const date = new Date(event.date);
+      if (!isNaN(date.getTime())) {
+        event.date = formatDate(date);
+      }
+    }
+    if (event.startTime) {
+      const startTime = new Date(event.startTime);
+      if (!isNaN(startTime.getTime())) {
+        event.startTime = formatAMPM(startTime);
+      }
+    }
+    if (event.endTime) {
+      const endTime = new Date(event.endTime);
+      if (!isNaN(endTime.getTime())) {
+        event.endTime = formatAMPM(endTime);
+      }
+    }
+
     if (props.eventType === "icon") {
       return (
         <div className="event event--icon mb-lg">
