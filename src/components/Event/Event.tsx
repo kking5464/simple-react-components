@@ -134,6 +134,7 @@ const Event = (props: EventProps) => {
     }
   }
 
+  return <></>;
 };
 
 export default Event;
