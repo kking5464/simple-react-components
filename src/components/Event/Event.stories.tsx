@@ -74,22 +74,6 @@ EventStory.argTypes = {
       category: "Event Information",
     },
   },
-  useApi: {
-    name: "Use API?",
-    control: { type: "boolean" },
-    description: "using API or not",
-    table: {
-      category: "API",
-    },
-  },
-  eventName: {
-    name: "Event Name",
-    control: { type: "text" },
-    description: "Event Name",
-    table: {
-      category: "API",
-    },
-  },
 };
 EventStory.args = {
   eventType: "card",
@@ -99,8 +83,6 @@ EventStory.args = {
   endTime: "8:00 PM",
   eventImage: "https://images.unsplash.com/photo-1508184585643-6001cf47a1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80",
   buttonUrlLink: "https://www.google.com/",
-  useApi: false,
-  eventName: "EventTest",
 };
 
 EventStory.storyName = "Event";

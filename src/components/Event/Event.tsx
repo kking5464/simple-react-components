@@ -5,10 +5,7 @@ import Button from "../Button/Button";
 import "./Event.scss";
 
 export interface EventProps {
-  eventName?: string;
-  useApi?: boolean | null;
   eventType?: string;
-
   eventTitle?: string;
   date?: string;
   startTime?: string;
@@ -17,172 +14,106 @@ export interface EventProps {
   buttonUrlLink?: string;
 }
 
-interface EventContent {
-  eventTitle?: string;
-  date?: string;
-  startTime?: string;
-  endTime?: string;
-  eventImage?: string;
-  buttonUrlLink?: string;
+function formatDate(dateStr: string) {
+  var formattedDate = dateStr;
+  const date = new Date(dateStr);
+  if (!isNaN(date.getTime())) {
+    const month = date.toLocaleString('default', { month: 'long' });
+    const dayOfMonth = date.getDate();
+    const year = date.getFullYear();
+    formattedDate = month + ' ' + dayOfMonth + ', ' + year;
+  }
+
+  return formattedDate;
 }
 
-function formatDate(date: Date) {
-  const month = date.toLocaleString('default', { month: 'long' });
-  const dayOfMonth = date.getDate();
-  const year = date.getFullYear();
-  var strDate = month + ' ' + dayOfMonth + ', ' + year;
-  return strDate;
-}
+function formatAMPM(dateStr: string) {
+  var formattedTime = dateStr;
+  const startTime = new Date(dateStr);
+  if (!isNaN(startTime.getTime())) {
+    var hours: number = startTime.getHours();
+    var minutes: number = startTime.getMinutes();
+    var ampm: string = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    var strMinutes: string = minutes < 10 ? '0' + minutes : minutes.toString();
+    formattedTime = hours + ':' + strMinutes + ' ' + ampm;
+  }
 
-function formatAMPM(date: Date) {
-  var hours: number = date.getHours();
-  var minutes: number = date.getMinutes();
-  var ampm: string = hours >= 12 ? 'PM' : 'AM';
-  hours = hours % 12;
-  hours = hours ? hours : 12;
-  var strMinutes: string = minutes < 10 ? '0'+minutes : minutes.toString();
-  var strTime = hours + ':' + strMinutes + ' ' + ampm;
-  return strTime;
+  return formattedTime;
 }
 
 const Event = (props: EventProps) => {
-  const [event, setEvent] = useState<EventContent>();
-
-  useEffect(() => {
-    if (props.useApi) {
-      fetch(`https://epop03mstrt6av4inte.dxcloud.episerver.net/api/Event?Name=${props.eventName}`)
-        .then((res) => res.json())
-        .then(
-          (result) => {
-            if (result.eventImage) {
-              const eventImageStr = `https://epop03mstrt6av4inte.dxcloud.episerver.net${result.eventImage}`;
-              result.eventImage = eventImageStr;
-            }
-            
-            if (result.buttonUrlLink) {
-              const buttonUrlLinkStr = `https://epop03mstrt6av4inte.dxcloud.episerver.net${result.buttonUrlLink}`;
-              result.buttonUrlLink = buttonUrlLinkStr;
-            }
-
-            setEvent(result);
-          },
-          (error) => {
-            const EventTemp: EventContent = {
-              eventTitle: "Error",
-              date: "No Date Available",
-              startTime: "No Start Time Available",
-              endTime: "No Start Time Available",
-              eventImage: "",
-              buttonUrlLink: "",
-            };
-            setEvent(EventTemp);
-          }
-        );
-    } else {
-      const EventTemp: EventContent = {
-        eventTitle: props.eventTitle,
-        date: props.date,
-        startTime: props.startTime,
-        endTime: props.endTime,
-        eventImage: props.eventImage,
-        buttonUrlLink: props.buttonUrlLink,
-      };
-      setEvent(EventTemp);
-    }
-  }, [props]);
-  if (event) {
-    if (event.date) {
-      const date = new Date(event.date);
-      if (!isNaN(date.getTime())) {
-        event.date = formatDate(date);
-      }
-    }
-    if (event.startTime) {
-      const startTime = new Date(event.startTime);
-      if (!isNaN(startTime.getTime())) {
-        event.startTime = formatAMPM(startTime);
-      }
-    }
-    if (event.endTime) {
-      const endTime = new Date(event.endTime);
-      if (!isNaN(endTime.getTime())) {
-        event.endTime = formatAMPM(endTime);
-      }
-    }
-
-    if (props.eventType === "icon") {
-      return (
-        <div className="event event--icon mb-lg">
-          <div className="event__icon">
-            <BrandIcon name={"occasions_calendar"} color={"gray"} />
-          </div>
-          <div className="event__body">
-            <h1 className="event__name">{event.eventTitle}</h1>
-            {(event.startTime || event.endTime) ? (
-              <div className="event__time-container">
-                {event.startTime ? <h3 className="event__time" data-epi-edit="StartTime">{event.startTime}</h3> : ''}
-                {event.endTime ? <h3 className="event__time" data-epi-edit="EndTime"> - {event.endTime}</h3> : ''}
-              </div>
-            )
-              : ''}
-          </div>
+  if (props.eventType === "icon") {
+    return (
+      <div className="event event--icon mb-lg">
+        <div className="event__icon">
+          <BrandIcon name={"occasions_calendar"} color={"gray"} />
         </div>
-      );
-    } else if (props.eventType === "preview") {
-      return (
-        <div className="event event--preview mb-lg">
-          <div className="event__image">
-            <img src={event.eventImage} />
-          </div>
-          <div className="event__body">
-            <div className="event__icon-container">
-              <BrandIcon name="occasions_calendar" color="gray" />
+        <div className="event__body">
+          <h1 className="event__name" data-epi-edit="EventTitle">{props.eventTitle}</h1>
+          {(props.startTime || props.endTime) ? (
+            <div className="event__time-container">
+              {props.startTime ? <h3 className="event__time" data-epi-edit="StartTime">{formatAMPM(props.startTime)}</h3> : ''}
+              {props.endTime ? <h3 className="event__time" data-epi-edit="EndTime"> - {formatAMPM(props.endTime)}</h3> : ''}
             </div>
-            <h1 className="event__name">{event.eventTitle}</h1>
-            {(event.startTime || event.endTime) ? (
-              <div className="event__time-container">
-                {event.startTime ? <h3 className="event__time" data-epi-edit="StartTime">{event.startTime}</h3> : ''}
-                {event.endTime ? <h3 className="event__time" data-epi-edit="EndTime"> - {event.endTime}</h3> : ''}
-              </div>
-            )
-              : ''}
-            {event.buttonUrlLink ? <a className="event__details-link" href={event.buttonUrlLink}>View event details</a> : ''}
-          </div>
+          )
+            : ''}
         </div>
-      );
-    } else {
-      return (
-        <div className="event event--basic-card basic-card mb-lg">
-          {event.eventImage ? <img data-epi-edit="Image" src={event.eventImage} /> : ''}
-          <div className="basic-card__content">
-            {(event.date || event.startTime || event.endTime) ? (
-              <div className="event--basic-card__date-time-container">
-                {event.date ? <h3 className="event--basic-card__date" data-epi-edit="Date">{event.date}</h3> : ''}
-                {(event.startTime || event.endTime) ? (
-                  <div className="event--basic-card__time-container">
-                    {event.startTime ? <h3 className="event--basic-card__start-time" data-epi-edit="StartTime">{event.startTime}</h3> : ''}
-                    {event.endTime ? <h3 className="event--basic-card__end-time" data-epi-edit="EndTime"> - {event.endTime}</h3> : ''}
-                  </div>
-                )
-                  : ''}
-              </div>
-            ) : ''}
-            {event.eventTitle ? <h2 className="basic-card__content-title" data-epi-edit="Title">{event.eventTitle}</h2> : ''}
-            {event.buttonUrlLink ?
-              <Button
-                label="View event details"
-                type='secondary'
-                color='secondaryBlue'
-                url={event.buttonUrlLink}
-              />
-              : ''}
-          </div>
+      </div>
+    );
+  } else if (props.eventType === "preview") {
+    return (
+      <div className="event event--preview mb-lg">
+        <div className="event__image">
+          <img src={props.eventImage} />
         </div>
-      );
-    }
+        <div className="event__body">
+          <div className="event__icon-container">
+            <BrandIcon name="occasions_calendar" color="gray" />
+          </div>
+          <h1 className="event__name" data-epi-edit="EventTitle">{props.eventTitle}</h1>
+          {(props.startTime || props.endTime) ? (
+            <div className="event__time-container">
+              {props.startTime ? <h3 className="event__time" data-epi-edit="StartTime">{formatAMPM(props.startTime)}</h3> : ''}
+              {props.endTime ? <h3 className="event__time" data-epi-edit="EndTime"> - {formatAMPM(props.endTime)}</h3> : ''}
+            </div>
+          )
+            : ''}
+          {props.buttonUrlLink ? <a className="event__details-link" href={props.buttonUrlLink}>View event details</a> : ''}
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="event event--basic-card basic-card mb-lg">
+        {props.eventImage ? <img data-epi-edit="Image" src={props.eventImage} /> : ''}
+        <div className="basic-card__content">
+          {(props.date || props.startTime || props.endTime) ? (
+            <div className="event--basic-card__date-time-container">
+              {props.date ? <h3 className="event--basic-card__date" data-epi-edit="Date">{formatDate(props.date)}</h3> : ''}
+              {(props.startTime || props.endTime) ? (
+                <div className="event--basic-card__time-container">
+                  {props.startTime ? <h3 className="event--basic-card__start-time" data-epi-edit="StartTime">{formatAMPM(props.startTime)}</h3> : ''}
+                  {props.endTime ? <h3 className="event--basic-card__end-time" data-epi-edit="EndTime"> - {formatAMPM(props.endTime)}</h3> : ''}
+                </div>
+              )
+                : ''}
+            </div>
+          ) : ''}
+          {props.eventTitle ? <h2 className="basic-card__content-title" data-epi-edit="EventTitle">{props.eventTitle}</h2> : ''}
+          {props.buttonUrlLink ?
+            <Button
+              label="View event details"
+              type='secondary'
+              color='secondaryBlue'
+              url={props.buttonUrlLink}
+            />
+            : ''}
+        </div>
+      </div>
+    );
   }
-
-  return <></>;
 };
 
 export default Event;
