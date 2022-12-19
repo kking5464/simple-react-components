@@ -50,10 +50,20 @@ const Event = (props: EventProps) => {
 
   useEffect(() => {
     if (props.useApi) {
-      fetch(`https://localhost:8001/api/Event?Name=${props.eventName}`)
+      fetch(`https://epop03mstrt6av4inte.dxcloud.episerver.net/api/Event?Name=${props.eventName}`)
         .then((res) => res.json())
         .then(
           (result) => {
+            if (result.eventImage) {
+              const eventImageStr = `https://epop03mstrt6av4inte.dxcloud.episerver.net${result.eventImage}`;
+              result.eventImage = eventImageStr;
+            }
+            
+            if (result.buttonUrlLink) {
+              const buttonUrlLinkStr = `https://epop03mstrt6av4inte.dxcloud.episerver.net${result.buttonUrlLink}`;
+              result.buttonUrlLink = buttonUrlLinkStr;
+            }
+
             setEvent(result);
           },
           (error) => {
