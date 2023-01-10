@@ -61,7 +61,6 @@ VideoStory.argTypes = {
     description: 'Language preference code in ISO 639-1 format',
     table: {
       category: 'Controls',
-      subcategory: 'Closed Caption'
     },
   },
   ccLoad: {
@@ -77,7 +76,6 @@ VideoStory.argTypes = {
     description: 'Load Closed Caption on Play',
     table: {
       category: 'Controls',
-      subcategory: 'Closed Caption'
     },
   },
 }
