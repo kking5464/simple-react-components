@@ -25,11 +25,6 @@ VideoStory.argTypes = {
     control: { type: 'text' },
     description: 'Video title',
   },
-  languagePreference: {
-    name: 'Language Preference',
-    control: { type: 'text' },
-    description: 'Language preference code in ISO 639-1 format',
-  },
   controls: {
     name: 'Show Video Controls',
     options: ['1', '0'],
@@ -41,6 +36,9 @@ VideoStory.argTypes = {
       },
     },
     description: 'Show video controls',
+    table: {
+      category: 'Controls',
+    },
   },
   autoplay: {
     name: 'Autoplay',
@@ -53,17 +51,44 @@ VideoStory.argTypes = {
       },
     },
     description: 'Autoplay',
+    table: {
+      category: 'Controls',
+    },
+  },
+  ccLanguagePreference: {
+    name: 'Language Preference',
+    control: { type: 'text' },
+    description: 'Language preference code in ISO 639-1 format',
+    table: {
+      category: 'Controls',
+      subcategory: 'Closed Caption'
+    },
+  },
+  ccLoad: {
+    name: 'Load Closed Caption on Play',
+    options: ['1', '0'],
+    control: {
+      type: 'select',
+      labels: {
+        '1': 'Enable',
+        '0': 'Disable'
+      },
+    },
+    description: 'Load Closed Caption on Play',
+    table: {
+      category: 'Controls',
+      subcategory: 'Closed Caption'
+    },
   },
 }
 
 VideoStory.args = {
   embedId: 'qsMpKU5Ld94',
   videoTitle: 'Test Video',
-  autoplay:'1',
-  languagePreference:'aa',
   controls:'1',
-  ccLoad:'0',
-  ccPref:'1'
+  autoplay:'1',
+  ccLanguagePreference:'en',
+  ccLoad:'1',
 };
 
 VideoStory.storyName = "BasicVideo";
