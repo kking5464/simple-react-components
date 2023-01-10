@@ -88,7 +88,7 @@ VideoStory.args = {
   controls:'1',
   autoplay:'1',
   ccLanguagePreference:'en',
-  ccLoad:'1',
+  ccLoad:'0',
 };
 
 VideoStory.storyName = "BasicVideo";

@@ -16,7 +16,7 @@ const BasicVideo = (props: BasicVideoProps) => {
   const mute = props.autoplay === '1' ? '1' : '0'
   const ccLanguagePreference = props.ccLanguagePreference ? props.ccLanguagePreference : 'en'
   const hl = props.ccLanguagePreference ? props.ccLanguagePreference : 'en'
-  const ccLoad = props.ccLoad ? props.ccLoad : '1'
+  const ccLoad = props.ccLoad ? props.ccLoad : '0'
 
   let videoSource: string = `https://www.youtube.com/embed/${props.embedId}?controls=${controls}&autoplay=${autoplay}&mute=${mute}&cc_lang_pref=${ccLanguagePreference}&hl=${hl}&cc_load_policy=${ccLoad}`;
 
